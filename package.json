@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-scss": "node ./internals/sassc.js",
+    "build": "yarn run build-scss",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -1,5 +1,29 @@
 @import './normalize';
 
+html, body {
+  line-height: 1;
+}
 p {
-  font-size: 12px;
+  // font-size: 12px;
+  margin: 0;
+}
+
+#header {
+  background-color: #EEE;
+}
+
+.p-bold {
+  font-weight: bold;
+}
+
+.p-title {
+  font-weight: bold;
+}
+
+.p-line {
+  
+}
+
+.border-black {
+  border: 1px solid black;
 }
