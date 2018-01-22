@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-size: 14px;
+  font-family: sans-serif;
+  line-height: 1.15;
+  min-width: 320px;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #2fbcc5;
+  &:visited {
+    color: #2fbcc5;
+  }
+}

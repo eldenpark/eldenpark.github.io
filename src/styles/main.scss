@@ -1,0 +1,74 @@
+@import './normalize';
+@import './global';
+@import './debug';
+
+.p-big {
+  font-size: 17px;
+}
+
+.p-bold {
+  font-weight: bold;
+}
+
+.p-title {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.p-line {
+  height: 14px;
+}
+
+#wrap {
+  display: flex;
+  min-height: 100%;
+  padding: 15px;
+
+  > div {
+    padding: 14px 14px;
+  }
+}
+
+.header {
+  width: 320px;
+  background-color: #EEE;
+
+  .profile_photo {
+    width: 100%;
+  }
+
+  .name {
+    margin-bottom: 12px;
+  }
+
+  .summary {
+    margin-top: 8px;
+  }
+}
+
+.main {
+  margin-left: 20px;
+}
+
+.main-entry {
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 600px)  {
+  #wrap {
+    padding: 0;
+    display: block;
+  }
+
+  .header {
+    width: 100%;
+    .profile_photo_wrapper {
+      .profile_photo {
+      }
+    }
+  }
+
+  .main {
+    margin-left: 0px;
+  }
+}
