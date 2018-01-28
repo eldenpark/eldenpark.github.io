@@ -2,6 +2,10 @@
 @import './global';
 @import './debug';
 
+.p-alert {
+  color: red;
+}
+
 .p-big {
   font-size: 17px;
 }
@@ -10,65 +14,155 @@
   font-weight: bold;
 }
 
-.p-title {
-  font-size: 15px;
-  margin-bottom: 6px;
-}
-
 .p-line {
-  height: 14px;
+  
 }
 
 #wrap {
   display: flex;
   min-height: 100%;
   padding: 15px;
+  min-width: 1100px;
 
   > div {
     padding: 14px 14px;
   }
 }
 
-.header {
-  width: 320px;
+.summary-wrapper {
   background-color: #EEE;
+  flex-shrink: 0;
+  width: 300px;
+}
 
+.summary {
   .profile_photo {
-    width: 100%;
+    text-align: center;
+
+    > img {
+      border-radius: 3px;
+      width: 270px;
+    }
   }
 
   .name {
     margin-bottom: 12px;
   }
 
-  .summary {
+  .desc {
     margin-top: 8px;
+  }
+
+  .contact {
+    margin-top: 8px;
+  }
+
+  .navigation {
+    font-size: 13px;
+    margin-top: 32px;
+
+    .active {
+      > span {
+        font-weight: bold;
+        color: #477b70;
+      }
+    }
+
+    > li {
+      display: inline-block;
+      margin-right: 2px;
+      &:before {
+        content: '|';
+        margin-right: 2px;
+      }
+    }
   }
 }
 
-.main {
+.body-wrapper {
+  flex-shrink: 0;
   margin-left: 20px;
+  width: 850px;
 }
 
-.main-entry {
-  margin-bottom: 25px;
+.timeline {
+  a {
+    color: black;
+    &:visited {
+      color: black;
+    }
+  }
+
+  b {
+    color: #1b1b1b;
+    &:visited {
+      color: #1b1b1b;
+    }
+  }
+
+  .timeline-entry {
+    margin-bottom: 29px;
+  }
+
+  .p-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .section {
+    margin-bottom: 15px;
+  }
+
+  .meta {
+    display: flex;
+    justify-content: space-between
+  }
+
+  .url {
+    font-size: 12px;
+  }
+
+  .role {
+    font-style: italic;
+  }
+
+  .jobname {
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .desc {
+    margin-top: 5px;
+
+    > li {
+      display: flex;
+      &:before {
+        content: '-';
+        margin-right: 6px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 600px)  {
   #wrap {
+    min-width: 320px;
     padding: 0;
     display: block;
-  }
 
-  .header {
-    width: 100%;
-    .profile_photo_wrapper {
-      .profile_photo {
-      }
+    > div {
+      margin-bottom: 21px;
     }
   }
 
-  .main {
+  .summary-wrapper {
+    width: 100%;
+  }
+
+  .body-wrapper {
+    flex-shrink: 0;
     margin-left: 0px;
+    width: 100%;
   }
 }
