@@ -2,10 +2,10 @@ const sass = require('node-sass');
 const path = require('path');
 const fs = require('fs');
 
-const INP_PATH = path.resolve(__dirname, 'styles', 'main.scss');
-const RES_PATH = path.resolve(__dirname, '..', 'assets', 'css', 'main.css');
+const INP_PATH = path.resolve(__dirname, '..', 'styles', 'main.scss');
+const RES_PATH = path.resolve(__dirname, '..', '..', 'assets', 'css', 'main.css');
 
-module.exports = function() {
+function sassc() {
   const result = sass.renderSync({
     file: INP_PATH,
     outputStyle: 'compressed',
@@ -17,3 +17,7 @@ module.exports = function() {
 
   console.log(`main.css is written to ${RES_PATH}`)
 }
+
+module.exports = {
+  sassc,
+};
