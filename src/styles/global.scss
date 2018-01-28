@@ -8,19 +8,25 @@ html, body {
   height: 100%;
   font-size: 14px;
   font-family: sans-serif;
-  line-height: 1.15;
+  line-height: 1.4;
   min-width: 320px;
 }
 
 p {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 a {
-  text-decoration: none;
-  color: #2fbcc5;
+  text-decoration: underline;
+  color: #477b70;
   &:visited {
-    color: #2fbcc5;
+    color: #477b70;
   }
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
