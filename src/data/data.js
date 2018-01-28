@@ -20,7 +20,7 @@ module.exports = {
       location: 'Seongnam, South Korea',
       role: 'Software Engineer',
       time: 'Jan 2017 - Jan 2018',
-      url: '<a href="">http://cbox.naver.com</a>',
+      url: '<a href="https://navercorp.com">https://navercorp.com</a>',
     },
     zoyi: {
       desc: {
@@ -31,7 +31,7 @@ module.exports = {
       location: 'Seoul, South Korea',
       role: 'Software Engineer Intern',
       time: 'Jul 2016 - Dec 2016',
-      url: '<a href="">https://zoyi.co</a>; <a href="">https://channel.io</a>',
+      url: '<a href="https://zoyi.co">https://zoyi.co</a>; <a href="https://channel.io">https://channel.io</a>',
     },
     lgcns: {
       desc: {
@@ -51,7 +51,7 @@ module.exports = {
       location: 'Seoul, South Korea',
       role: 'Founder, Designer, Engineering Lead',
       time: 'Mar 2017 - Present',
-      url: '<a href="">https://github.com/marmoym</a>',
+      url: '<a href="https://github.com/marmoym">https://github.com/marmoym</a>',
     },
     gimci: {
       desc: {
@@ -62,7 +62,7 @@ module.exports = {
       location: 'Seoul, South Korea',
       role: 'Founder, Engineering Lead',
       time: 'Jan 2016 - Feb 2017',
-      url: '<a href="">https://github.com/gimci</a>',
+      url: '<a href="https://github.com/gimci">https://github.com/gimci</a>; <a href="https://gimci.github.io">https://gimci.github.io</a>',
     },
     swmaestro: {
       desc: {
