@@ -4,6 +4,9 @@ const Summary = require('../components/Summary');
 const Timeline = require('../components/Timeline');
 
 const config = {
+  /**
+   * Navigation entry which is active,
+   */
   navigation: 'timeline',
 };
 
