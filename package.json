@@ -4,15 +4,13 @@
   "description": "Initial",
   "main": "index.js",
   "scripts": {
-    "build": "yarn run build-scss && yarn run minify",
-    "build-scss": "node ./internals/sassc.js",
-    "minify": "node ./internals/minifier.js",
-    "start": "node ./src/app.js",
+    "build": "node ./src/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "commander": "^2.14.1",
     "html-minifier": "^3.5.8",
     "node-sass": "^4.7.2"
   },
