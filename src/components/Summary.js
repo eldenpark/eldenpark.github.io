@@ -4,17 +4,30 @@ const Summary = (data, config) => `
       <img src="assets/img/pic2.jpg" alt="profile_photo">
     </div>
     <div class="desc">
-      <p class="p-bold p-big name">${data.profile.name}</p>
-      <p class="p-bold">${data.$softwareEngineer}</p>
-      <p>${data.profile.location}</p>
+      <p class="name">${data.profile.name}</p>
+      <div class="meta">
+        <p class="p-bold">${data.$softwareEngineer}</p>
+        <p>${data.profile.location}</p>
+      </div>
       <div class="contact">
-        <p><a href="mailto:${data.profile.email}">${data.profile.email}</a></p>
-        <p><a href="${data.profile.githubUrl}">${data.profile.githubName}</a> (github) / <a href="${data.profile.mediumUrl}">${data.profile.fullAccountName}</a> (medium)</p>
+        <div>
+          <span>Email</span>
+          <a href="mailto:${data.profile.email}">${data.profile.email}</a>
+        </div>
+        <div>
+          <span>Github</span>
+          <a href="${data.profile.githubUrl}">${data.profile.githubName}</a>
+        </div>
+        <div>
+          <span>Medium</span>
+          <a href="${data.profile.mediumUrl}">${data.profile.fullAccountName}</a>
+        </div>
       </div>
     </div>
+    <div class="updated-at">Last modified Feb 2018</div>
     <ul class="navigation">
       <li class="${config.navigation === 'timeline' ? 'active' : ''}"><span>Timeline</span></li>
-      <li class="${config.navigation === 'music' ? 'active' : ''}"><span>(under construction)</span></li>
+      <li class="${config.navigation === 'music' ? 'active' : ''}"><span>Music</span></li>
     </ul>
   </div>
 `;
