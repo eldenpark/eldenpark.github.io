@@ -14,6 +14,7 @@ function getOutputPath(filename) {
 
 function minifyHtml(file) {
   return minify(file, {
+    collapseInlineTagWhitespace: true,
     collapseWhitespace: true,
     removeAttributeQuotes: true,
     removeComments: true,

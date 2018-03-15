@@ -4,7 +4,7 @@ const path = require('path');
 const program = require('commander');
 
 const compile = require('./utils/fileUtils').compile;
-const sassc = require('./utils/sassc');
+const writeToFile = require('./utils/sassc').writeToFile;
 
 program
   .version('0.1.0')
@@ -17,7 +17,7 @@ if (!program.file) {
   console.log(`'-f' File option is not given, default: 'index'.`);
 }
 
-sassc();
 compile({
   filename: program.build || file,
 });
+writeToFile();
