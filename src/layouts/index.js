@@ -40,14 +40,6 @@ ul, li {
   padding: 0;
 }
 
-.p-alert {
-  color: red;
-}
-
-.p-bold {
-  font-weight: 600;
-}
-
 .weight-500 {
   font-weight: 500;
 }

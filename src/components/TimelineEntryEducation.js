@@ -19,7 +19,7 @@ const TimelineEntryEducation = ({ data, name }) => {
   return `
     <div class="${className}">
       <span class="time">${timeline.time}</span>
-      <span class="desc">${timeline.desc.a}</span>
+      <span class="desc">${timeline.desc[0]}</span>
     </div>
   `;
 };

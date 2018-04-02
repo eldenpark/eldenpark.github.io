@@ -12,19 +12,43 @@ module.exports = {
   },
   timeline: {
     bagdar: {
-      desc: {
-        a: 'Founded a startup to develop award-winning idea on information security',
-      },
+      desc: [
+        'Founded a startup to develop award-winning idea on information security',
+        'Project <b>Viewer Identifying Module</b>: Web content security solution through displaying viewer\'s information on the image',
+        [
+          'Used HTML, LESS, PHP, JavaScript, and GD (PHP built-in image processing library)',
+          'Mostly worked on architecting PHP web request handler and client-side web application',
+          'Led the team of two, sourcing the idea, participated in <b>LG CNS Hackathon 2015</b>. Earned Bronze award',
+        ],
+      ],
       fullname: 'Bagdar',
       location: 'Seoul, Korea',
       role: 'Founder, Lead Engineer',
       time: 'Oct 2015 - Jan 2016',
       url: '',
     },
+    ces2017: {
+      desc: [
+        'Studied the latest technology trends and issues in one of the largest consumer tech shows (Korea University Scholarship)',
+      ],
+      fullname: 'Field Study in CES 2017',
+      location: 'Las Vegas, US',
+      role: '',
+      time: 'Jan 2017',
+      url: '',
+    },
+    codeInduction: {
+      desc: [
+        '',
+      ],
+      fullname: 'Linewise code auto-complete by copying and selectively pasting preceding lines using deep neutral network',
+      location: 'Korea University',
+      role: '',
+      time: '2017',
+      url: '',
+    },
     dataCraft: {
-      desc: {
-        a: '',
-      },
+      desc: [],
       fullname: 'datacraft',
       location: 'S.Korea',
       role: '',
@@ -32,9 +56,9 @@ module.exports = {
       url: '',
     },
     fieldStudySV: {
-      desc: {
-        a: 'Visited IT companies such as Google, Facebook and interviwed tech leaders and entrepreneurs in Silicon Valley. Was funded by Korea University',
-      },
+      desc: [
+        'Visited IT companies such as Google, Facebook and interviwed tech leaders and entrepreneurs in Silicon Valley. (Korea University Scholarship)',
+      ],
       fullname: 'Field Study in Silicon Valley',
       location: 'San Jose, US',
       role: 'Student Leader',
@@ -42,10 +66,11 @@ module.exports = {
       url: '',
     },
     gimci: {
-      desc: {
-        a: 'Founded and led the team to build Gimci, a Korean natural language processor, on top of NodeJS',
-        b: 'Garnered a research fund from Korea University (2016) and conducted a study "Performance optimaization on Korean text using letter-based romanization"'
-      },
+      desc: [
+        'Founded an open source project Gimci.js, a Korean natural language processor',
+        'Garnered a research fund from Korea University (2016) and also conducted a study with it "Performance optimaization on Korean text using letter-based romanization"',
+        'D2 Campus Fest 2017 (Collegiate Open Source Competition by Naver) Finalist',
+      ],
       fullname: 'Gimci',
       location: 'Seoul, S.Korea',
       role: 'Founder, Engineering Lead',
@@ -53,29 +78,49 @@ module.exports = {
       url: '<a href="https://github.com/gimci">https://github.com/gimci</a>; <a href="https://gimci.github.io">https://gimci.github.io</a>',
     },
     gokathon: {
-      desc: {
-        a: 'Founded a "hackathon", an event where students develop and share their software',
-      },
+      desc: [
+        'Founded and organized an event "hackathon", where students develop and share their software. This became an annual regular event of school department',
+      ],
       fullname: 'Gokathon: Korea University Hackathon',
       location: 'Korea University',
       role: 'Founder, Event Organizer',
       time: 'Aug 2016',
       url: '',
     },
+    kookminuniv: {
+      desc: [
+        'Kookmin University',
+      ],
+      fullname: 'Kookmin University',
+      location: 'S. Korea',
+      role: '',
+      time: '2013 - 2014',
+      url: '',
+    },
+    koreanProcessing: {
+      desc: [
+
+      ],
+      fullname: 'Performance optimaization on Korean text using letter-based romanization',
+      location: 'Korea University',
+      role: '',
+      time: '2016',
+      url: '',
+    },
     koreauniv: {
-      desc: {
-        a: '<b>BS in Computer Science</b>, Korea University',
-      },
+      desc: [
+        '<b>BS in Computer Science</b>, Korea University',
+      ],
       fullname: '',
       location: 'S.Korea',
       role: '',
-      time: '2017',
+      time: '2015 - 2017',
       url: '',
     },
     lereve: {
-      desc: {
-        a: 'Winter Internship, offered after winning LG CNS Hackathon (2015). Researched company\'s server-side technology stacks in software architecture team',
-      },
+      desc: [
+        'Winter Internship, offered after winning LG CNS Hackathon (2015). Researched company\'s server-side technology stacks in software architecture team',
+      ],
       fullname: 'Le Rêve School of Arts',
       location: 'S.Korea',
       role: 'Software Engineer Intern',
@@ -83,9 +128,10 @@ module.exports = {
       url: '',
     },
     lgcns: {
-      desc: {
-        a: 'Winter Internship, offered after winning LG CNS Hackathon (2015). Researched company\'s server-side technology stacks in software architecture team',
-      },
+      desc: [
+        'Winter Internship, offered after winning bronze in LG CNS Hackathon (2015)',
+        'Researched company\'s technology stacks in Software Architecture Team',
+      ],
       fullname: 'LG CNS',
       location: 'Seoul, S.Korea',
       role: 'Software Engineer Intern',
@@ -93,20 +139,23 @@ module.exports = {
       url: '',
     },
     lyonBleu: {
-      desc: {
-        a: 'Studeid French',
-      },
+      desc: [
+        'Etudié le français avec des etudiants des pays européens',
+      ],
       fullname: 'Lyon Bleu International',
       location: 'Lyon, France',
       role: '',
-      time: 'Jan 2016 - Feb 2016',
+      time: 'Jan 2009 - May 2009',
       url: '',
     },
     marmoym: {
-      desc: {
-        a: '"Build the language together",&nbsp;<b>Marmoym</b>&nbsp;is an open platform where anyone can define the terms',
-        b: 'Founded and led the side-project team. Used technologies such as ReactJS, ExpressJS, and KnexJS',
-      },
+      desc: [
+        'Project Marmoym (말모음): An open source platform where anyone an define the language',
+        [
+          'Used React.js, Knex.js, Express.js, TypeScript to build microservices',
+          'Experimented latest practices and technologies on both client and server sides so that the product could later on be referred to if needed',
+        ]
+      ],
       fullname: 'Marmoym',
       location: 'Seoul, S.Korea',
       role: 'Founder, Engineering Lead, Designer',
@@ -114,21 +163,25 @@ module.exports = {
       url: '<a href="https://github.com/marmoym">https://github.com/marmoym</a>',
     },
     memebox: {
-      desc: {
-        a: 'Worked as a lead engineer at Memebox, a startup funded by a number of venture capitals including Y Combinator (2014)',
-        b: 'Developed&nbsp;<b>Brand-insight Dashboard</b>&nbsp;full-stack using React, D3.',
-        b: 'Starting from scratch, implemented a deploy pipeline, rest-apis and also the client-side application, communicating with teams of multi-regional bases',
-      },
+      desc: [
+        'Worked as a lead engineer at Memebox, a K-beauty startup funded by Y Combinator (2014)',
+        'Project <b>Brand Insight Dashboard</b>: A dashboard that visualizes customers\' reviews data on merchandises',
+        [
+          'Used React.js, D3.js, Express.js, PostgreSQL, Knex.js to build both client and server sides microservices. Created CI pipeline by building a deploy routine',
+          'Owned a project and built and devised the entire product oneself. Worked in both San Francisco and Pangyo, communicating with multi regional base team',
+          'Embedded D3.js into React app to effectively display analyzed data on user sentiments'
+        ],
+      ],
       fullname: 'Memebox',
-      location: 'Pangyo, S.Korea / San Francisco, US',
+      location: 'Pangyo, S.Korea - San Francisco, US',
       role: 'Lead Engineer',
       time: 'Jan 2018 - Present',
       url: '<a href="https://us.memebox.com/">https://us.memebox.com/</a>',
     },
     military: {
-      desc: {
-        a: '',
-      },
+      desc: [
+        '',
+      ],
       fullname: 'Republic of Korea Army',
       location: '705th Commandos Division, S.Korea',
       role: '',
@@ -136,10 +189,14 @@ module.exports = {
       url: '',
     },
     naver: {
-      desc: {
-        a: 'Worked on&nbsp;<b>Common Comment Platform</b>&nbsp;(공통댓글): a reply module/APIs (Disqus-like) used in various Naver Services',
-        b: 'Full stack engineeing on different types of micro-services such as client-side web app, rest APIs, cache, message queue, batch, etc, while using technologies JavaScript/jQuery, Java Spring, Redis, and so on',
-      },
+      desc: [
+        'Full stack engineering in the top domestic internet service company (2017) with a massive user base (1M+/day)',
+        'Project <b>Common Comment Platform</b> (공통댓글): Comment module/APIs (Disqus-like) used in various Naver Services',
+        [
+          'Used Java Spring, iBatis, MySQL, and Redis to handle large web traffic on the server side. On front-end, used jQuery and vanilla JavaScript to create a web application that runs in various browsing platforms',
+          'Worked on restructuring the client-side web-application so that state hydration takes place in one-way (unidirectional flow)',
+        ],
+      ],
       fullname: 'Naver Corporation',
       location: 'Seongnam, S.Korea',
       role: 'Software Engineer',
@@ -147,18 +204,16 @@ module.exports = {
       url: '<a href="https://navercorp.com">https://navercorp.com</a>',
     },
     nepal: {
-      desc: {
-        a: '',
-      },
+      desc: [],
       fullname: 'International Workcamp: Volunteering in Toilet Construction',
       location: 'Kathmandu, Nepal',
       role: 'Volunteer',
       time: 'Jul 2012 - Aug 2012',
     },
     swmaestro: {
-      desc: {
-        a: 'Member of a national youth engineer raising program. Co-worked on group projects with the help of mentors from industry',
-      },
+      desc: [
+        'Member of a national youth engineer raising program. Co-worked on group projects with the help of mentors from industry',
+      ],
       fullname: 'Software Maestro',
       location: 'Seoul, S.Korea',
       role: 'Software Engineer',
@@ -166,19 +221,19 @@ module.exports = {
       url: '',
     },
     unesco: {
-      desc: {
-        a: 'Participated (and orchestrated the talk as chair) in a forum where students from different countries share their views',
-      },
+      desc: [
+        'Orchestrated an international youth forum as chair elected. Shared ideas with students from different countries and with different values',
+      ],
       fullname: 'UNESCO International Youth Forum 2013: Historical Reconciliation in East Asia',
       location: 'Seoul, S.Korea',
-      role: '',
+      role: 'Chair (elected)',
       time: 'Aug 2013',
       url: '',
     },
     univofutah: {
-      desc: {
-        a: 'Exchange Student, University of Utah',
-      },
+      desc: [
+        'Exchange Student, University of Utah',
+      ],
       fullname: 'Exchange Student, University of Utah, UT, US',
       location: 'Salt Lake City, US',
       role: '',
@@ -186,10 +241,19 @@ module.exports = {
       url: '',
     },
     zoyi: {
-      desc: {
-        a: 'Worked as a client-side engineer on&nbsp;<b>Channel</b>,&nbsp;a chat API that runs embedded on websites. Used ReactJS in its core and led the <a>migration</a> from Flux Utils to Redux',
-        b: 'Designed and implemented&nbsp;<b>WI-Funnel</b>, a dashboard that processes and diplays various indices, collected by&nbsp;<b>Walk Insights</b>',
-      },
+      desc: [
+        'Worked as a software engineer at the fastest rising tech startup in Korea',
+        'Project a) <b>Channel</b>: a chat API (similar to Intercom) that runs embedded on websites enabling communication between clients and the business',
+        [
+          'Used JavaScript ES6, SASS, React.js, Redux.js, Node.js and AWS S3',
+          'Developed the web application, with much thought devoted to make it run in different browsing environments. Set up coding styles and conventions for writing React.js applications',
+          'Focused on optimised state control in the client-side, leading the <a>migration</a> from Flux Utils to Redux.js',
+        ],
+        'Project b) <b>WI-Funnel</b>: a data visualizer (dashboard) that calculates and shows charts',
+        [
+          'Used React.js, Node.js, and small chart libraries to build dashboard that shows data collected by Walk Insights before being heavily processed such as by MapReduce',
+        ],
+      ],
       fullname: 'Zoyi Corporation',
       location: 'Seoul, S.Korea',
       role: 'Software Engineer',

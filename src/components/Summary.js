@@ -33,6 +33,7 @@ const className = toStyle({
       }
 
       .meta {
+        font-weight: 500;
       }
 
       .contact {
@@ -103,7 +104,7 @@ const Summary = (data, config) => `
     <div class="desc">
       <p class="name">${data.profile.name}</p>
       <div class="meta">
-        <p class="p-bold">${data.$softwareEngineer}</p>
+        <p>${data.$softwareEngineer}</p>
         <p>${data.profile.location}</p>
       </div>
       <div class="contact">
@@ -121,7 +122,7 @@ const Summary = (data, config) => `
         </div>
       </div>
     </div>
-    <div class="updated-at">Last modified Feb 2018</div>
+    <div class="updated-at">Last modified Mar 2018</div>
     <ul class="navigation">
       <li class="${config.navigation === 'timeline' ? 'active' : ''}">
         <span><a href="/">Timeline</a></span>

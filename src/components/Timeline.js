@@ -36,17 +36,6 @@ const className = toStyle({
       margin-bottom: 2px;
     }
 
-    .desc {
-      > li {
-        display: flex;
-        text-align: justify;
-        &:before {
-          content: '-';
-          margin-right: 3px;
-        }
-      }
-    }
-
     .actName {
       font-weight: 500;
     }
@@ -65,13 +54,19 @@ const Timeline = (data) => `
     ${TimelineEntryEmployment({data, name: 'bagdar'})}
   </div>
   <div class="timeline-section">
-    <p class="section-title">Engineering and Research</p>
-    ${TimelineEntryActivity({data, name: 'marmoym'})}
-    ${TimelineEntryActivity({data, name: 'gimci'})}
-    ${TimelineEntryActivity({data, name: 'swmaestro'})}
+    <p class="section-title">Engineering</p>
+    ${TimelineEntryEmployment({data, name: 'marmoym'})}
+    ${TimelineEntryEmployment({data, name: 'gimci'})}
+    ${TimelineEntryEmployment({data, name: 'swmaestro'})}
+  </div>
+  <div class="timeline-section">
+    <p class="section-title">Research</p>
+    ${TimelineEntryActivity({data, name: 'codeInduction'})}
+    ${TimelineEntryActivity({data, name: 'koreanProcessing'})}
   </div>
   <div class="timeline-section">
     <p class="section-title">Other Activities</p>
+    ${TimelineEntryActivity({data, name: 'ces2017'})}
     ${TimelineEntryActivity({data, name: 'gokathon'})}
     ${TimelineEntryActivity({data, name: 'fieldStudySV'})}
     ${TimelineEntryActivity({data, name: 'unesco'})}
@@ -83,6 +78,7 @@ const Timeline = (data) => `
     <p class="section-title">Education</p>
     ${TimelineEntryEducation({data, name: 'koreauniv'})}
     ${TimelineEntryEducation({data, name: 'univofutah'})}
+    ${TimelineEntryEducation({data, name: 'kookminuniv'})}
   </div>
 </div>
 `;
