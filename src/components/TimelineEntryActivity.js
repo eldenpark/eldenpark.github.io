@@ -5,6 +5,7 @@ const className = toStyle({
   name: 'TimelineEntryActivity',
   style: `
     margin-bottom: 7px;
+    text-align: justify;
     .meta {
       .separator {
         margin: 0 5px;

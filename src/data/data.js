@@ -6,11 +6,22 @@ module.exports = {
     fullAccountName: 'eldeniyenden',
     githubName: 'eldeni',
     githubUrl: 'https://github.com/eldeni',
+    linkedInUrl: 'https://www.linkedin.com/in/seunghyunpark/',
     location: 'Seoul, Korea',
-    name: 'Elden Seunghyun Park',
     mediumUrl: 'https://medium.com/@eldeniyenden',
+    name: 'Elden Seunghyun Park',
   },
   timeline: {
+    awesomeDomstorage: {
+      desc: [
+        'Authored an open source library that provides abstraction for using web storages (Local storage, Session Storage). Used JavaScript ES6.',
+      ],
+      fullname: 'Awesome-domestorage.js',
+      location: 'Seoul, Korea',
+      role: 'Author, Engineering Lead',
+      time: 'Aug 2016 - Sep 2016',
+      url: '',
+    },
     bagdar: {
       desc: [
         'Founded a startup to develop award-winning idea on information security',
@@ -31,7 +42,7 @@ module.exports = {
       desc: [
         'Studied the latest technology trends and issues in one of the largest consumer tech shows (Korea University Scholarship)',
       ],
-      fullname: 'Field Study in CES 2017',
+      fullname: 'Field Study in Consumer Electronics Show 2017',
       location: 'Las Vegas, US',
       role: '',
       time: 'Jan 2017',
@@ -48,12 +59,18 @@ module.exports = {
       url: '',
     },
     dataCraft: {
-      desc: [],
-      fullname: 'datacraft',
+      desc: [
+        'Developed batch text preprocessor that executes a series of predefined tasks on raw text data. The data was then fed into a deep neural network that learns and predicts programming source code.',
+        [
+          'Used Node.js and designed the app so that it creates data pipeline inbetween each task. The architecture was inspired by Java Spring Batch.',
+          'Worked during the study "Linewise source code auto-complete using deep neural network"',
+        ],
+      ],
+      fullname: 'Datacraft.js',
       location: 'S.Korea',
-      role: '',
+      role: 'Software Engineer, Researcher',
       time: 'Jun 2017 - July 2017',
-      url: '',
+      url: 'https://github.com/eldeni/datacraft',
     },
     fieldStudySV: {
       desc: [
@@ -67,13 +84,19 @@ module.exports = {
     },
     gimci: {
       desc: [
-        'Founded an open source project Gimci.js, a Korean natural language processor',
-        'Garnered a research fund from Korea University (2016) and also conducted a study with it "Performance optimaization on Korean text using letter-based romanization"',
+        'Founded an open source project Gimci, a Korean natural language processor',
+        'Gained a research fund (undergraduate research program) from Korea University (2016) conducting a study with it "Performance optimaization on Korean text using letter-based romanization"',
         'D2 Campus Fest 2017 (Collegiate Open Source Competition by Naver) Finalist',
+        'Project Gimci.js: Korean nautral language processor built on top of a Node.js',
+        [
+          'Used Node.js to build pipeline that processes text data',
+          'To optimize search performance on Korean text, a number of practices from the industry were studied and adopted. This includes "Faroo Algorithm" where search is done through pre-building a dictionary by deleting a certain number of characters from every word entry.',
+          'A new methodology of romanizing Korean was proposed, Bagsynghien rule (박승현 전사법)',
+        ]
       ],
       fullname: 'Gimci',
       location: 'Seoul, S.Korea',
-      role: 'Founder, Engineering Lead',
+      role: 'Founder, Engineering Lead, Author',
       time: 'Jan 2016 - Feb 2017',
       url: '<a href="https://github.com/gimci">https://github.com/gimci</a>; <a href="https://gimci.github.io">https://gimci.github.io</a>',
     },
@@ -117,6 +140,16 @@ module.exports = {
       time: '2015 - 2017',
       url: '',
     },
+    kweb: {
+      desc: [
+        'Member of a school software engineering club where students practice and share knowledge on web technologies',
+      ],
+      fullname: 'Korea University Web Master (KWEB)',
+      location: 'Korea University',
+      role: '',
+      time: 'Mar 2015 - Aug 2016',
+      url: '',
+    },
     lereve: {
       desc: [
         'Winter Internship, offered after winning LG CNS Hackathon (2015). Researched company\'s server-side technology stacks in software architecture team',
@@ -150,10 +183,10 @@ module.exports = {
     },
     marmoym: {
       desc: [
-        'Project Marmoym (말모음): An open source platform where anyone an define the language',
+        'Project Marmoym (말모음): An open source platform where anyone can define the language',
         [
-          'Used React.js, Knex.js, Express.js, TypeScript to build microservices',
-          'Experimented latest practices and technologies on both client and server sides so that the product could later on be referred to if needed',
+          'Used React.js, Knex.js, Express.js, TypeScript to build a number of microservices including REST Apis, web application',
+          'Experimented and researched latest practices and technologies on both client and server sides. This side-project is designed to be referred to whenever there is a need to adapt new technology',
         ]
       ],
       fullname: 'Marmoym',
@@ -212,7 +245,8 @@ module.exports = {
     },
     swmaestro: {
       desc: [
-        'Member of a national youth engineer raising program. Co-worked on group projects with the help of mentors from industry',
+        'Member of a national youth engineer raising program where government provides funding, space, and affiliation with industry.',
+        'Developed Software Maestro Portal with a mentor from industry, a portal website that provides utility to members of the program',
       ],
       fullname: 'Software Maestro',
       location: 'Seoul, S.Korea',

@@ -45,7 +45,7 @@ const className = toStyle({
         span {
           color: #555;
           display: inline-block;
-          width: 60px;
+          width: 66px;
           font-weight: 600;
         }
       }
@@ -119,6 +119,10 @@ const Summary = (data, config) => `
         <div>
           <span>Medium</span>
           <a href="${data.profile.mediumUrl}">${data.profile.fullAccountName}</a>
+        </div>
+        <div>
+          <span>LinkedIn</span>
+          <a href="${data.profile.linkedInUrl}">${data.profile.name}</a>
         </div>
       </div>
     </div>
