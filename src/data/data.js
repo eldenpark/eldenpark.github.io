@@ -198,9 +198,9 @@ module.exports = {
     memebox: {
       desc: [
         'Worked as a lead engineer at Memebox, a K-beauty startup funded by Y Combinator (2014)',
-        'Project <b>Brand Insight Dashboard</b>: A dashboard that visualizes customers\' reviews data on merchandises',
+        'Project <b>Brand Insight Dashboard</b>: A dashboard that visualizes customers\' review data on merchandises',
         [
-          'Used React.js, D3.js, Express.js, PostgreSQL, Knex.js to build both client and server sides microservices. Created CI pipeline by building a deploy routine',
+          'Used React.js, D3.js, Express.js, PostgreSQL, Knex.js to build both client and server sides microservices. Also created CI pipeline from scratch building a deploy routine',
           'Owned a project and built and devised the entire product oneself. Worked in both San Francisco and Pangyo, communicating with multi regional base team',
           'Embedded D3.js into React app to effectively display analyzed data on user sentiments'
         ],
@@ -223,7 +223,7 @@ module.exports = {
     },
     naver: {
       desc: [
-        'Full stack engineering in the top domestic internet service company (2017) with a massive user base (1M+/day)',
+        'Full stack engineering in the top domestic internet service company (2017) with a massive user base',
         'Project <b>Common Comment Platform</b> (공통댓글): Comment module/APIs (Disqus-like) used in various Naver Services',
         [
           'Used Java Spring, iBatis, MySQL, and Redis to handle large web traffic on the server side. On front-end, used jQuery and vanilla JavaScript to create a web application that runs in various browsing platforms',
@@ -266,7 +266,7 @@ module.exports = {
     },
     univofutah: {
       desc: [
-        'Exchange Student, University of Utah',
+        'Study abroad, University of Utah',
       ],
       fullname: 'Exchange Student, University of Utah, UT, US',
       location: 'Salt Lake City, US',
