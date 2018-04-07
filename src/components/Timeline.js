@@ -82,6 +82,7 @@ const Timeline = (data) => `
     ${TimelineEntryEducation({data, name: 'koreauniv'})}
     ${TimelineEntryEducation({data, name: 'univofutah'})}
     ${TimelineEntryEducation({data, name: 'kookminuniv'})}
+    ${TimelineEntryEducation({data, name: 'yeongdong'})}
   </div>
 </div>
 `;

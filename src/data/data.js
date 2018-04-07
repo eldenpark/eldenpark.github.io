@@ -68,7 +68,7 @@ module.exports = {
       ],
       fullname: 'Datacraft.js',
       location: 'S.Korea',
-      role: 'Software Engineer, Researcher',
+      role: 'Author, Researcher',
       time: 'Jun 2017 - July 2017',
       url: 'https://github.com/eldeni/datacraft',
     },
@@ -272,6 +272,16 @@ module.exports = {
       location: 'Salt Lake City, US',
       role: '',
       time: 'Spring 2014',
+      url: '',
+    },
+    yeongdong: {
+      desc: [
+        'Yeongdong High School, Seoul',
+      ],
+      fullname: 'Yeongdong High School, Seoul',
+      location: 'Salt Lake City, US',
+      role: '',
+      time: '2005 - 2008',
       url: '',
     },
     zoyi: {
