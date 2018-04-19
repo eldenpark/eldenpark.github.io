@@ -38,11 +38,25 @@ module.exports = {
       time: 'Oct 2015 - Jan 2016',
       url: '',
     },
+    browserLock: {
+      desc: [
+        'Developed chrome extension that does lock the browser on user\'s demand.',
+        'Led the team to participate in the in-company hackathon at Naver Corporation (2017)',
+        [
+          'Used Node.js, JavaScript and Chrome APIs to handle (removing and storing elsewhere) the browsing data, cookies and sessions, the likes',
+        ],
+      ],
+      fullname: 'browser-lock.js',
+      location: 'Chuncheon, Korea',
+      role: 'Team Leader, Engineering Lead',
+      time: 'Mar 2017',
+      url: 'https://github.com/eldeni/browser-lock',
+    },
     ces2017: {
       desc: [
         'Studied the latest technology trends and issues in one of the largest consumer tech shows (Korea University Scholarship)',
       ],
-      fullname: 'Field Study in Consumer Electronics Show 2017',
+      fullname: 'Field Study in Consumer Electronics Show (CES) 2017',
       location: 'Las Vegas, US',
       role: '',
       time: 'Jan 2017',
@@ -75,10 +89,12 @@ module.exports = {
     fieldStudySV: {
       desc: [
         'Visited IT companies such as Google, Facebook and interviwed tech leaders and entrepreneurs in Silicon Valley. (Korea University Scholarship)',
+        'Led the group as a student representative',
+        'Took Big-Data open source workshop provided by Cloudera (5-day lecture)'
       ],
       fullname: 'Field Study in Silicon Valley',
       location: 'San Jose, US',
-      role: 'Student Leader',
+      role: 'Student Representative',
       time: 'Jun 2016 - July 2016',
       url: '',
     },
@@ -86,8 +102,8 @@ module.exports = {
       desc: [
         'Founded an open source project Gimci, a Korean natural language processor',
         'Gained a research fund (undergraduate research program) from Korea University (2016) conducting a study with it "Performance optimaization on Korean text using letter-based romanization"',
-        'D2 Campus Fest 2017 (Collegiate Open Source Competition by Naver) Finalist',
-        'Project Gimci.js: Korean nautral language processor built on top of a Node.js',
+        'D2 Campus Fest 2017 (Collegiate Open Source Competition by held Naver) Finalist',
+        'Project Gimci.js: Korean nautral language processor built on top of Node.js',
         [
           'Used Node.js to build pipeline that processes text data',
           'To optimize search performance on Korean text, a number of practices from the industry were studied and adopted. This includes "Faroo Algorithm" where search is done through pre-building a dictionary by deleting a certain number of characters from every word entry.',
@@ -173,7 +189,7 @@ module.exports = {
     },
     lyonBleu: {
       desc: [
-        'Etudié le français avec des etudiants des pays européens',
+        'Etudié le Français avec des etudiants des pays européens',
       ],
       fullname: 'Lyon Bleu International',
       location: 'Lyon, France',
@@ -242,6 +258,26 @@ module.exports = {
       location: 'Kathmandu, Nepal',
       role: 'Volunteer',
       time: 'Jul 2012 - Aug 2012',
+    },
+    nips2017: {
+      desc: [
+        'Researched industry-level machine learning modeling and latest academic breakthroughs, the study funded by Naver Corporation',
+      ],
+      fullname: 'Field Study in Conference on Neural Information Processing Systems (NIPS) 2017',
+      location: 'Long Beach, US',
+      role: 'Volunteer',
+      time: 'Dec 2017',
+    },
+    real: {
+      desc: [
+        'Member of a student club that studies software engineering, industry design and business planning',
+        'Learned the latest technology by conducting software engineering projects',
+        'Studied entrepreneurship and shared ideas on starting a company, with students of diverse majors'
+      ],
+      fullname: 'Real Entrepreneurship Achievement League (REAL) 2016',
+      location: 'Seoul, Korea',
+      role: 'Software Engineer',
+      time: 'Jan 2016 - Jun 2016',
     },
     swmaestro: {
       desc: [

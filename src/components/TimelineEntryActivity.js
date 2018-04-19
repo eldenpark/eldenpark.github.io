@@ -6,6 +6,24 @@ const className = toStyle({
   style: `
     margin-bottom: 7px;
     text-align: justify;
+    .desc {
+      .item-2 {
+        padding-left: 12px;
+      }
+
+      b {
+        font-weight: 500;
+      }
+
+      > li {
+        display: flex;
+        text-align: justify;
+        &:before {
+          content: '-';
+          margin-right: 3px;
+        }
+      }
+    }
     .meta {
       .separator {
         margin: 0 5px;

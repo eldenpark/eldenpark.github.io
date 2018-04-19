@@ -57,6 +57,7 @@ const Timeline = (data) => `
     <p class="section-title">Engineering</p>
     ${TimelineEntryEmployment({data, name: 'marmoym'})}
     ${TimelineEntryEmployment({data, name: 'dataCraft'})}
+    ${TimelineEntryEmployment({data, name: 'browserLock'})}
     ${TimelineEntryEmployment({data, name: 'gimci'})}
     ${TimelineEntryEmployment({data, name: 'swmaestro'})}
     ${TimelineEntryEmployment({data, name: 'awesomeDomstorage'})}
@@ -68,8 +69,10 @@ const Timeline = (data) => `
   </div>
   <div class="timeline-section">
     <p class="section-title">Other Activities</p>
+    ${TimelineEntryActivity({data, name: 'nips2017'})}
     ${TimelineEntryActivity({data, name: 'ces2017'})}
     ${TimelineEntryActivity({data, name: 'gokathon'})}
+    ${TimelineEntryActivity({data, name: 'real'})}
     ${TimelineEntryActivity({data, name: 'fieldStudySV'})}
     ${TimelineEntryActivity({data, name: 'kweb'})}
     ${TimelineEntryActivity({data, name: 'unesco'})}
