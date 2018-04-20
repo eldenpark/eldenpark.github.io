@@ -88,8 +88,7 @@ module.exports = {
     },
     fieldStudySV: {
       desc: [
-        'Visited IT companies such as Google, Facebook and interviwed tech leaders and entrepreneurs in Silicon Valley. (Korea University Scholarship)',
-        'Led the group as a student representative',
+        'Visited IT companies such as Google, Facebook and interviewd tech leaders and entrepreneurs in Silicon Valley. Led the group as a student representative. (Korea University Scholarship)',
         'Took Big-Data open source workshop provided by Cloudera (5-day lecture)'
       ],
       fullname: 'Field Study in Silicon Valley',
@@ -270,8 +269,7 @@ module.exports = {
     },
     real: {
       desc: [
-        'Member of a student club that studies software engineering, industry design and business planning',
-        'Learned the latest technology by conducting software engineering projects',
+        'Member of a student club that studies software engineering, industry design and business planning. Conducted software engineering projects.',
         'Studied entrepreneurship and shared ideas on starting a company, with students of diverse majors'
       ],
       fullname: 'Real Entrepreneurship Achievement League (REAL) 2016',
