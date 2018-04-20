@@ -126,7 +126,7 @@ const Summary = (data, config) => `
         </div>
       </div>
     </div>
-    <div class="updated-at">Last modified Mar 2018</div>
+    <div class="updated-at">Last modified Apr 2018</div>
     <ul class="navigation">
       <li class="${config.navigation === 'timeline' ? 'active' : ''}">
         <span><a href="/">Timeline</a></span>
