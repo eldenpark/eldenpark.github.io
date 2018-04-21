@@ -210,13 +210,23 @@ module.exports = {
       time: 'Mar 2017 - Present',
       url: '<a href="https://github.com/marmoym">https://github.com/marmoym</a>',
     },
+    mashup: {
+      desc: [
+        'Member of a developer-designer project group. Studied and shared latest technologies. Conducted group project on Android application development',
+      ],
+      fullname: 'Mashup 2018',
+      location: 'Seoul, S.Korea',
+      role: 'Android Engineer',
+      time: 'Mar 2018 - Present',
+      url: '',
+    },
     memebox: {
       desc: [
         'Worked as a lead engineer at Memebox, a K-beauty startup funded by Y Combinator (2014)',
         'Project <b>Brand Insight Dashboard</b>: A dashboard that visualizes customers\' review data on merchandises',
         [
-          'Used React.js, D3.js, Express.js, PostgreSQL, Knex.js to build both client and server sides microservices. Also created CI pipeline from scratch building a deploy routine',
-          'Owned a project and built and devised the entire product oneself. Worked in both San Francisco and Pangyo, communicating with multi regional base team',
+          'Used React.js, D3.js, Express.js, PostgreSQL, Knex.js to build both client and server sides microservices. Created CI and deploy pipeline using PM2.',
+          'Owned a project and built and devised the entire product mostly oneself. Worked in both San Francisco and Pangyo, communicating with multi regional base team',
           'Embedded D3.js into React app to effectively display analyzed data on user sentiments'
         ],
       ],

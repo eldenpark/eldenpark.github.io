@@ -11,7 +11,7 @@ const className = toStyle({
     min-width: 1000px;
     
     > div {
-      padding: 14px 0px;
+      padding: 34px 0 20px 0;
     }
     
     .summary-wrapper {
