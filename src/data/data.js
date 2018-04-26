@@ -223,11 +223,11 @@ module.exports = {
     memebox: {
       desc: [
         'Worked as a lead engineer at Memebox, a K-beauty startup funded by Y Combinator (2014)',
-        'Project <b>Brand Insight Dashboard</b>: A dashboard that visualizes customers\' review data on merchandises',
+        'Project <b>Brand Insight Dashboard</b>: A dashboard that visualizes customers\' review data on merchandises. Led the project which the company promotes in order to expand its data-driven approach to the market',
         [
-          'Used React.js, D3.js, Express.js, PostgreSQL, Knex.js to build both client and server sides microservices. Created CI and deploy pipeline using PM2.',
-          'Owned a project and built and devised the entire product mostly oneself. Worked in both San Francisco and Pangyo, communicating with multi regional base team',
-          'Embedded D3.js into React app to effectively display analyzed data on user sentiments'
+          'Used React.js, D3.js, Express.js, PostgreSQL, Knex.js, AWS stacks to build both client and server sides microservices. Set up deploy pipeline using PM2.',
+          'Owned a project and built and devised the entire product mostly oneself. Architected and even UI designed from ground zero. Worked in both San Francisco and Pangyo, communicating with multi regional base team.',
+          'Embedded D3.js into React app to effectively display analyzed data. Architected in such a way that React does control the appplication state while d3 has its own areas to control the svg-based DOM nodes.'
         ],
       ],
       fullname: 'Memebox',
@@ -251,7 +251,7 @@ module.exports = {
         'Full stack engineering in the top domestic internet service company (2017) with a massive user base',
         'Project <b>Common Comment Platform</b> (공통댓글): Comment module/APIs (Disqus-like) used in various Naver Services',
         [
-          'Used Java Spring, iBatis, MySQL, and Redis to handle large web traffic on the server side. On front-end, used jQuery and vanilla JavaScript to create a web application that runs in various browsing platforms',
+          'Used Java Spring, iBatis, MySQL, and Redis to handle large web traffic on the server side. In front-end, used jQuery and vanilla JavaScript to work on web application that runs in various browsing platforms',
           'Worked on restructuring the client-side web-application so that state hydration takes place in one-way (unidirectional flow)',
         ],
       ],
@@ -330,14 +330,14 @@ module.exports = {
     },
     zoyi: {
       desc: [
-        'Worked as a software engineer at the fastest rising tech startup in Korea',
+        'Worked as a software engineer at the fastest rising tech startup (2016) in Korea',
         'Project a) <b>Channel</b>: a chat API (similar to Intercom) that runs embedded on websites enabling communication between clients and the business',
         [
-          'Used JavaScript ES6, SASS, React.js, Redux.js, Node.js and AWS S3',
-          'Developed the web application, with much thought devoted to make it run in different browsing environments. Set up coding styles and conventions for writing React.js applications',
+          'Used JavaScript ES6, SASS, React.js, Redux.js, Node.js, Webpack and AWS S3',
+          'Developed the web application, with much thought devoted to make it run in different browsing environments and to make it as light-weighted as possible. Set up React.js application architecture and programming conventions',
           'Focused on optimised state control in the client-side, leading the <a>migration</a> from Flux Utils to Redux.js',
         ],
-        'Project b) <b>WI-Funnel</b>: a data visualizer (dashboard) that calculates and shows charts',
+        'Project b) <b>WI-Funnel</b>: a data visualizer (dashboard) that calculates and shows charts. Conducted solo.',
         [
           'Used React.js, Node.js, and small chart libraries to build dashboard that shows data collected by Walk Insights before being heavily processed such as by MapReduce',
         ],
