@@ -2,47 +2,36 @@ const sass = require('node-sass');
 const path = require('path');
 const fs = require('fs');
 
-const INP_PATH = path.resolve(__dirname, '..', 'styles', 'main.scss');
-const RES_PATH = path.resolve(__dirname, '..', '..', 'assets', 'css', 'main.css');
+const randomString = require('./stringUtils').randomString;
 
+const MAIN_CSS_PATH = path.resolve(__dirname, '..', '..', 'assets', 'css', 'main.css');
+
+/**
+ * Global style state object. This keeps all the style definition of the app.
+ */
 const state = {
   style: '',
 };
 
-function randomString() {
-  var text = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+exports.toStyle = function ({ 
+  name,
+  global = false,
+  style,
+}) {
+  let className = '';
+  let wrappedStyle = '';
 
-  for (var i = 0; i < 5; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-  return text;
-}
-
-exports.default = function () {
-  const result = sass.renderSync({
-    file: INP_PATH,
-    outputStyle: 'compressed',
-    outFile: RES_PATH,
-    sourceMap: true,
-  });
-  fs.writeFileSync(RES_PATH, result.css.toString('utf-8'));
-  console.log(`main.css is written to ${RES_PATH}`)
-};
-
-exports.globalStyle = function globalStyle(style) {
-  state.style += (style + ' ');
-};
-
-exports.toStyle = function toStyle({ style, name }) {
-  const className = name + '-' + randomString();
-  const wrappedStyle = `.${className}{${style}} `;
+  if (global === true) {
+    wrappedStyle = (style + ' ');
+  } else {
+    className = name + '-' + randomString();
+    wrappedStyle = `.${className}{${style}} `;  
+  }
   state.style += wrappedStyle;
-
   return className;
 };
 
-exports.writeToFile = function writeToFile() {
+exports.generateCssFile = function () {
   console.log('[css] Writing to file');
 
   const compiled = sass.renderSync({
@@ -52,6 +41,6 @@ exports.writeToFile = function writeToFile() {
   const css = compiled.css.toString('utf8').replace(/[\r\n]/g, '');
 
   console.log('[css]', css);
-  fs.writeFileSync(RES_PATH, css);
-  console.log(`main.css is written to ${RES_PATH}`)
+  fs.writeFileSync(MAIN_CSS_PATH, css);
+  console.log(`main.css is written to ${MAIN_CSS_PATH}`)
 };

@@ -14,5 +14,7 @@
     "html-minifier": "^3.5.8",
     "node-sass": "^4.7.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "showdown": "^1.8.6"
+  }
 }
