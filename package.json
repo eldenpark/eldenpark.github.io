@@ -5,16 +5,41 @@
   "main": "index.js",
   "scripts": {
     "build": "node ./src/build.js",
+    "dev": "node ./src/launch.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.14.1",
-    "html-minifier": "^3.5.8",
-    "node-sass": "^4.7.2"
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "html-minifier": "^3.5.21",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.3",
+    "react-hot-loader": "^4.7.1"
   },
   "devDependencies": {
-    "showdown": "^1.8.6"
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "@babel/plugin-proposal-decorators": "^7.3.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-proposal-function-sent": "^7.2.0",
+    "@babel/plugin-proposal-json-strings": "^7.2.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/register": "^7.0.0",
+    "@nodekit/express-isomorphic": "0.0.13",
+    "@types/express": "^4.16.1",
+    "@types/node": "^10.12.26",
+    "@types/react": "^16.8.4",
+    "@types/react-dom": "^16.8.2",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "showdown": "^1.9.0"
   }
 }
