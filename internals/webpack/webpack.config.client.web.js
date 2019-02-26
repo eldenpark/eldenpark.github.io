@@ -63,9 +63,6 @@ module.exports = {
       '.jsx', 
       '.ts', 
       '.tsx',
-
-      // https://github.com/apollographql/apollo-link-state/issues/302#issuecomment-431219631
-      '*', '.mjs', '.gql', '.graphql', 
     ],
   },
   target: 'web',

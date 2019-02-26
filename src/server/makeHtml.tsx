@@ -7,7 +7,7 @@ const makeHtml: MakeHtml = async function ({
   requestUrl = '',
   universalAppPath = '',
 }) {
-  let Universal = undefined;
+  let Universal;
   try {
     Universal = require(universalAppPath).default;
   } catch (err) {

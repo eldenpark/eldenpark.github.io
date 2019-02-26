@@ -123,3 +123,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/sass,node,macos,windows,visualstudiocode
+
+eject/
+dist/

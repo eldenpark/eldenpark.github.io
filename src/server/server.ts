@@ -10,6 +10,8 @@ import path from 'path';
 import * as paths from '../paths';
 import makeHtml from './makeHtml';
 
+const env = process.env.NODE_ENV;
+
 function extend(app, state) {
   console.log('extend()');
 
@@ -30,15 +32,18 @@ const { localServer, server, eject } = ExpressIsomorphic.create({
   webpackConfigUniversalLocalPath: paths.webpackConfigUniversalLocal,
 });
 
-const port = 6234;
+if (env !== 'production') {
+  const port = 6234;
 
-const httpServer = http.createServer(localServer().app);
-// const httpServer = http.createServer(server().app);
+  const httpServer = http.createServer(localServer().app);
 
-httpServer.listen(port, () => {
-  console.log(`Listening on ${port}`);
-});
+  httpServer.listen(port, () => {
+    console.log(`Listening on ${port}`);
+  });
+} else {
+  eject({
+    ejectPath: paths.distEject,
+  });
+}
 
-// eject({
-//   ejectPath: paths.distEject,
-// });
+
