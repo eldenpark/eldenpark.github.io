@@ -3,6 +3,7 @@ import * as React from 'react';
 import showdown from 'showdown';
 
 import config from '@@config';
+import GlobalStyle from '@@components/GlobalStyle';
 import Summary from '@@components/Summary/Summary';
 
 const converter = new showdown.Converter();
@@ -25,7 +26,10 @@ axios.get(`${config.dataEndPoint}/ex1.md`)
 
 const Universal = () => {
   return (
-    <Summary />
+    <>
+      <GlobalStyle />
+      <Summary />
+    </>
   );
 };
 

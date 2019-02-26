@@ -1,6 +1,7 @@
 import { attachAssets } from '@nodekit/express-isomorphic';
 import * as React from 'react';
 import { renderToString } from 'react-dom/server';
+import { ServerStyleSheet } from 'styled-components';
 
 const makeHtml: MakeHtml = async function ({
   assets,
@@ -23,6 +24,9 @@ const makeHtml: MakeHtml = async function ({
   console.log('[make-html] app in string: %s', appRootInString);
   console.log('[make-html] assets: %s', assets);
 
+  const sheet = new ServerStyleSheet();
+  const styledComponentsStyleTags = sheet.getStyleTags();
+
   return `
 <!DOCTYPE html>
 <html>
@@ -30,6 +34,7 @@ const makeHtml: MakeHtml = async function ({
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
   <title>express-isomorphic-example</title>
+  ${styledComponentsStyleTags}
 </head>
 <body>
   <div id="app-root">${appRootInString}</div>

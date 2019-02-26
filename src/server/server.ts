@@ -21,7 +21,7 @@ function extend(app, state) {
   });
 }
 
-const { localServer, server, eject } = ExpressIsomorphic.create({
+const { localServer, eject } = ExpressIsomorphic.create({
   extend,
   makeHtml,
   publicPath: paths.dist,
