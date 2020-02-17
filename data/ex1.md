@@ -1,5 +1,0 @@
-# Power
-foo
-
-- bar
-- baz

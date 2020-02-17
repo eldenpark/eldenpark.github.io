@@ -1,12 +1,18 @@
-import { hot } from 'react-hot-loader';
-import * as React from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import Universal from '../universal/Universal';
+import Universal from '@@src/universal/components/Universal';
 
-const ClientApp = () => {
+const domElement = document.getElementById('react-root');
+
+const ClientApp: React.FC<any> = () => {
   return (
     <Universal />
   );
 };
 
-export default hot(module)(ClientApp);
+ReactDOM.hydrate(
+  <ClientApp />,
+  domElement,
+  () => {},
+);

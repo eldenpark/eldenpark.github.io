@@ -1,23 +1,23 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "declaration": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "jsx": "react",
     "lib": [
+      "dom",
       "es6",
       "es7"
     ],
     "module": "commonjs",
     "moduleResolution": "node",
     "paths": {
-      "@@components/*": [
-        "src/universal/components/*"
+      "@@src/*": [
+        "./src/*"
       ],
-      "@@config": [
-        "src/config"
+      "@@universal/*": [
+        "./src/universal/*"
       ],
     },
     "strictNullChecks": true,
