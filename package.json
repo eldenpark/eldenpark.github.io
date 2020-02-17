@@ -4,9 +4,9 @@
   "description": "Initial",
   "main": "index.js",
   "scripts": {
-    "build2": "node ./src/build.js",
     "build": "node ./scripts/build.js",
     "dev": "node ./scripts/launch.js",
+    "eslint": "npx eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -59,7 +59,7 @@
     "eslint-plugin-sort-destructure-keys": "^1.3.0",
     "eslint-plugin-typescript-sort-keys": "^0.2.0",
     "gulp": "^4.0.2",
-    "husky": "^2.4.1",
+    "husky": "^4.2.3",
     "jege": "^0.4.0",
     "lerna": "^3.15.0",
     "mini-css-extract-plugin": "^0.9.0",
@@ -72,5 +72,11 @@
     "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2",
     "yargs": "^13.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "yarn eslint"
+    }
   }
 }
