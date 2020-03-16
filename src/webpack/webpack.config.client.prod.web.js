@@ -20,8 +20,8 @@ const config = {
   output: {
     chunkFilename: 'chunk.[chunkhash].js',
     filename: '[name].[chunkhash].js',
-    path: paths.distPublic,
-    publicPath: '/public/',
+    path: paths.docs,
+    publicPath: '/',
   },
 };
 

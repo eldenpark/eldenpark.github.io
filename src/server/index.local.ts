@@ -23,8 +23,7 @@ const log = logger('[eldeni.github.io]');
 const paths = {
   build: path.resolve(__dirname, '../../build'),
   data: path.resolve(__dirname, '../../data'),
-  dist: path.resolve(__dirname, '../../dist'),
-  public: path.resolve(__dirname, '../../dist/public'),
+  docs: path.resolve(__dirname, '../../docs'),
 };
 
 const extend: Extend<IsomorphicState> = async (app, serverState) => {
@@ -41,7 +40,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
     next();
   });
 
-  app.use(express.static(paths.public));
+  app.use(express.static(paths.docs));
 
   withWebpackDev({
     serverState,
@@ -63,10 +62,10 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
 export default async function local() {
   log('local(): Starting, ENV: %j', process.env.ENV);
 
-  const port = process.env.PORT || 5001;
+  const port = process.env.PORT || 3001;
   const { app } = await ExpressIsomorphic.createDev({
     extend,
-    makeHtmlPath: path.resolve(paths.dist, 'makeHtml.bundle.js'),
+    makeHtmlPath: path.resolve(paths.build, 'makeHtml.bundle.js'),
     watchExt: 'js,jsx,ts,tsx,html,test',
     watchPaths: [
       paths.data,

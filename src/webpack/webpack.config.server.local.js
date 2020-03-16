@@ -18,8 +18,8 @@ const config = {
   output: {
     filename: 'makeHtml.bundle.js',
     libraryTarget: 'commonjs2',
-    path: paths.dist,
-    publicPath: '/public/',
+    path: paths.build,
+    publicPath: '/',
   },
   plugins: [
   ],

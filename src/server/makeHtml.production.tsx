@@ -19,7 +19,7 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
 }) => {
   log('makeHtml()');
 
-  const { socketPath, socketPort, state } = serverState;
+  const { state } = serverState;
   const {
     assets,
     publicPath,
@@ -45,8 +45,6 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
     processEnvElement,
     reactAppInString,
     reactAssetElements,
-    socketPath,
-    socketPort,
     styledComponentsStyleElements: styleTags,
   });
   return html;
@@ -58,8 +56,6 @@ function template({
   processEnvElement,
   reactAppInString,
   reactAssetElements,
-  socketPath,
-  socketPort,
   styledComponentsStyleElements,
 }) {
   return `
@@ -77,16 +73,6 @@ function template({
   </head>
   <div id="react-root">${reactAppInString}</div>
   ${reactAssetElements}
-  <script>
-    if (window.io) {
-      var socket = io('http://localhost:${socketPort}', {
-        path: '${socketPath}'
-      });
-      socket.on('express-isomorphic', function ({ msg }) {
-        console.warn('[express-isomorphic] %s', msg);
-      });
-    }
-  </script>
 </html>
 `;
 }

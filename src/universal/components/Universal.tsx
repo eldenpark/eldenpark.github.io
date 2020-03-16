@@ -1,25 +1,26 @@
 import { compose } from 'redux';
-import { css, Global } from '@emotion/core';
+import styled, { createGlobalStyle } from 'styled-components';
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
-import styled from '@emotion/styled';
 
+import BioView from '@@src/universal/components/views/BioView/BioView';
 import ErrorBoundary from '@@src/universal/components/app/Error/ErrorBoundary';
 import normalize from '@@src/universal/styles/normalize';
 
-const normalizeStyle = css`
+const Normalize = createGlobalStyle`
   ${normalize}
 `;
 
-const customStyle = css({
+const GlobalStyle = createGlobalStyle({
   '*': {
     boxSizing: 'border-box',
-    color: 'black',
   },
   a: {
     textDecoration: 'none',
   },
   body: {
+    backgroundColor: '#1c1721',
+    color: 'white',
   },
   input: {
     border: 'none',
@@ -31,20 +32,16 @@ const customStyle = css({
 });
 
 const StyledUniversal = styled.div({
-  fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif;',
+  fontFamily: '"Ubuntu", "Helvetica", "Arial", sans-serif;',
 });
 
 const Universal: React.FC<any> = () => {
   return (
     <StyledUniversal>
       <ErrorBoundary>
-        <Global
-          styles={normalizeStyle}
-        />
-        <Global
-          styles={customStyle}
-        />
-        123
+        <Normalize />
+        <GlobalStyle />
+        <BioView />
       </ErrorBoundary>
     </StyledUniversal>
   );

@@ -8,7 +8,7 @@ const config = {
   devtool: 'source-map',
   entry: {
     makeHtml: [
-      path.resolve(paths.src, 'server/makeHtml.tsx'),
+      path.resolve(paths.src, 'server/makeHtml.production.tsx'),
     ],
   },
   mode: 'production',
@@ -19,7 +19,7 @@ const config = {
     filename: 'makeHtml.bundle.js',
     libraryTarget: 'commonjs2',
     path: paths.build,
-    publicPath: '/public/',
+    publicPath: '/',
   },
   plugins: [
   ],

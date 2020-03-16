@@ -13,12 +13,20 @@ const data: Data = {
       role: 'Engineering Lead',
     },
   ],
+  general: {
+    name: 'Elden S. Park',
+  },
 };
 
 export default data;
 
 export interface Data {
   bio: Bio[];
+  general: General;
+}
+
+interface General {
+  name: string;
 }
 
 interface Bio {

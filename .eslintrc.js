@@ -70,6 +70,7 @@ module.exports = {
     }],
     'react/no-danger': ['off'],
     'react/prop-types': ['off'],
+    'react/no-unescaped-entities': ['off'],
     'sort-destructure-keys/sort-destructure-keys': 2,
     'sort-keys': ['error'],
     'typescript-sort-keys/interface': ['error', 'asc', {

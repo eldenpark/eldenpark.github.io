@@ -30,10 +30,10 @@ const babelRc = {
     // "@babel/plugin-proposal-json-strings",
     // 'dynamic-import-node',
 
-    // [r('babel-plugin-styled-components'), {
-    //   displayName: true,
-    //   ssr: true,
-    // }],
+    [r('babel-plugin-styled-components'), {
+      displayName: true,
+      ssr: true,
+    }],
   ],
   presets: [
     [r('@babel/preset-env'), {
@@ -42,13 +42,6 @@ const babelRc = {
       },
     }],
     r('@babel/preset-react'),
-    [
-      r('@emotion/babel-preset-css-prop'),
-      {
-        autoLabel: true,
-        labelFormat: '[local]',
-      },
-    ],
     r('@babel/preset-typescript'),
   ],
 };
