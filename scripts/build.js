@@ -2,7 +2,6 @@ const { buildLogger } = require('jege/server');
 const chalk = require('chalk');
 const { compile } = require('express-isomorphic-extension/webpack');
 const del = require('del');
-// const fs = require('fs');
 const gulp = require('gulp');
 const path = require('path');
 

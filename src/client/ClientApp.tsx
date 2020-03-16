@@ -1,18 +1,19 @@
+import { hot } from 'react-hot-loader';
 import React from 'react';
-import ReactDOM from 'react-dom';
 
+import DataProvider from '@@src/universal/components/DataProvider';
+import { log } from '@@src/universal/modules/Logger';
 import Universal from '@@src/universal/components/Universal';
 
-const domElement = document.getElementById('react-root');
-
 const ClientApp: React.FC<any> = () => {
+  const data = window['CONTENT_DATA'];
+  log('window.CONTENT_DATA: %o', data);
+
   return (
-    <Universal />
+    <DataProvider data={data}>
+      <Universal />
+    </DataProvider>
   );
 };
 
-ReactDOM.hydrate(
-  <ClientApp />,
-  domElement,
-  () => {},
-);
+export default hot(module)(ClientApp);

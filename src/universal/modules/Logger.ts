@@ -1,6 +1,6 @@
 import { logger } from 'jege';
 
-const log = logger('[form-web]');
+const log = logger('[eldeni.github.io]');
 
 export {
   log,

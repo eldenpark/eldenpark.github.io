@@ -9,8 +9,9 @@ const config = {
   devtool: 'source-map',
   entry: {
     client: [
+      'react-hot-loader/patch',
       'webpack-hot-middleware/client',
-      path.resolve(paths.src, 'client/ClientApp.tsx'),
+      path.resolve(paths.src, 'client/client.tsx'),
     ],
     react: ['react', 'react-dom'],
   },

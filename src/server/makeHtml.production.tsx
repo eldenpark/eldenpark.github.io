@@ -32,6 +32,7 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
 
   const element = (
     <ServerApp
+      contentData={contentData}
       serverStyleSheet={serverStyleSheet}
     />
   );
@@ -67,7 +68,7 @@ function template({
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-    <script>window['DATA']=${contentData}</script>
+    <script>window['CONTENT_DATA']=${contentData}</script>
     ${styledComponentsStyleElements}
     ${processEnvElement}
   </head>

@@ -7,7 +7,6 @@ const babelRc = {
       r('babel-plugin-module-resolver'), {
         alias: {
           '@@src': './src',
-          '@@universal': './src/universal',
         },
       },
     ],
