@@ -1,6 +1,8 @@
 import React from 'react';
 
-const DataContext = React.createContext<object | undefined>(undefined);
+import { ContentData } from '@@data/ContentData'; // only for type inferencing, so no worries for its location being outside of 'src/'
+
+const DataContext = React.createContext<ContentData | undefined>(undefined);
 
 const DataProvider = ({
   children,

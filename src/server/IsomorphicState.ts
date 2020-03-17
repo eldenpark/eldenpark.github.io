@@ -1,10 +1,10 @@
 import { WebpackServerState } from 'express-isomorphic-extension/webpack';
 
+import { ContentData } from '@@data/ContentData';
+
 export default class IsomorphicState implements WebpackServerState {
   assets: string[];
   buildHash: string;
-  contentData: any;
-  cssFileName: string;
-  isReady: boolean = false;
+  contentData: ContentData;
   publicPath: string;
 }

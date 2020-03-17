@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { DataContext } from '@@src/universal/components/DataProvider';
+
 const StyledHeader = styled.div({
   display: 'flex',
 });
@@ -10,8 +12,9 @@ const Left = styled.div({
 });
 
 const Title = styled.div({
+  fontFamily: '"Work Sans"',
   fontSize: '1.8em',
-  fontWeight: 900,
+  fontWeight: 800,
 });
 
 const Description = styled.div({
@@ -32,15 +35,16 @@ const Photo = styled.img.attrs({
 });
 
 const Header = () => {
+  const { general } = React.useContext(DataContext)!;
+
   return (
     <StyledHeader>
       <Left>
         <Title>
-          Gieur nagnei
+          {general.name}
         </Title>
         <Description>
-          Space of
-          <Name>Elden S. Park</Name>
+          {general.introduction}
         </Description>
       </Left>
       <div>

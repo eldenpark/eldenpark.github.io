@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import express, {
   NextFunction,
   Request,
@@ -23,6 +24,15 @@ const paths = {
 };
 
 const extend: Extend<IsomorphicState> = async (app, serverState) => {
+  const dataPath = process.env.DATA_PATH as string;
+  let contentData;
+  try {
+    contentData = require(dataPath).default;
+  } catch (err) {
+    log(`local(): ${chalk.yellow('warn')} process.env.ENV.dataPath is not a valid path`);
+    throw new Error('dataPath is not a valid path');
+  }
+
   app.use((req: Request, res, next: NextFunction) => {
     log('extend(): requestUrl: %s', req.url);
     next();
@@ -39,12 +49,9 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
 
   return Promise.all([])
     .then(() => {
-      serverState.update((object) => ({
-        ...object,
-        state: {
-          ...object.state,
-          publicPath,
-        },
+      serverState.update(() => ({
+        contentData,
+        publicPath,
       }));
     });
 };

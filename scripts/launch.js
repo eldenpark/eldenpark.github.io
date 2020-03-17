@@ -13,7 +13,7 @@ require('@babel/register')({
 });
 
 function launch() {
-  process.env.DATA_PATH = path.resolve(__dirname, '../data/data-1.ts');
+  process.env.DATA_PATH = path.resolve(__dirname, '../data/data-20200316.ts');
 
   log('launch(): argv: %j, DATA_PATH: %s', argv, process.env.DATA_PATH);
 

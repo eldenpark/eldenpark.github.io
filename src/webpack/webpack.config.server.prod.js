@@ -8,7 +8,7 @@ const config = {
   devtool: 'source-map',
   entry: {
     makeHtml: [
-      path.resolve(paths.src, 'server/makeHtml.production.tsx'),
+      path.resolve(paths.src, 'server/makeHtml.tsx'),
     ],
   },
   mode: 'production',

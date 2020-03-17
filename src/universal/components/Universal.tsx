@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle({
 });
 
 const StyledUniversal = styled.div({
-  fontFamily: '"Ubuntu", "Helvetica", "Arial", sans-serif;',
+  fontFamily: '"Noto Serif", "Work Sans", "Helvetica", "Arial", sans-serif;',
 });
 
 const Universal: React.FC<any> = () => {

@@ -6,6 +6,7 @@ const babelRc = {
     [
       r('babel-plugin-module-resolver'), {
         alias: {
+          '@@data': './data',
           '@@src': './src',
         },
       },

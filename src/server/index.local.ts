@@ -5,7 +5,6 @@ import express, {
 import ExpressIsomorphic, {
   Extend,
 } from 'express-isomorphic';
-import fs from 'fs';
 import http from 'http';
 import { logger } from 'jege/server';
 import path from 'path';
@@ -28,12 +27,13 @@ const paths = {
 
 const extend: Extend<IsomorphicState> = async (app, serverState) => {
   const dataPath = process.env.DATA_PATH as string;
-  if (!fs.existsSync(dataPath)) {
+  let contentData;
+  try {
+    contentData = require(dataPath).default;
+  } catch (err) {
     log(`local(): ${chalk.yellow('warn')} process.env.ENV.dataPath is not a valid path`);
     throw new Error('dataPath is not a valid path');
   }
-
-  const contentData = require(dataPath).default;
 
   app.use((req: Request, res, next: NextFunction) => {
     log('extend(): requestUrl: %s', req.url);
@@ -47,13 +47,9 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
     webpackConfig,
   })(app);
 
-  serverState.update((object) => ({
-    ...object,
-    state: {
-      ...object.state,
-      contentData: JSON.stringify(contentData),
-      publicPath: webpackConfig.output.publicPath,
-    },
+  serverState.update(() => ({
+    contentData,
+    publicPath: webpackConfig.output.publicPath,
   }));
 
   return watch(webpackConfigServer);
@@ -63,13 +59,22 @@ export default async function local() {
   log('local(): Starting, ENV: %j', process.env.ENV);
 
   const port = process.env.PORT || 3001;
-  const { app } = await ExpressIsomorphic.createDev({
+  const { app, serverState } = await ExpressIsomorphic.createDev({
     extend,
     makeHtmlPath: path.resolve(paths.build, 'makeHtml.bundle.js'),
     watchExt: 'js,jsx,ts,tsx,html,test',
     watchPaths: [
       paths.data,
     ],
+  });
+
+  serverState.on('change', () => {
+    delete require.cache[process.env.DATA_PATH!];
+    const contentData = require(process.env.DATA_PATH!).default;
+
+    serverState.update(() => ({
+      contentData,
+    }));
   });
 
   const server = http.createServer(app);

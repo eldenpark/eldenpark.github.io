@@ -12,6 +12,8 @@ import { ServerStyleSheet } from 'styled-components';
 import IsomorphicState from './IsomorphicState';
 import ServerApp from '@@src/server/ServerApp';
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const log = logger('[eldeni.github.io]');
 
 const makeHtml: MakeHtml<IsomorphicState> = async ({
@@ -67,29 +69,35 @@ function template({
 <html>
   <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Work+Sans:400,500,700,800,900&display=swap" rel="stylesheet">
     <style>${fontAwesomeCss}</style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
-    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-    <script>window['CONTENT_DATA']=${contentData}</script>
+    <script>window['CONTENT_DATA']=${JSON.stringify(contentData)}</script>
     ${styledComponentsStyleElements}
     ${processEnvElement}
   </head>
   <div id="react-root">${reactAppInString}</div>
   ${reactAssetElements}
-  <script>
-    if (window.io) {
-      var socket = io('http://localhost:${socketPort}', {
-        path: '${socketPath}'
-      });
-      socket.on('express-isomorphic', function ({ msg }) {
-        console.warn('[express-isomorphic] %s', msg);
-      });
-    }
-  </script>
+  ${socket(socketPort, socketPath)}
 </html>
 `;
+}
+
+function socket(socketPort, socketPath) {
+  return isProd
+    ? ''
+    : `
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+      <script>
+        if (window.io) {
+          var socket = io('http://localhost:${socketPort}', {
+            path: '${socketPath}'
+          });
+          socket.on('express-isomorphic', function ({ msg }) {
+            console.warn('[express-isomorphic] %s', msg);
+          });
+        }
+      </script>
+    `;
 }
 
 function getProcessEnv(prefix) {
