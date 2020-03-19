@@ -1,0 +1,189 @@
+{
+  "errors": [],
+  "warnings": [
+    "entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  client (289 KiB)\n      chunk.442361a6fe3fc7d45839.js\n      chunk.39bc764ad0687a0c8b83.js\n      client.08aa237d9f88e14d9d1f.js\n",
+    "webpack performance recommendations: \nYou can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.\nFor more info visit https://webpack.js.org/guides/code-splitting/"
+  ],
+  "builtAt": 1584600185015,
+  "assetsByChunkName": {
+    "vendors~client~react": "chunk.442361a6fe3fc7d45839.js",
+    "client": "client.08aa237d9f88e14d9d1f.js",
+    "react": "react.b01cb78f7b8c6bdfbe38.js",
+    "vendors~client": "chunk.39bc764ad0687a0c8b83.js"
+  },
+  "assets": [
+    {
+      "name": "chunk.39bc764ad0687a0c8b83.js",
+      "size": 155269,
+      "chunks": [
+        3
+      ],
+      "chunkNames": [
+        "vendors~client"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": true
+    },
+    {
+      "name": "chunk.442361a6fe3fc7d45839.js",
+      "size": 129724,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "vendors~client~react"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": true
+    },
+    {
+      "name": "client.08aa237d9f88e14d9d1f.js",
+      "size": 10772,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "client"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": true
+    },
+    {
+      "name": "react.b01cb78f7b8c6bdfbe38.js",
+      "size": 1556,
+      "chunks": [
+        2
+      ],
+      "chunkNames": [
+        "react"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "client": {
+      "chunks": [
+        0,
+        3,
+        1
+      ],
+      "assets": [
+        "chunk.442361a6fe3fc7d45839.js",
+        "chunk.39bc764ad0687a0c8b83.js",
+        "client.08aa237d9f88e14d9d1f.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "react": {
+      "chunks": [
+        0,
+        2
+      ],
+      "assets": [
+        "chunk.442361a6fe3fc7d45839.js",
+        "react.b01cb78f7b8c6bdfbe38.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "reason": "split chunk (cache group: vendors) (name: vendors~client~react)",
+      "size": 134233,
+      "names": [
+        "vendors~client~react"
+      ],
+      "files": [
+        "chunk.442361a6fe3fc7d45839.js"
+      ],
+      "hash": "442361a6fe3fc7d45839",
+      "siblings": [
+        1,
+        2,
+        3
+      ],
+      "parents": [],
+      "children": [],
+      "childrenByOrder": {}
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 14855,
+      "names": [
+        "client"
+      ],
+      "files": [
+        "client.08aa237d9f88e14d9d1f.js"
+      ],
+      "hash": "08aa237d9f88e14d9d1f",
+      "siblings": [
+        0,
+        3
+      ],
+      "parents": [],
+      "children": [],
+      "childrenByOrder": {}
+    },
+    {
+      "id": 2,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 40,
+      "names": [
+        "react"
+      ],
+      "files": [
+        "react.b01cb78f7b8c6bdfbe38.js"
+      ],
+      "hash": "b01cb78f7b8c6bdfbe38",
+      "siblings": [
+        0
+      ],
+      "parents": [],
+      "children": [],
+      "childrenByOrder": {}
+    },
+    {
+      "id": 3,
+      "rendered": true,
+      "initial": true,
+      "entry": false,
+      "reason": "split chunk (cache group: vendors) (name: vendors~client)",
+      "size": 466941,
+      "names": [
+        "vendors~client"
+      ],
+      "files": [
+        "chunk.39bc764ad0687a0c8b83.js"
+      ],
+      "hash": "39bc764ad0687a0c8b83",
+      "siblings": [
+        0,
+        1
+      ],
+      "parents": [],
+      "children": [],
+      "childrenByOrder": {}
+    }
+  ]
+}
