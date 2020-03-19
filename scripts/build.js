@@ -13,14 +13,16 @@ const buildLog = buildLogger('[eldeni.github.io]');
 
 const paths = {
   build: path.resolve(__dirname, '../build'),
-  docs: path.resolve(__dirname, '../docs'),
+  dist: path.resolve(__dirname, '../dist'),
+  root: path.resolve(__dirname, '..'),
   src: path.resolve(__dirname, '../src'),
 };
 
 gulp.task('clean', () => {
   const cleanPaths = [
     `${paths.build}/**/*`,
-    `${paths.docs}/**/*`,
+    `${paths.dist}/**/*`,
+    `${paths.root}/*.html`,
   ];
 
   buildLog('clean', 'cleanPaths: %j', cleanPaths);
@@ -30,14 +32,14 @@ gulp.task('clean', () => {
 
 gulp.task('copy-public', () => {
   const publicPath = path.resolve(paths.src, 'public');
-  buildLog('copy-public', 'src: %s, docs: %s', publicPath, paths.docs);
+  buildLog('copy-public', 'src: %s, dist: %s', publicPath, paths.dist);
 
   return gulp.src(`${publicPath}/**/*`)
-    .pipe(gulp.dest(paths.docs));
+    .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task('webpack-client', () => {
-  const buildJsonPath = path.resolve(paths.docs, 'build.json');
+  const buildJsonPath = path.resolve(paths.dist, 'build.json');
   buildLog('webpack-client', 'buildJsonPath: %s', buildJsonPath);
 
   return compile({

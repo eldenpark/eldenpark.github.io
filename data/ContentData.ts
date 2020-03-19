@@ -15,6 +15,7 @@ interface General {
   introduction: string;
   linkedIn: string;
   name: string;
+  photoUrl: string;
 }
 
 export interface Group {

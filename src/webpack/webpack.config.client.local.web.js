@@ -21,7 +21,7 @@ const config = {
   },
   output: {
     filename: '[name].[hash].js',
-    publicPath: '/',
+    publicPath: '/dist/',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

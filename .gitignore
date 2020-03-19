@@ -126,5 +126,7 @@ $RECYCLE.BIN/
 
 docs/*
 !docs/.gitkeep
+dist/*
+!dist/.gitkeep
 build/*
 !build/.gitkeep

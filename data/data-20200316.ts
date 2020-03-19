@@ -219,6 +219,7 @@ const data: ContentData = {
     introduction: 'I write code, and think over observations. Learning is what drives me the most.<br />Other than doing some projects on the side as a pastime, I listen to music and dj. ',
     linkedIn: 'https://www.linkedin.com/in/eldenpark/',
     name: 'Elden Seunghyun Park',
+    photoUrl: '/dist/assets/elden-2-reduced.jpg',
   },
   interests: {
     id: 'interests',

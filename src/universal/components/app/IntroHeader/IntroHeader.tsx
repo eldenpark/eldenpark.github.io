@@ -37,9 +37,7 @@ const Introduction = styled.div({
   }),
 });
 
-const Photo = styled.img.attrs({
-  src: 'assets/pic2.jpg',
-})({
+const Photo = styled.img({
   borderRadius: 6,
   float: 'right',
   height: 100,
@@ -83,7 +81,9 @@ const IntroHeader = () => {
         </Title>
       </Top>
       <Bottom>
-        <Photo />
+        <Photo
+          src={general.photoUrl}
+        />
         <Introduction>
           <p dangerouslySetInnerHTML={{ __html: general.introduction }} />
         </Introduction>

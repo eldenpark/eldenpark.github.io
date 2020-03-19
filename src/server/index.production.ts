@@ -14,13 +14,14 @@ import { withWebpack } from 'express-isomorphic-extension/webpack';
 import IsomorphicState from './IsomorphicState';
 import webpackConfig from '../webpack/webpack.config.client.prod.web';
 
-const webpackBuild = require('../../docs/build.json');
+const webpackBuild = require('../../dist/build.json');
 
 const log = logger('[eldeni.github.io]');
 
 const paths = {
   build: path.resolve(__dirname, '../../build'),
-  docs: path.resolve(__dirname, '../../docs'),
+  dist: path.resolve(__dirname, '../../dist'),
+  root: path.resolve(__dirname, '../../'),
 };
 
 const extend: Extend<IsomorphicState> = async (app, serverState) => {
@@ -45,7 +46,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
 
   const { path: outputPath, publicPath } = webpackConfig.output;
 
-  app.use('/', express.static(outputPath));
+  app.use(publicPath, express.static(outputPath));
 
   return Promise.all([])
     .then(() => {
@@ -71,17 +72,17 @@ export default async function main() {
   });
 
   await eject({
-    filePath: path.resolve(paths.docs, 'index.html'),
+    filePath: path.resolve(paths.root, 'index.html'),
     requestUrl: `http://localhost:${port}/`,
   });
 
   await eject({
-    filePath: path.resolve(paths.docs, 'projects.html'),
+    filePath: path.resolve(paths.root, 'projects.html'),
     requestUrl: `http://localhost:${port}/projects.html`,
   });
 
   await eject({
-    filePath: path.resolve(paths.docs, 'music.html'),
+    filePath: path.resolve(paths.root, 'music.html'),
     requestUrl: `http://localhost:${port}/music.html`,
   });
 }

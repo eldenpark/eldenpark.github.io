@@ -22,7 +22,7 @@ const log = logger('[eldeni.github.io]');
 const paths = {
   build: path.resolve(__dirname, '../../build'),
   data: path.resolve(__dirname, '../../data'),
-  docs: path.resolve(__dirname, '../../docs'),
+  dist: path.resolve(__dirname, '../../dist'),
 };
 
 const extend: Extend<IsomorphicState> = async (app, serverState) => {
@@ -40,7 +40,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
     next();
   });
 
-  app.use(express.static(paths.docs));
+  app.use(webpackConfig.output.publicPath, express.static(paths.dist));
 
   withWebpackDev({
     serverState,

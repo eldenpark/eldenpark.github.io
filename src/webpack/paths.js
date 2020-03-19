@@ -4,7 +4,7 @@ const ROOT_PATH = path.resolve(__dirname, '../..');
 
 module.exports = {
   build: path.resolve(ROOT_PATH, 'build'),
-  docs: path.resolve(ROOT_PATH, 'docs'),
+  dist: path.resolve(ROOT_PATH, 'dist'),
   root: ROOT_PATH,
   src: path.resolve(ROOT_PATH, 'src'),
 };
