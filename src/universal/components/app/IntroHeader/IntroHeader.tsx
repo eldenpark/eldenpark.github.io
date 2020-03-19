@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { useContentData } from '@@src/universal/contexts/dataContext';
+import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
 import { w320 } from '@@src/universal/styles/media';
 
 const StyledIntroHeader = styled.div({
@@ -17,8 +17,11 @@ const Bottom = styled.div({
 const Title = styled.div({
   color: 'white',
   fontFamily: '"Work Sans"',
-  fontSize: '1.7rem',
+  fontSize: '1.8rem',
   fontWeight: 800,
+  ...w320({
+    fontSize: '1.7rem',
+  }),
 });
 
 const Introduction = styled.div({

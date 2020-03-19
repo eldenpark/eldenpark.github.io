@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { useContentData } from '@@src/universal/contexts/dataContext';
+import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
 import Group from '@@src/universal/components/app/Group/Group';
 
 const StyledBioView = styled.div({
 });
 
 const Message = styled.p({
-  fontSize: '0.88rem',
+  fontSize: '0.9em',
   marginBottom: 26,
 });
 

@@ -48,6 +48,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
   })(app);
 
   serverState.update(() => ({
+    builtAt: Date.now(),
     contentData,
     publicPath: webpackConfig.output.publicPath,
   }));

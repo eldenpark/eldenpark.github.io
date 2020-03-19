@@ -5,7 +5,10 @@ export interface ContentData {
   employment: Group;
   general: General;
   interests: Group;
+  menus: Menus;
   projectsAbbrev: Group;
+  projectsGeneral: Group;
+  projectsLibraries: Group;
   talks: Group;
 }
 
@@ -16,6 +19,14 @@ interface General {
   linkedIn: string;
   name: string;
   photoUrl: string;
+}
+
+interface Menus {
+  items: {
+    exact?: string;
+    label: string;
+    url: string;
+  }[];
 }
 
 export interface Group {

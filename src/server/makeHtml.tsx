@@ -31,11 +31,15 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
 
   const reactAssetElements = createAssetElements(assets, publicPath);
   const processEnvElement = createStringifiableObjectElement('__NODE_ENV__', getProcessEnv('NODE_ENV'));
-  const { contentData } = serverState.state;
+  const { builtAt, contentData } = serverState.state;
+  const isomorphicData = {
+    builtAt,
+    contentData,
+  };
 
   const element = (
     <ServerApp
-      contentData={contentData}
+      isomorphicData={isomorphicData}
       requestUrl={requestUrl}
       serverStyleSheet={serverStyleSheet}
     />
@@ -45,8 +49,8 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
   const styleTags = serverStyleSheet.getStyleTags();
 
   const html = template({
-    contentData,
     fontAwesomeCss: dom.css(),
+    isomorphicData,
     processEnvElement,
     reactAppInString,
     reactAssetElements,
@@ -58,8 +62,8 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
 };
 
 function template({
-  contentData,
   fontAwesomeCss,
+  isomorphicData,
   processEnvElement,
   reactAppInString,
   reactAssetElements,
@@ -72,9 +76,10 @@ function template({
   <head>
     <title>Elden Park</title>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/dist/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Work+Sans:400,500,700,800,900&display=swap" rel="stylesheet">
     <style>${fontAwesomeCss}</style>
-    <script>window['CONTENT_DATA']=${JSON.stringify(contentData)}</script>
+    <script>window['ISOMORPHIC_DATA']=${JSON.stringify(isomorphicData)}</script>
     ${styledComponentsStyleElements}
     ${processEnvElement}
   </head>

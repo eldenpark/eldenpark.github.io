@@ -51,6 +51,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
   return Promise.all([])
     .then(() => {
       serverState.update(() => ({
+        builtAt: webpackBuild.builtAt,
         contentData,
         publicPath,
       }));

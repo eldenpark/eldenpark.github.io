@@ -24,13 +24,22 @@ const GlobalStyle = createGlobalStyle({
     transition: 'color 0.5s ease',
   },
   body: {
-    backgroundColor: '#28242b',
-    color: '#e8e8e8',
+  },
+  button: {
+    backgroundColor: 'inherit',
+    border: 'none',
+    color: 'inherit',
+    cursor: 'pointer',
+    margin: 0,
+    outline: 'none',
+    padding: 0,
   },
   html: {
+    backgroundColor: '#2e2c2f',
+    color: '#e1e1e1',
     fontFamily: '"Source Serif Pro", "Work Sans", "Helvetica", "Arial", sans-serif;',
     fontSize: 14,
-    lineHeight: 1.42,
+    lineHeight: 1.45,
   },
   input: {
     border: 'none',
@@ -47,6 +56,7 @@ const GlobalStyle = createGlobalStyle({
 });
 
 const StyledUniversal = styled.div({
+  fontSize: '1.07rem',
 });
 
 const Universal: React.FC<any> = () => {

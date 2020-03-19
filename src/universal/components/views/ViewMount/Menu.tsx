@@ -1,9 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-
 import {
   NavLink,
 } from 'react-router-dom';
+import React from 'react';
+import styled from 'styled-components';
+
+import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
 
 const StyledMenu = styled.ul({
   '& a': {
@@ -14,7 +15,8 @@ const StyledMenu = styled.ul({
     paddingBottom: 4,
   },
   '& a.active': {
-    borderBottom: '1px solid white',
+    borderBottom: '1px solid #fff',
+    color: '#fff',
   },
   '& li:not(:first-child)': {
     marginLeft: 12,
@@ -41,17 +43,23 @@ const Link: React.FC<any> = ({
 };
 
 const Menu = () => {
+  const { menus } = useContentData();
+  const menuCompoennts = React.useMemo(() => {
+    return menus.items.map((menu) => {
+      return (
+        <Link
+          exact={menu.exact && menu.exact === 'true'}
+          to={menu.url}
+        >
+          {menu.label}
+        </Link>
+      )
+    });
+  }, [menus]);
+
   return (
     <StyledMenu>
-      <Link exact to="/">
-        About
-      </Link>
-      <Link to="/projects.html">
-        Projects
-      </Link>
-      <Link to="/music.html">
-        Music
-      </Link>
+      {menuCompoennts}
     </StyledMenu>
   );
 };

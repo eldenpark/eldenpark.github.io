@@ -7,6 +7,7 @@ import {
 
 import IntroHeader from '@@src/universal/components/app/IntroHeader/IntroHeader';
 import BioView from '@@src/universal/components/views/BioView/BioView';
+import Footer from '@@src/universal/components/app/Footer/Footer';
 import Menu from '@@src/universal/components/views/ViewMount/Menu';
 import MusicView from '@@src/universal/components/views/MusicView/MusicView';
 import ProjectView from '@@src/universal/components/views/ProjectView/ProjectView';
@@ -49,6 +50,7 @@ const ViewMount = () => {
             />
           </Switch>
         </ViewWrapper>
+        <Footer />
       </Inner>
     </StyledViewMount>
   );

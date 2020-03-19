@@ -5,25 +5,25 @@ import {
 } from 'react-router-dom';
 import { StyleSheetManager } from 'styled-components';
 
-import { DataProvider } from '@@src/universal/contexts/dataContext';
+import { IsomorphicDataProvider } from '@@src/universal/contexts/IsomorphicDataContext';
 import Universal from '@@src/universal/components/Universal';
 
 const log = logger('[eldeni.github.io]');
 
 const ServerApp = ({
-  contentData,
+  isomorphicData,
   requestUrl,
   serverStyleSheet,
 }) => {
-  log('ServerApp(): contentData: %j', contentData);
+  log('ServerApp(): isomorphicData: %j', isomorphicData);
 
   return (
     <StaticRouter location={requestUrl}>
-      <DataProvider data={contentData}>
+      <IsomorphicDataProvider data={isomorphicData}>
         <StyleSheetManager sheet={serverStyleSheet.instance}>
           <Universal />
         </StyleSheetManager>
-      </DataProvider>
+      </IsomorphicDataProvider>
     </StaticRouter>
   );
 };

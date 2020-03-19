@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import { Group as GroupType } from '@@data/ContentData';
 
 const StyledGroup = styled.div({
-  marginBottom: 46,
+  marginBottom: '3.7em',
 });
 
 const GroupLabel = styled.p({
   color: '#fff',
-  fontSize: '1.1rem',
+  fontSize: '1.31rem',
   fontWeight: 500,
   letterSpacing: '0.021em',
   marginBottom: 7,
@@ -22,7 +22,7 @@ const Item = styled.div({
     },
     borderBottom: '1px solid #fff',
   },
-  marginBottom: 22,
+  marginBottom: '1.4em',
 });
 
 const Description = styled.div({

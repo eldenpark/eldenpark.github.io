@@ -32,9 +32,10 @@ gulp.task('clean', () => {
 
 gulp.task('copy-public', () => {
   const publicPath = path.resolve(paths.src, 'public');
-  buildLog('copy-public', 'src: %s, dist: %s', publicPath, paths.dist);
+  const srcPath = `${publicPath}/**/*`;
+  buildLog('copy-public', 'src: %s, dist: %s', srcPath, paths.dist);
 
-  return gulp.src(`${publicPath}/**/*`)
+  return gulp.src(srcPath)
     .pipe(gulp.dest(paths.dist));
 });
 

@@ -136,7 +136,7 @@ const data: ContentData = {
       {
         children: [
           {
-            label: 'Student representative of Software Technology and Entrepreneurship Program (STEP, Interdisciplinary program) / Founder and board member of Gokathon',
+            label: 'Student representative of Software Technology and Entrepreneurship Program (STEP, Interdisciplinary program) / Founder of Gokathon',
           },
         ],
         title1: '<b>B.S., in Computer Science</b>, Korea University, Seoul, South Korea',
@@ -231,6 +231,23 @@ const data: ContentData = {
     ],
     label: 'INTERESTS',
   },
+  menus: {
+    items: [
+      {
+        exact: 'true',
+        label: 'About',
+        url: '/',
+      },
+      {
+        label: 'Projects',
+        url: '/projects.html',
+      },
+      {
+        label: 'Music',
+        url: '/music.html',
+      },
+    ],
+  },
   projectsAbbrev: {
     id: 'projects',
     items: [
@@ -240,6 +257,24 @@ const data: ContentData = {
       },
     ],
     label: 'PROJECTS',
+  },
+  projectsGeneral: {
+    id: 'projects_general',
+    items: [
+      {
+        title1: '22',
+      },
+    ],
+    label: 'GENERAL',
+  },
+  projectsLibraries: {
+    id: 'projects_libraries',
+    items: [
+      {
+        title1: '11',
+      },
+    ],
+    label: 'LIBRARIES',
   },
   talks: {
     id: 'talks',
