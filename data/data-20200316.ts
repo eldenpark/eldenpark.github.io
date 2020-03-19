@@ -231,7 +231,7 @@ const data: ContentData = {
     ],
     label: 'INTERESTS',
   },
-  menus: {
+  menu: {
     items: [
       {
         exact: 'true',

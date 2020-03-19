@@ -5,7 +5,7 @@ export interface ContentData {
   employment: Group;
   general: General;
   interests: Group;
-  menus: Menus;
+  menu: Menus;
   projectsAbbrev: Group;
   projectsGeneral: Group;
   projectsLibraries: Group;

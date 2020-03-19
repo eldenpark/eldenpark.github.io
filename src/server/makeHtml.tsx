@@ -76,6 +76,7 @@ function template({
   <head>
     <title>Elden Park</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/dist/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Work+Sans:400,500,700,800,900&display=swap" rel="stylesheet">
     <style>${fontAwesomeCss}</style>

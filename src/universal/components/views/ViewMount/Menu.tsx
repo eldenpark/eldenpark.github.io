@@ -43,19 +43,20 @@ const Link: React.FC<any> = ({
 };
 
 const Menu = () => {
-  const { menus } = useContentData();
+  const { menu } = useContentData();
   const menuCompoennts = React.useMemo(() => {
-    return menus.items.map((menu) => {
+    return menu.items.map((item) => {
       return (
         <Link
-          exact={menu.exact && menu.exact === 'true'}
-          to={menu.url}
+          exact={item.exact && item.exact === 'true'}
+          key={item.url}
+          to={item.url}
         >
-          {menu.label}
+          {item.label}
         </Link>
-      )
+      );
     });
-  }, [menus]);
+  }, [menu]);
 
   return (
     <StyledMenu>
