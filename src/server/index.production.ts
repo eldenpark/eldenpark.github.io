@@ -70,9 +70,18 @@ export default async function main() {
     log('productionServer listening on: %s', port);
   });
 
-  const filePath = path.resolve(paths.docs, 'index.html');
   await eject({
-    filePath,
+    filePath: path.resolve(paths.docs, 'index.html'),
     requestUrl: `http://localhost:${port}/`,
+  });
+
+  await eject({
+    filePath: path.resolve(paths.docs, 'projects.html'),
+    requestUrl: `http://localhost:${port}/projects.html`,
+  });
+
+  await eject({
+    filePath: path.resolve(paths.docs, 'music.html'),
+    requestUrl: `http://localhost:${port}/music.html`,
   });
 }
