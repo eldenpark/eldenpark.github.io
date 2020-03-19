@@ -1,23 +1,36 @@
 export interface ContentData {
-  bio: Bio[];
+  activities: Group;
+  awards: Group;
+  education: Group;
+  employment: Group;
   general: General;
+  interests: Group;
+  projectsAbbrev: Group;
+  talks: Group;
 }
 
 interface General {
+  email: string;
+  github: string;
   introduction: string;
+  linkedIn: string;
   name: string;
 }
 
-interface Bio {
-  company: string;
-  dateFrom: string;
-  dateTo: string;
-  description: Description[];
-  location: string;
-  role: string;
+export interface Group {
+  id: string;
+  items: Item[];
+  label: string;
 }
 
-interface Description {
-  children?: string[];
-  label: string;
+interface Item {
+  children?: {
+    children?: {
+      label: string;
+    }[];
+    label: string;
+  }[];
+  title1: string;
+  title2?: string;
+  title3?: string;
 }

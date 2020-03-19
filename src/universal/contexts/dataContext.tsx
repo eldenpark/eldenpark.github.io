@@ -15,4 +15,10 @@ const DataProvider = ({
   );
 };
 
-export { DataContext, DataProvider as default };
+const useContentData = () => React.useContext(DataContext);
+
+export {
+  DataContext,
+  DataProvider,
+  useContentData,
+};

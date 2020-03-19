@@ -1,27 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Header from './Header';
+import { useContentData } from '@@src/universal/contexts/dataContext';
+import Group from '@@src/universal/components/app/Group/Group';
 
 const StyledBioView = styled.div({
-  alignItems: 'center',
-  border: '1px solid black',
-  display: 'flex',
-  flexDirection: 'column',
 });
 
-const Inner = styled.div({
-  border: '1px solid gray',
-  maxWidth: 500,
-  width: '100%',
+const Message = styled.p({
+  fontSize: '0.88rem',
+  marginBottom: 26,
 });
 
-const BioView = () => {
+const BioView: React.FC = () => {
+  const {
+    activities,
+    awards,
+    education,
+    employment,
+    interests,
+    projectsAbbrev,
+    talks,
+  } = useContentData()!;
+
   return (
     <StyledBioView>
-      <Inner>
-        <Header />
-      </Inner>
+      <Message>
+        *If you'd like to see my professional resume, please contact me.
+      </Message>
+      <Group group={interests} />
+      <Group group={education} />
+      <Group group={employment} />
+      <Group group={projectsAbbrev} />
+      <Group group={activities} />
+      <Group group={awards} />
+      <Group group={talks} />
     </StyledBioView>
   );
 };

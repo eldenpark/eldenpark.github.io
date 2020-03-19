@@ -69,12 +69,16 @@ export default async function local() {
   });
 
   serverState.on('change', () => {
-    delete require.cache[process.env.DATA_PATH!];
-    const contentData = require(process.env.DATA_PATH!).default;
+    try {
+      delete require.cache[process.env.DATA_PATH!];
+      const contentData = require(process.env.DATA_PATH!).default;
 
-    serverState.update(() => ({
-      contentData,
-    }));
+      serverState.update(() => ({
+        contentData,
+      }));
+    } catch (err) {
+      log('on change: error loading module: %s', process.env.DATA_PATH);
+    }
   });
 
   const server = http.createServer(app);

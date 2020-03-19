@@ -1,7 +1,8 @@
 import { hot } from 'react-hot-loader';
 import React from 'react';
 
-import DataProvider from '@@src/universal/components/DataProvider';
+import { BrowserRouter } from 'react-router-dom';
+import { DataProvider } from '@@src/universal/contexts/dataContext';
 import { log } from '@@src/universal/modules/Logger';
 import Universal from '@@src/universal/components/Universal';
 
@@ -10,9 +11,11 @@ const ClientApp: React.FC<any> = () => {
   log('window.CONTENT_DATA: %o', data);
 
   return (
-    <DataProvider data={data}>
-      <Universal />
-    </DataProvider>
+    <BrowserRouter>
+      <DataProvider data={data}>
+        <Universal />
+      </DataProvider>
+    </BrowserRouter>
   );
 };
 

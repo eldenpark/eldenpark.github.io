@@ -17,6 +17,7 @@ const isProd = process.env.NODE_ENV === 'production';
 const log = logger('[eldeni.github.io]');
 
 const makeHtml: MakeHtml<IsomorphicState> = async ({
+  requestUrl,
   serverState,
 }) => {
   log('makeHtml()');
@@ -35,6 +36,7 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
   const element = (
     <ServerApp
       contentData={contentData}
+      requestUrl={requestUrl}
       serverStyleSheet={serverStyleSheet}
     />
   );
@@ -68,8 +70,9 @@ function template({
   return `
 <html>
   <head>
+    <title>Elden Park</title>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Work+Sans:400,500,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Work+Sans:400,500,700,800,900&display=swap" rel="stylesheet">
     <style>${fontAwesomeCss}</style>
     <script>window['CONTENT_DATA']=${JSON.stringify(contentData)}</script>
     ${styledComponentsStyleElements}
