@@ -1,15 +1,15 @@
 {
   "errors": [],
   "warnings": [
-    "entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  client (290 KiB)\n      chunk.442361a6fe3fc7d45839.js\n      chunk.86e9453ea60683fcbbba.js\n      client.a69777b952635e943c49.js\n",
+    "entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  client (291 KiB)\n      chunk.442361a6fe3fc7d45839.js\n      chunk.816feb63bcf0ad12dd7d.js\n      client.c26d3277089ae0beb1b1.js\n",
     "webpack performance recommendations: \nYou can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.\nFor more info visit https://webpack.js.org/guides/code-splitting/"
   ],
-  "builtAt": 1584711660828,
+  "builtAt": 1584716544285,
   "assetsByChunkName": {
     "vendors~client~react": "chunk.442361a6fe3fc7d45839.js",
-    "client": "client.a69777b952635e943c49.js",
+    "client": "client.c26d3277089ae0beb1b1.js",
     "react": "react.b01cb78f7b8c6bdfbe38.js",
-    "vendors~client": "chunk.86e9453ea60683fcbbba.js"
+    "vendors~client": "chunk.816feb63bcf0ad12dd7d.js"
   },
   "assets": [
     {
@@ -27,8 +27,8 @@
       "emitted": true
     },
     {
-      "name": "chunk.86e9453ea60683fcbbba.js",
-      "size": 156386,
+      "name": "chunk.816feb63bcf0ad12dd7d.js",
+      "size": 156420,
       "chunks": [
         3
       ],
@@ -41,8 +41,8 @@
       "emitted": true
     },
     {
-      "name": "client.a69777b952635e943c49.js",
-      "size": 11074,
+      "name": "client.c26d3277089ae0beb1b1.js",
+      "size": 11677,
       "chunks": [
         1
       ],
@@ -79,8 +79,8 @@
       ],
       "assets": [
         "chunk.442361a6fe3fc7d45839.js",
-        "chunk.86e9453ea60683fcbbba.js",
-        "client.a69777b952635e943c49.js"
+        "chunk.816feb63bcf0ad12dd7d.js",
+        "client.c26d3277089ae0beb1b1.js"
       ],
       "children": {},
       "childAssets": {}
@@ -127,14 +127,14 @@
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 16285,
+      "size": 17163,
       "names": [
         "client"
       ],
       "files": [
-        "client.a69777b952635e943c49.js"
+        "client.c26d3277089ae0beb1b1.js"
       ],
-      "hash": "a69777b952635e943c49",
+      "hash": "c26d3277089ae0beb1b1",
       "siblings": [
         0,
         3
@@ -174,9 +174,9 @@
         "vendors~client"
       ],
       "files": [
-        "chunk.86e9453ea60683fcbbba.js"
+        "chunk.816feb63bcf0ad12dd7d.js"
       ],
-      "hash": "86e9453ea60683fcbbba",
+      "hash": "816feb63bcf0ad12dd7d",
       "siblings": [
         0,
         1

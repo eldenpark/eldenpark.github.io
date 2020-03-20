@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle({
     },
     color: 'inherit',
     textDecoration: 'none',
-    transition: 'color 0.5s ease',
+    transition: 'color 1s ease',
   },
   body: {
   },
@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle({
     color: '#e1e1e1',
     fontFamily: '"Source Serif Pro", "Work Sans", "Helvetica", "Arial", sans-serif;',
     fontSize: 14,
-    lineHeight: 1.45,
+    lineHeight: 1.51,
   },
   input: {
     border: 'none',
@@ -56,7 +56,7 @@ const GlobalStyle = createGlobalStyle({
 });
 
 const StyledUniversal = styled.div({
-  fontSize: '1.1rem',
+  fontSize: '1.15rem',
 });
 
 const Universal: React.FC<any> = () => {

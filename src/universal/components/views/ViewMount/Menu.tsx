@@ -15,7 +15,7 @@ const StyledMenu = styled.ul({
     paddingBottom: 4,
   },
   '& a.active': {
-    borderBottom: '1px solid #fff',
+    borderBottom: '2px solid #fff',
     color: '#fff',
   },
   '& li:not(:first-child)': {

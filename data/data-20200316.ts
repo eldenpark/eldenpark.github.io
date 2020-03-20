@@ -257,30 +257,37 @@ const data: ContentData = {
       {
         title1: '<a href="https://eldeni.github.io/moodsic/">Moodsic: Mood classification using spectrograms of sound</a>',
         title2: '2020',
+        title3: 'Moodsic classifies songs of your choice according to their mood. It uses GCP\'s AutoML to train the model, JavaScript as mode-app interface, and Python to create spectrograms',
       },
       {
         title1: 'Form: Decentrralized knowledge base',
         title2: '2019',
+        title3: 'Knowledge and its revision history served on the peer to peer network',
       },
       {
         title1: '<a href="https://github.com/gradhax/booktrax-streamer">Booktrax: Audiobook generator</a>',
         title2: '2019',
+        title3: 'Booktrax generates audiobook based on the raw text you give. Using AWS\'s Polly and GCP\'s Natural Language, it adds synthetic human voice and images pertaining to the phrases',
       },
       {
         title1: '<a href="https://github.com/eldeni/sdpp-media-server">Streaming Data Payment Protocol V2</a>',
         title2: '2019',
+        title3: '(Draft) An application-layer client-server protocol that enables purchase of data streams (such as IoT sensor data) through cryptocurrency, with invoice and receipts stored in an immutable distributed ledger',
       },
       {
         title1: '<a href="https://github.com/usc-walkin/operator">Revcoin: Recycling vending machine</a>',
         title2: '2019',
+        title3: 'Revcoin gives cryptocurrency (IOTA) to whoever returns the recyclables',
       },
       {
-        title1: '<a href="https://github.com/chatty-app/chatty-android">Chatty</a>',
+        title1: '<a href="https://github.com/chatty-app/chatty-android">Chatty</a>, "Write diaries with a chatbot"',
         title2: '2018',
+        title3: 'Android application. Implemented state propagation in Java, inspired by Redux.js',
       },
       {
         title1: '<a href="https://gimci.github.io/">Gimci: Korean natural language processor</a>',
         title2: '2016',
+        title3: 'Language processor with a noble Romanization scheme. Implemeneted a search engine inspired by Faroo\'s method',
       },
     ],
     label: 'GENERAL',
@@ -291,26 +298,32 @@ const data: ContentData = {
       {
         title1: '<a href="https://github.com/eldeni/jege">jege</a>',
         title2: '2019',
+        title3: 'Logger written in TypeScript',
       },
       {
         title1: '<a href="https://github.com/eldeni/xongkoro">xongkoro</a>',
         title2: '2019',
+        title3: 'Asynchronous data fetcher for server side rendering of React, inspired by Apollo.js (prior to 16.x)',
       },
       {
         title1: '<a href="https://github.com/eldeni/process-launch">process-launch</a>',
         title2: '2019',
+        title3: 'Handy tool to define and run child processes, and process groups',
       },
       {
         title1: '<a href="https://github.com/eldeni/knex-object">knex-object</a>',
         title2: '2019',
+        title3: 'Object model definer for Knex.js. Used JavaScript\'s decorator (ECMAScript 2018, Stage2), inspired by Hibernate and other ORMs',
       },
       {
         title1: '<a href="https://github.com/dechartjs/dechart">dechart</a>',
         title2: '2018',
+        title3: 'D3 meets React. Pseudo two-way data binding to control DOM manipulation',
       },
       {
         title1: '<a href="https://github.com/eldeni/express-isomorphic">express-isomorphic</a>',
         title2: '2018',
+        title3: 'Express.js extended to serve isomorphic application (app running in both client and server sides). Constantly refreshing codes on both sides while developing. This website is built and developed using this library',
       },
     ],
     label: 'LIBRARIES',
@@ -372,7 +385,7 @@ const data: ContentData = {
         children: [
           {
             type: 'text',
-            value: `I craft things for fun, or for different purposes. Some I build solely for myself to use, others to present as proof of concept.`,
+            value: `I craft things for fun, or for different purposes. Some I build solely for myself to use, others to present as proof of concept. If you are curious to know about the projects, or would like to suggest a new thing to work on, feel free to hit me up.`,
           },
           {
             type: 'group',

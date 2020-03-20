@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
 import { w320 } from '@@src/universal/styles/media';
@@ -15,12 +16,43 @@ const Bottom = styled.div({
 });
 
 const Title = styled.div({
+  '& .dummy': {
+    opacity: 0,
+  },
+  '& .effect': {
+    color: '#e62e73',
+    position: 'absolute',
+    top: 0,
+    zIndex: 0,
+  },
+  '& .effect-2': {
+    color: '#665dd5',
+    position: 'absolute',
+    top: 0,
+    zIndex: 0,
+  },
+  '& .main': {
+    position: 'absolute',
+    top: 0,
+    zIndex: 10,
+  },
+  '& p': {
+    transition: '1s ease',
+  },
+  '&:hover .effect': {
+    transform: 'translate(9px, 1px)',
+  },
+  '&:hover .effect-2': {
+    transform: 'translate(5px, -1px)',
+  },
   color: 'white',
+  cursor: 'pointer',
   fontFamily: '"Work Sans"',
-  fontSize: '1.9rem',
+  fontSize: '2.0rem',
   fontWeight: 800,
+  position: 'relative',
   ...w320({
-    fontSize: '1.8rem',
+    fontSize: '1.82rem',
   }),
 });
 
@@ -81,7 +113,20 @@ const IntroHeader = () => {
     <StyledIntroHeader>
       <Top>
         <Title>
-          {general.name}
+          <Link to="/">
+            <p className="dummy">
+              {general.name}
+            </p>
+            <p className="main">
+              {general.name}
+            </p>
+            <p className="effect">
+              {general.name}
+            </p>
+            <p className="effect-2">
+              {general.name}
+            </p>
+          </Link>
         </Title>
       </Top>
       <Bottom>
