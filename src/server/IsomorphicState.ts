@@ -7,5 +7,6 @@ export default class IsomorphicState implements WebpackServerState {
   buildHash: string;
   builtAt: number;
   contentData: ContentData;
+  latestCommitHash: string;
   publicPath: string;
 }

@@ -5,10 +5,10 @@ export interface ContentData {
   employment: Group;
   general: General;
   interests: Group;
-  music: Group;
   projectsAbbrev: Group;
   projectsGeneral: Group;
   projectsLibraries: Group;
+  songs: Group;
   talks: Group;
   views: Views;
 }
@@ -16,7 +16,10 @@ export interface ContentData {
 interface General {
   email: string;
   github: string;
-  introduction: string;
+  introduction: {
+    p1: string;
+    p2?: string;
+  };
   linkedIn: string;
   name: string;
   photoUrl: string;

@@ -31,10 +31,11 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
 
   const reactAssetElements = createAssetElements(assets, publicPath);
   const processEnvElement = createStringifiableObjectElement('__NODE_ENV__', getProcessEnv('NODE_ENV'));
-  const { builtAt, contentData } = serverState.state;
+  const { builtAt, contentData, latestCommitHash } = serverState.state;
   const isomorphicData = {
     builtAt,
     contentData,
+    latestCommitHash,
   };
 
   const element = (

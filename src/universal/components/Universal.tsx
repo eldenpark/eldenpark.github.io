@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
 
+import color from '@@src/universal/styles/color';
 import ErrorBoundary from '@@src/universal/components/app/Error/ErrorBoundary';
 import normalize from '@@src/universal/styles/normalize';
 import ViewMount from '@@src/universal/components/views/ViewMount/ViewMount';
@@ -35,8 +36,8 @@ const GlobalStyle = createGlobalStyle({
     padding: 0,
   },
   html: {
-    backgroundColor: '#2e2c2f',
-    color: '#e1e1e1',
+    backgroundColor: color.htmlBackgroundColor,
+    color: color.htmlColor,
     fontFamily: '"Source Serif Pro", "Work Sans", "Helvetica", "Arial", sans-serif;',
     fontSize: 14,
     lineHeight: 1.51,

@@ -57,12 +57,11 @@ const Title = styled.div({
 });
 
 const Introduction = styled.div({
-  '& > p': {
-    display: 'inline',
+  '& > div': {
+    marginTop: '0.6em',
   },
-  '& br': {
-    display: 'block',
-    marginTop: '0.7em',
+  '& p': {
+    display: 'inline',
   },
   minHeight: 90,
   paddingTop: 5,
@@ -73,10 +72,15 @@ const Introduction = styled.div({
 });
 
 const Photo = styled.img({
+  '&:hover': {
+    transform: 'scale(1.2)',
+    transformOrigin: 'top right',
+  },
   borderRadius: 6,
   float: 'right',
   height: 100,
   margin: '0px 0 6px 6px',
+  transition: '1s ease',
   width: 100,
   ...w320({
     height: 85,
@@ -134,7 +138,8 @@ const IntroHeader = () => {
           src={general.photoUrl}
         />
         <Introduction>
-          <p dangerouslySetInnerHTML={{ __html: general.introduction }} />
+          <p dangerouslySetInnerHTML={{ __html: general.introduction.p1 }} />
+          {general.introduction.p2 && <div><p dangerouslySetInnerHTML={{ __html: general.introduction.p2 }} /></div>}
         </Introduction>
         <Contact>
           <li>

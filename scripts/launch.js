@@ -1,4 +1,5 @@
 const { argv } = require('yargs');
+const childProcess = require('child_process');
 const { logger } = require('jege/server');
 const path = require('path');
 
@@ -12,8 +13,13 @@ require('@babel/register')({
   extensions: ['.js', '.jsx', '.ts', '.tsx'],
 });
 
+const latestCommitHash = (function getLastetCommitHash() {
+  return childProcess.execSync(`git log --pretty=format:'%h' -n 1`).toString();
+})();
+
 function launch() {
   process.env.DATA_PATH = path.resolve(__dirname, '../data/data-20200316.ts');
+  process.env.LATEST_COMMIT_HASH = latestCommitHash;
 
   log('launch(): argv: %j, DATA_PATH: %s', argv, process.env.DATA_PATH);
 

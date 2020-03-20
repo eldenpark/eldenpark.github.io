@@ -10,13 +10,13 @@ const StyledFooter = styled.div({
     },
     borderBottom: '1px solid #bdbdbd',
   },
-  '& span:last-child': {
+  '& span:not(:first-child)': {
     marginLeft: '0.5em',
   },
   color: '#bdbdbd',
   display: 'flex',
   justifyContent: 'space-between',
-  marginTop: 100,
+  marginTop: 90,
   padding: '18px 0',
 });
 
@@ -24,6 +24,7 @@ const Footer = () => {
   const {
     builtAt,
     contentData,
+    latestCommitHash,
   } = useIsomorphicData()!;
 
   const date = React.useMemo(() => {
@@ -44,7 +45,8 @@ const Footer = () => {
         </p>
         <p>
           <span>Last updated at</span>
-          <span>{`${date.getMonth() + 1}/${date.getFullYear()}`}</span>
+          <span>{`${date.getMonth() + 1}/${date.getFullYear()},`}</span>
+          <span>{latestCommitHash}</span>
         </p>
       </div>
       <div>

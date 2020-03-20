@@ -27,6 +27,8 @@ const paths = {
 
 const extend: Extend<IsomorphicState> = async (app, serverState) => {
   const dataPath = process.env.DATA_PATH as string;
+  const latestCommitHash = process.env.LATEST_COMMIT_HASH as string;
+
   let contentData;
   try {
     contentData = require(dataPath).default;
@@ -50,6 +52,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
   serverState.update(() => ({
     builtAt: Date.now(),
     contentData,
+    latestCommitHash,
     publicPath: webpackConfig.output.publicPath,
   }));
 

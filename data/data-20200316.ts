@@ -216,7 +216,9 @@ const data: ContentData = {
   general: {
     email: 'eldeniyenden@gmail.com',
     github: 'https://github.com/eldeni/',
-    introduction: 'I write code, and think over observations. Learning is what drives me the most.<br />Other than doing some projects on the side as a pastime, I listen to music and dj. ',
+    introduction: {
+      p1: 'I write code, and think over observations. Learning is what drives me the most. Other than doing some projects on the side as a pastime, I listen to music and dj.',
+    },
     linkedIn: 'https://www.linkedin.com/in/eldenpark/',
     name: 'Elden Seunghyun Park',
     photoUrl: '/dist/assets/elden-2-reduced.jpg',
@@ -226,20 +228,10 @@ const data: ContentData = {
     items: [
       {
         title1: '',
-        title2: `I'm interested in a wide range of topics in terms of research/engineering. That includes, but not limited to, autonomous network, distributed computing, and their applications to make a next generation web`,
+        title2: 'I\'m interested in a wide range of topics in terms of research/engineering. That includes, but not limited to, autonomous network, distributed computing, and their applications to make a next generation web',
       },
     ],
     label: 'INTERESTS',
-  },
-  music: {
-    id: 'music',
-    items: [
-      {
-        title1: '',
-        title2: `music`,
-      },
-    ],
-    label: 'MUSIC',
   },
   projectsAbbrev: {
     id: 'projects',
@@ -328,6 +320,47 @@ const data: ContentData = {
     ],
     label: 'LIBRARIES',
   },
+  songs: {
+    id: 'songs',
+    items: [
+      {
+        title1: 'Darude - Surrender',
+        title2: '2018, Mar 2020',
+        title3: '<iframe src="https://www.youtube.com/embed/WfVsT88Pwz0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      },
+      {
+        title1: 'Vini Vici & Astrix - Adhana',
+        title2: '2017, Mar 2020',
+        title3: '<iframe src="https://www.youtube.com/embed/Aooy7iw-7cY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      },
+      {
+        title1: 'Chris Schweizer feat. Roxanne Emery - Under The Light',
+        title2: '2018, Mar 2020',
+        title3: '<iframe src="https://www.youtube.com/embed/FUZcSWDzzog" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      },
+      {
+        title1: 'Davey Asprey - Alone In The Wilderness (Extended Mix)',
+        title2: '2018, Mar 2020',
+        title3: '<iframe src="https://www.youtube.com/embed/401oweAI6-M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      },
+      {
+        title1: 'Armin van Buuren feat. Josh Cumbee - Sunny Days (Club Mix)',
+        title2: '2017, Mar 2020',
+        title3: '<iframe src="https://www.youtube.com/embed/0Gxz0SnW_i0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      },
+      {
+        title1: 'Chris Schweizer - The Wolf (Extended Mix)',
+        title2: '2018, Mar 2020',
+        title3: '<iframe src="https://www.youtube.com/embed/0hm5T77olxw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      },
+      {
+        title1: 'Armin van Buuren - Therapy (Leo Reyes Extended Remix)',
+        title2: '2018, Mar 2020',
+        title3: '<iframe src="https://www.youtube.com/embed/O94aCnc5xHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      },
+    ],
+    label: 'SONGS (MISC)',
+  },
   talks: {
     id: 'talks',
     items: [
@@ -345,7 +378,7 @@ const data: ContentData = {
         children: [
           {
             type: 'text',
-            value: `<small>* If you'd like to see my professional resume, please contact me.</small>`,
+            value: '<small>* If you\'d like to see my professional resume, please contact me.</small>',
           },
           {
             type: 'group',
@@ -385,7 +418,7 @@ const data: ContentData = {
         children: [
           {
             type: 'text',
-            value: `I craft things for fun, or for different purposes. Some I build solely for myself to use, others to present as proof of concept. If you are curious to know about the projects, or would like to suggest a new thing to work on, feel free to hit me up.`,
+            value: 'I craft things for fun, or for different purposes. Some I build solely for myself to use, others to present as proof of concept. If you are curious to know about the projects, or would like to suggest a new thing to work on, feel free to hit me up.',
           },
           {
             type: 'group',
@@ -403,8 +436,12 @@ const data: ContentData = {
       {
         children: [
           {
+            type: 'text',
+            value: 'Music has been an integral part of my life. During the school days, I played instruments in a band. Now my interest has been extended over to mix and possibly produce the sound (in the future🙏). I listen a lot to Trance music, but I\'m really an omnivore in terms of preference. <img src="/dist/assets/music-1.jpg" />',
+          },
+          {
             type: 'group',
-            value: 'music',
+            value: 'songs',
           },
         ],
         label: 'Music',

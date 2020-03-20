@@ -5,12 +5,23 @@ import Group from '@@src/universal/components/app/Group/Group';
 import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
 
 const StyledDefaultView = styled.div({
+  overflowX: 'hidden',
+  width: '100%',
 });
 
 const StyledText = styled.div({
+  '& img': {
+    alignSelf: 'center',
+    borderRadius: 5,
+    display: 'block',
+    margin: '1.05em 0',
+    maxWidth: '80%',
+  },
   '& small': {
     fontSize: '0.91em',
   },
+  display: 'flex',
+  flexDirection: 'column',
   marginBottom: '2.4em',
 });
 

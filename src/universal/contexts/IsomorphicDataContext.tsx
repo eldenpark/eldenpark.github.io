@@ -25,6 +25,7 @@ export {
 };
 
 interface IsomorphicData {
-  builtAt: number;
+  builtAt: string;
   contentData: ContentData;
+  latestCommitHash: string;
 }
