@@ -9,7 +9,7 @@ const StyledGroup = styled.div({
 
 const GroupLabel = styled.p({
   color: '#fff',
-  fontSize: '1.31rem',
+  fontSize: '1.35rem',
   fontWeight: 500,
   letterSpacing: '0.021em',
   marginBottom: 7,

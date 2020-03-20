@@ -10,7 +10,7 @@ const data: ContentData = {
             label: 'Worked on a number of Android application projects, self-taught.',
           },
         ],
-        title1: 'Mashup (Product development group)',
+        title1: 'Mashup (Product development group), Seoul, South Korea',
         title2: '01/2018 - 12/2018',
       },
       {
@@ -28,7 +28,7 @@ const data: ContentData = {
             label: 'Student representative of an overseas workshop program, organized by Korea University',
           },
         ],
-        title1: 'Silicon Valley Technology and Entrepreneurship Workshop, San Jose, CA',
+        title1: 'Silicon Valley technology and entrepreneurship workshop, San Jose, CA',
         title2: '06/2016',
       },
       {
@@ -47,7 +47,7 @@ const data: ContentData = {
           },
         ],
         title1: 'International Workcamp, Kathmandu, Nepal',
-        title2: '03/2015 - 08/2017',
+        title2: '07/2012',
       },
       {
         children: [
@@ -231,6 +231,16 @@ const data: ContentData = {
     ],
     label: 'INTERESTS',
   },
+  music: {
+    id: 'music',
+    items: [
+      {
+        title1: '',
+        title2: `music`,
+      },
+    ],
+    label: 'MUSIC',
+  },
   projectsAbbrev: {
     id: 'projects',
     items: [
@@ -245,7 +255,32 @@ const data: ContentData = {
     id: 'projects_general',
     items: [
       {
-        title1: '22',
+        title1: '<a href="https://eldeni.github.io/moodsic/">Moodsic: Mood classification using spectrograms of sound</a>',
+        title2: '2020',
+      },
+      {
+        title1: 'Form: Decentrralized knowledge base',
+        title2: '2019',
+      },
+      {
+        title1: '<a href="https://github.com/gradhax/booktrax-streamer">Booktrax: Audiobook generator</a>',
+        title2: '2019',
+      },
+      {
+        title1: '<a href="https://github.com/eldeni/sdpp-media-server">Streaming Data Payment Protocol V2</a>',
+        title2: '2019',
+      },
+      {
+        title1: '<a href="https://github.com/usc-walkin/operator">Revcoin: Recycling vending machine</a>',
+        title2: '2019',
+      },
+      {
+        title1: '<a href="https://github.com/chatty-app/chatty-android">Chatty</a>',
+        title2: '2018',
+      },
+      {
+        title1: '<a href="https://gimci.github.io/">Gimci: Korean natural language processor</a>',
+        title2: '2016',
       },
     ],
     label: 'GENERAL',
@@ -254,7 +289,28 @@ const data: ContentData = {
     id: 'projects_libraries',
     items: [
       {
-        title1: '11',
+        title1: '<a href="https://github.com/eldeni/jege">jege</a>',
+        title2: '2019',
+      },
+      {
+        title1: '<a href="https://github.com/eldeni/xongkoro">xongkoro</a>',
+        title2: '2019',
+      },
+      {
+        title1: '<a href="https://github.com/eldeni/process-launch">process-launch</a>',
+        title2: '2019',
+      },
+      {
+        title1: '<a href="https://github.com/eldeni/knex-object">knex-object</a>',
+        title2: '2019',
+      },
+      {
+        title1: '<a href="https://github.com/dechartjs/dechart">dechart</a>',
+        title2: '2018',
+      },
+      {
+        title1: '<a href="https://github.com/eldeni/express-isomorphic">express-isomorphic</a>',
+        title2: '2018',
       },
     ],
     label: 'LIBRARIES',
@@ -263,8 +319,9 @@ const data: ContentData = {
     id: 'talks',
     items: [
       {
-        title1: '<a href="https://www.youtube.com/watch?v=_z_6H4x2XDg&list=PLZl3coZhX98oeg76bUDTagfySnBJin3FE&index=11">FEConf 2018</a>, Seoul, South Korea',
-        title2: '<a href="https://www.slideshare.net/enginehenryed/react-with-d3-dom-manipulation-orchestration-132381218">React with D3</a>: DOM Manipulation Orchestration',
+        title1: '<a href="https://2018.feconf.kr/">FEConf 2018</a>, Seoul, South Korea',
+        title2: '11/2018',
+        title3: '<a href="https://www.slideshare.net/enginehenryed/react-with-d3-dom-manipulation-orchestration-132381218">React with D3</a>: DOM Manipulation Orchestration <a href="https://www.youtube.com/watch?v=_z_6H4x2XDg&list=PLZl3coZhX98oeg76bUDTagfySnBJin3FE&index=11">[video]</a>',
       },
     ],
     label: 'TALKS',
@@ -315,7 +372,7 @@ const data: ContentData = {
         children: [
           {
             type: 'text',
-            value: `power`,
+            value: `I craft things for fun, or for different purposes. Some I build solely for myself to use, others to present as proof of concept.`,
           },
           {
             type: 'group',
@@ -333,16 +390,8 @@ const data: ContentData = {
       {
         children: [
           {
-            type: 'text',
-            value: `power`,
-          },
-          {
             type: 'group',
-            value: 'projectsGeneral',
-          },
-          {
-            type: 'group',
-            value: 'projectsLibraries',
+            value: 'music',
           },
         ],
         label: 'Music',

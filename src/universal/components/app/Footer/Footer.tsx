@@ -5,6 +5,9 @@ import { useIsomorphicData } from '@@src/universal/contexts/IsomorphicDataContex
 
 const StyledFooter = styled.div({
   '& button': {
+    '&:hover': {
+      borderBottom: 'none',
+    },
     borderBottom: '1px solid #bdbdbd',
   },
   '& span:last-child': {

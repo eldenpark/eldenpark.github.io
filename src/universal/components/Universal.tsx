@@ -56,7 +56,7 @@ const GlobalStyle = createGlobalStyle({
 });
 
 const StyledUniversal = styled.div({
-  fontSize: '1.07rem',
+  fontSize: '1.1rem',
 });
 
 const Universal: React.FC<any> = () => {

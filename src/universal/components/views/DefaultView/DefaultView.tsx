@@ -9,9 +9,9 @@ const StyledDefaultView = styled.div({
 
 const StyledText = styled.div({
   '& small': {
-    fontSize: '0.9em',
+    fontSize: '0.91em',
   },
-  marginBottom: '3.0em',
+  marginBottom: '2.4em',
 });
 
 const Text = ({

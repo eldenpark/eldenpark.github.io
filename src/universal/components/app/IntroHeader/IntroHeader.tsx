@@ -17,10 +17,10 @@ const Bottom = styled.div({
 const Title = styled.div({
   color: 'white',
   fontFamily: '"Work Sans"',
-  fontSize: '1.8rem',
+  fontSize: '1.9rem',
   fontWeight: 800,
   ...w320({
-    fontSize: '1.7rem',
+    fontSize: '1.8rem',
   }),
 });
 
@@ -55,8 +55,9 @@ const Photo = styled.img({
 const Contact = styled.ul({
   '& a': {
     '&:hover': {
-      color: '#ddc3f7',
+      borderBottom: 'none',
     },
+    borderBottom: '1px solid #c4bddb',
     color: '#c4bddb',
   },
   '& li': {
@@ -69,7 +70,7 @@ const Contact = styled.ul({
   '& li:not(:first-child)::before': {
     content: '"| "',
   },
-  fontSize: '0.96rem',
+  fontSize: '1rem',
   marginTop: 13,
 });
 
