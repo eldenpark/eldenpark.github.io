@@ -5,11 +5,11 @@ export interface ContentData {
   employment: Group;
   general: General;
   interests: Group;
-  menu: Menus;
   projectsAbbrev: Group;
   projectsGeneral: Group;
   projectsLibraries: Group;
   talks: Group;
+  views: Views;
 }
 
 interface General {
@@ -21,11 +21,16 @@ interface General {
   photoUrl: string;
 }
 
-interface Menus {
+interface Views {
   items: {
+    children: {
+      type: string;
+      value: string;
+    }[];
     exact?: string;
     label: string;
     url: string;
+    visibleOnMenu: string;
   }[];
 }
 

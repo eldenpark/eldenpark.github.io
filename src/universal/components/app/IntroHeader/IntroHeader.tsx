@@ -30,7 +30,7 @@ const Introduction = styled.div({
   },
   '& br': {
     display: 'block',
-    margin: '4 0',
+    marginTop: '0.7em',
   },
   minHeight: 90,
   paddingTop: 5,
@@ -47,8 +47,8 @@ const Photo = styled.img({
   margin: '0px 0 6px 6px',
   width: 100,
   ...w320({
-    height: 75,
-    width: 75,
+    height: 85,
+    width: 85,
   }),
 });
 
@@ -69,7 +69,7 @@ const Contact = styled.ul({
   '& li:not(:first-child)::before': {
     content: '"| "',
   },
-  fontSize: '0.9rem',
+  fontSize: '0.96rem',
   marginTop: 13,
 });
 

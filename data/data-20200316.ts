@@ -231,23 +231,6 @@ const data: ContentData = {
     ],
     label: 'INTERESTS',
   },
-  menu: {
-    items: [
-      {
-        exact: 'true',
-        label: 'About',
-        url: '/',
-      },
-      {
-        label: 'Projects',
-        url: '/projects.html',
-      },
-      {
-        label: 'Music',
-        url: '/music.html',
-      },
-    ],
-  },
   projectsAbbrev: {
     id: 'projects',
     items: [
@@ -285,6 +268,88 @@ const data: ContentData = {
       },
     ],
     label: 'TALKS',
+  },
+  views: {
+    items: [
+      {
+        children: [
+          {
+            type: 'text',
+            value: `<small>* If you'd like to see my professional resume, please contact me.</small>`,
+          },
+          {
+            type: 'group',
+            value: 'interests',
+          },
+          {
+            type: 'group',
+            value: 'education',
+          },
+          {
+            type: 'group',
+            value: 'employment',
+          },
+          {
+            type: 'group',
+            value: 'projectsAbbrev',
+          },
+          {
+            type: 'group',
+            value: 'activities',
+          },
+          {
+            type: 'group',
+            value: 'awards',
+          },
+          {
+            type: 'group',
+            value: 'talks',
+          },
+        ],
+        exact: 'true',
+        label: 'About',
+        url: '/',
+        visibleOnMenu: 'true',
+      },
+      {
+        children: [
+          {
+            type: 'text',
+            value: `power`,
+          },
+          {
+            type: 'group',
+            value: 'projectsGeneral',
+          },
+          {
+            type: 'group',
+            value: 'projectsLibraries',
+          },
+        ],
+        label: 'Projects',
+        url: '/projects.html',
+        visibleOnMenu: 'true',
+      },
+      {
+        children: [
+          {
+            type: 'text',
+            value: `power`,
+          },
+          {
+            type: 'group',
+            value: 'projectsGeneral',
+          },
+          {
+            type: 'group',
+            value: 'projectsLibraries',
+          },
+        ],
+        label: 'Music',
+        url: '/music.html',
+        visibleOnMenu: 'true',
+      },
+    ],
   },
 };
 

@@ -25,7 +25,7 @@ declare global {
 
 log('[client] Running in NODE_ENV: %s', process.env.NODE_ENV);
 
-const appRoot = document.getElementById('react-root');
+const appRoot = document.getElementById('app-root');
 
 ReactDOM.hydrate(
   <ClientApp />,

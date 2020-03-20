@@ -1,5 +1,7 @@
 const r = require.resolve;
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const babelRc = {
   plugins: [
     r('react-hot-loader/babel'),
@@ -31,7 +33,7 @@ const babelRc = {
     // 'dynamic-import-node',
 
     [r('babel-plugin-styled-components'), {
-      displayName: true,
+      displayName: !isProd,
       ssr: true,
     }],
   ],

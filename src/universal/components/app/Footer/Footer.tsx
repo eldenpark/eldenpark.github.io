@@ -13,7 +13,8 @@ const StyledFooter = styled.div({
   color: '#bdbdbd',
   display: 'flex',
   justifyContent: 'space-between',
-  marginTop: 102,
+  marginTop: 100,
+  padding: '18px 0',
 });
 
 const Footer = () => {

@@ -84,7 +84,7 @@ function template({
     ${styledComponentsStyleElements}
     ${processEnvElement}
   </head>
-  <div id="react-root">${reactAppInString}</div>
+  <div id="app-root">${reactAppInString}</div>
   ${reactAssetElements}
   ${socket(socketPort, socketPath)}
 </html>

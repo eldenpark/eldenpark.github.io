@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
+  Redirect,
   Route,
   Switch,
 } from 'react-router-dom';
 
-import IntroHeader from '@@src/universal/components/app/IntroHeader/IntroHeader';
-import BioView from '@@src/universal/components/views/BioView/BioView';
+import DefaultView from '@@src/universal/components/views/DefaultView/DefaultView';
 import Footer from '@@src/universal/components/app/Footer/Footer';
+import IntroHeader from '@@src/universal/components/app/IntroHeader/IntroHeader';
 import Menu from '@@src/universal/components/views/ViewMount/Menu';
-import MusicView from '@@src/universal/components/views/MusicView/MusicView';
-import ProjectView from '@@src/universal/components/views/ProjectView/ProjectView';
+import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
 
 const StyledViewMount = styled.div({
   alignItems: 'center',
@@ -29,6 +29,31 @@ const ViewWrapper = styled.div({
 });
 
 const ViewMount = () => {
+  const { views } = useContentData();
+
+  const routes = React.useMemo(() => {
+    const _routes = views.items.map((item) => {
+      return (
+        <Route
+          exact={!!item.exact && item.exact === 'true'}
+          key={item.url}
+          path={item.url}
+          render={() => {
+            return (
+              <DefaultView childrenMeta={item.children} />
+            );
+          }}
+        />
+      );
+    });
+
+    _routes.push(
+      <Redirect key="default" to={views.items[0].url} />,
+    );
+
+    return _routes;
+  }, [views]);
+
   return (
     <StyledViewMount>
       <Inner>
@@ -36,18 +61,7 @@ const ViewMount = () => {
         <Menu />
         <ViewWrapper>
           <Switch>
-            <Route
-              component={MusicView}
-              path="/music.html"
-            />
-            <Route
-              component={ProjectView}
-              path="/projects.html"
-            />
-            <Route
-              component={BioView}
-              path="/"
-            />
+            {routes}
           </Switch>
         </ViewWrapper>
         <Footer />
