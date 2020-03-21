@@ -1,9 +1,33 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
 import { w320 } from '@@src/universal/styles/media';
+
+const textShadow1 = keyframes({
+  '0%, 100%': {
+    transform: 'translate(0px, 0px)',
+  },
+  '20%': {
+    transform: 'translate(9px, 1px)',
+  },
+  '40%': {
+    transform: 'translate(0px, 0px)',
+  },
+});
+
+const textShadow2 = keyframes({
+  '0%, 100%': {
+    transform: 'translate(0px, 0px)',
+  },
+  '20%': {
+    transform: 'translate(5px, -1px)',
+  },
+  '40%': {
+    transform: 'translate(0px, 0px)',
+  },
+});
 
 const StyledIntroHeader = styled.div({
 });
@@ -19,7 +43,7 @@ const Title = styled.div({
   '& .dummy': {
     opacity: 0,
   },
-  '& .effect': {
+  '& .effect-1': {
     color: '#e62e73',
     position: 'absolute',
     top: 0,
@@ -34,16 +58,17 @@ const Title = styled.div({
   '& .main': {
     position: 'absolute',
     top: 0,
+    transition: '1s ease',
     zIndex: 10,
   },
-  '& p': {
-    transition: '1s ease',
-  },
-  '&:hover .effect': {
+  '&:hover .effect-1': {
     transform: 'translate(9px, 1px)',
   },
   '&:hover .effect-2': {
     transform: 'translate(5px, -1px)',
+  },
+  '&:hover .main': {
+    color: '#eff',
   },
   color: 'white',
   cursor: 'pointer',
@@ -54,7 +79,15 @@ const Title = styled.div({
   ...w320({
     fontSize: '1.82rem',
   }),
-});
+}, css`
+  & .effect-1 {
+    animation: 10s ease 0s infinite normal forwards ${textShadow1};
+  }
+
+  & .effect-2 {
+    animation: 10s ease 0s infinite normal forwards ${textShadow2};
+  }
+`);
 
 const Introduction = styled.div({
   '& > div': {
@@ -124,7 +157,7 @@ const IntroHeader = () => {
             <p className="main">
               {general.name}
             </p>
-            <p className="effect">
+            <p className="effect-1">
               {general.name}
             </p>
             <p className="effect-2">

@@ -30,6 +30,14 @@ const Multimedia = styled.div({
   '& > *': {
     margin: '0.3em 0',
   },
+  '& iframe': {
+    alignSelf: 'center',
+    height: '44vw',
+    margin: '0.9em 0',
+    maxHeight: 267,
+    maxWidth: 480,
+    width: '80vw',
+  },
   '& img': {
     borderRadius: 5,
     display: 'block',

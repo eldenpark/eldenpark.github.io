@@ -52,14 +52,6 @@ const Title = styled.div({
     },
     borderBottom: `1px solid ${color.htmlColor}`,
   },
-  '& iframe': {
-    alignSelf: 'center',
-    height: '44vw',
-    margin: '0.9em 0',
-    maxHeight: 267,
-    maxWidth: 480,
-    width: '80vw',
-  },
 });
 
 const Description = styled.div({

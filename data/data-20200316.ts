@@ -275,11 +275,11 @@ const data: ContentData = {
       {
         children: [
           {
-            label: 'Music has been an integral part of my life. During the school days, I have played instruments in a band. Now, my interest has been extended over to mixing and possibly producing the sound in the future.',
+            label: 'Music has been an integral part of my life. During the school days, I have played instruments in a band. Now, my interest has been extended over to mixing and possibly producing the sound.',
             type: 'text',
           },
           {
-            label: '<p>I\'m a huge fan of trance music, but when it comes to the type of songs I listen to, I\'m more of an omnivore. </p>',
+            label: '<p>I\'m a huge fan of trance music but when it comes to the type of songs I listen to, I\'m more of an omnivore. Below is a list of tracks I\'ve enjoyed the most. This I hope will consist of the ones I produce in the future. Let me know if you know any good tracks.</p>',
             type: 'text',
           },
           {
@@ -396,7 +396,7 @@ const data: ContentData = {
       {
         title1: '<a href="https://github.com/eldeni/express-isomorphic">express-isomorphic</a>',
         title2: '2018',
-        title3: 'Express.js extended to serve isomorphic application (app running in both client and server sides). Constantly refreshing codes on both sides while developing. (This) personal website is built and developed using this library',
+        title3: 'Express.js extended to serve isomorphic application (app running in both client and server sides). Constantly refreshing codes on both sides while developing. This website you\'re not at is built and developed using this library',
       },
     ],
     label: 'LIBRARIES',
@@ -466,7 +466,7 @@ const data: ContentData = {
         title2: '2018, Mar 2020',
       },
     ],
-    label: 'SONGS (MISC)',
+    label: 'TRACKS (MISC)',
     type: 'category',
   },
   talks: {
@@ -475,7 +475,7 @@ const data: ContentData = {
       {
         title1: '<a href="https://2018.feconf.kr/">FEConf 2018</a>, Seoul, South Korea',
         title2: '11/2018',
-        title3: '<a href="https://www.slideshare.net/enginehenryed/react-with-d3-dom-manipulation-orchestration-132381218">React with D3</a>: DOM Manipulation Orchestration <a href="https://www.youtube.com/watch?v=_z_6H4x2XDg&list=PLZl3coZhX98oeg76bUDTagfySnBJin3FE&index=11">[video]</a>',
+        title3: '<a href="https://www.slideshare.net/enginehenryed/react-with-d3-dom-manipulation-orchestration-132381218">React with D3: DOM Manipulation Orchestration</a> <a href="https://www.youtube.com/watch?v=_z_6H4x2XDg&list=PLZl3coZhX98oeg76bUDTagfySnBJin3FE&index=11">[video]</a>',
       },
     ],
     label: 'TALKS',
