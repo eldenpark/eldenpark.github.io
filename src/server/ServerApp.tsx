@@ -14,11 +14,15 @@ const ServerApp = ({
   isomorphicData,
   requestUrl,
   serverStyleSheet,
+  staticContext,
 }) => {
   log('ServerApp(): isomorphicData: %j', isomorphicData);
 
   return (
-    <StaticRouter location={requestUrl}>
+    <StaticRouter
+      context={staticContext}
+      location={requestUrl}
+    >
       <IsomorphicDataProvider data={isomorphicData}>
         <StyleSheetManager sheet={serverStyleSheet.instance}>
           <Universal />

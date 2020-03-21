@@ -38,7 +38,13 @@ const ViewMount = () => {
           exact={!!item.exact && item.exact === 'true'}
           key={item.url}
           path={item.url}
-          render={() => {
+          render={({
+            staticContext,
+          }) => {
+            if (staticContext) {
+              (staticContext as any).name = item.url;
+            }
+
             return (
               <DefaultView childrenMeta={item.children} />
             );

@@ -16,6 +16,12 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const log = logger('[eldeni.github.io]');
 
+const ogImageUrls = {
+  '/': '/dist/assets/elden-2-reduced.jpg',
+  '/music.html': '/dist/assets/music-1.jpg',
+  default: '/dist/assets/elden-2-reduced.jpg',
+};
+
 const makeHtml: MakeHtml<IsomorphicState> = async ({
   requestUrl,
   serverState,
@@ -37,14 +43,17 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
     contentData,
     latestCommitHash,
   };
+  const staticContext = {};
 
   const element = (
     <ServerApp
       isomorphicData={isomorphicData}
       requestUrl={requestUrl}
       serverStyleSheet={serverStyleSheet}
+      staticContext={staticContext}
     />
   );
+
   const reactAppInString = await renderToString(element);
 
   const styleTags = serverStyleSheet.getStyleTags();
@@ -52,6 +61,7 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
   const html = template({
     fontAwesomeCss: dom.css(),
     isomorphicData,
+    opImageUrl: ogImageUrls[staticContext['name'] || 'default'],
     processEnvElement,
     reactAppInString,
     reactAssetElements,
@@ -65,6 +75,7 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
 function template({
   fontAwesomeCss,
   isomorphicData,
+  opImageUrl,
   processEnvElement,
   reactAppInString,
   reactAssetElements,
@@ -80,12 +91,12 @@ function template({
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-161485149-1');
     </script>
 
     <title>Elden Park</title>
     <meta charset="UTF-8">
+    <meta property="og:image" content="${opImageUrl}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/dist/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Work+Sans:400,500,700,800,900&display=swap" rel="stylesheet">
