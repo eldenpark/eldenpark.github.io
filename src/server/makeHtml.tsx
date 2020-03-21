@@ -17,9 +17,9 @@ const isProd = process.env.NODE_ENV === 'production';
 const log = logger('[eldeni.github.io]');
 
 const ogImageUrls = {
-  '/': '/dist/assets/elden-2-reduced.jpg',
-  '/music.html': '/dist/assets/music-1.jpg',
-  default: '/dist/assets/elden-2-reduced.jpg',
+  '/': '/g/assets/elden-2-reduced.jpg',
+  '/music.html': '/g/assets/music-1.jpg',
+  default: '/g/assets/elden-2-reduced.jpg',
 };
 
 const makeHtml: MakeHtml<IsomorphicState> = async ({

@@ -22,7 +22,7 @@ const log = logger('[eldeni.github.io]');
 const paths = {
   build: path.resolve(__dirname, '../../build'),
   data: path.resolve(__dirname, '../../data'),
-  dist: path.resolve(__dirname, '../../dist'),
+  dist: path.resolve(__dirname, '../../g'),
 };
 
 const extend: Extend<IsomorphicState> = async (app, serverState) => {

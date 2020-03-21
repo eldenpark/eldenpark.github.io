@@ -256,7 +256,7 @@ const data: ContentData = {
     },
     linkedIn: 'https://www.linkedin.com/in/eldenpark/',
     name: 'Elden Seunghyun Park',
-    photoUrl: '/dist/assets/elden-2-reduced.jpg',
+    photoUrl: '/g/assets/elden-2-reduced.jpg',
   },
   interests: {
     id: 'interests',
@@ -283,7 +283,7 @@ const data: ContentData = {
             type: 'text',
           },
           {
-            label: '<img src="/dist/assets/music-1.jpg" />',
+            label: '<img src="/g/assets/music-1.jpg" />',
             type: 'multimedia',
           },
         ],
@@ -539,7 +539,7 @@ const data: ContentData = {
           },
         ],
         label: 'Projects',
-        url: '/projects.html',
+        url: '/g/projects.html',
         visibleOnMenu: 'true',
       },
       {
@@ -554,7 +554,7 @@ const data: ContentData = {
           },
         ],
         label: 'Music',
-        url: '/music.html',
+        url: '/g/music.html',
         visibleOnMenu: 'true',
       },
     ],

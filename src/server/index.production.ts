@@ -14,13 +14,13 @@ import { withWebpack } from 'express-isomorphic-extension/webpack';
 import IsomorphicState from './IsomorphicState';
 import webpackConfig from '../webpack/webpack.config.client.prod.web';
 
-const webpackBuild = require('../../dist/build.json');
+const webpackBuild = require('../../g/build.json');
 
 const log = logger('[eldeni.github.io]');
 
 const paths = {
   build: path.resolve(__dirname, '../../build'),
-  dist: path.resolve(__dirname, '../../dist'),
+  dist: path.resolve(__dirname, '../../g'),
   root: path.resolve(__dirname, '../../'),
 };
 
@@ -81,12 +81,12 @@ export default async function main() {
   });
 
   await eject({
-    filePath: path.resolve(paths.root, 'projects.html'),
+    filePath: path.resolve(paths.dist, 'projects.html'),
     requestUrl: `http://localhost:${port}/projects.html`,
   });
 
   await eject({
-    filePath: path.resolve(paths.root, 'music.html'),
+    filePath: path.resolve(paths.dist, 'music.html'),
     requestUrl: `http://localhost:${port}/music.html`,
   });
 }
