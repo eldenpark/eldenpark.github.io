@@ -1,11 +1,14 @@
 export interface ContentData {
+  aboutDesc: Group;
   activities: Group;
   awards: Group;
   education: Group;
   employment: Group;
   general: General;
   interests: Group;
+  musicDesc: Group;
   projectsAbbrev: Group;
+  projectsDesc: Group;
   projectsGeneral: Group;
   projectsLibraries: Group;
   songs: Group;
@@ -42,16 +45,19 @@ export interface Group {
   id: string;
   items: Item[];
   label: string;
+  type: 'message' | 'category';
 }
 
 interface Item {
   children?: {
     children?: {
       label: string;
+      type: 'text' | 'multimedia';
     }[];
     label: string;
+    type: 'text' | 'multimedia';
   }[];
-  title1: string;
+  title1?: string;
   title2?: string;
   title3?: string;
 }

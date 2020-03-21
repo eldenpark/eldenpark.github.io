@@ -46,7 +46,7 @@ const Footer = () => {
         <p>
           <span>Last updated at</span>
           <span>{`${date.getMonth() + 1}/${date.getFullYear()},`}</span>
-          <span>{latestCommitHash}</span>
+          <span>{`[-1] ${latestCommitHash}`}</span>
         </p>
       </div>
       <div>

@@ -75,6 +75,15 @@ function template({
   return `
 <html>
   <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161485149-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-161485149-1');
+    </script>
+
     <title>Elden Park</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

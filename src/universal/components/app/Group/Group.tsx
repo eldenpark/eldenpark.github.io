@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Child from './Child';
 import color from '@@src/universal/styles/color';
 import { Group as GroupType } from '@@data/ContentData';
 
-const StyledGroup = styled.div({
-  marginBottom: '3.7em',
-});
+const StyledGroup = styled.div<any>(({ type = 'category' }) => ({
+  marginBottom: type === 'category' ? '3.7em' : '2.4em',
+}));
 
-const GroupLabel = styled.p({
+const StyledGroupLabel = styled.p({
   color: color.h1Color,
   fontSize: '1.19em',
   fontWeight: 500,
@@ -16,12 +17,21 @@ const GroupLabel = styled.p({
   marginBottom: 7,
 });
 
-const Item = styled.div({
-  marginBottom: '1.9em',
-});
+const GroupLabel = ({
+  group,
+}) => {
+  return (
+    <StyledGroupLabel id={group.id}>
+      {group.label}
+    </StyledGroupLabel>
+  );
+};
 
-const Description = styled.div({
-  marginTop: 5,
+const Item = styled.div({
+  '& .desc:not(:first-child)': {
+    marginTop: '0.42em',
+  },
+  marginBottom: '1.9em',
 });
 
 const Title1 = styled.div({
@@ -50,8 +60,9 @@ const Title = styled.div({
     maxWidth: 480,
     width: '80vw',
   },
-  display: 'flex',
-  flexDirection: 'column',
+});
+
+const Description = styled.div({
 });
 
 const Group: React.FC<GroupProps> = ({
@@ -62,36 +73,44 @@ const Group: React.FC<GroupProps> = ({
       const children = item.children?.map((depth1) => {
         const children2 = depth1.children?.map((depth2) => {
           return (
-            <p key={depth2.label}>
-              {depth2.label}
-            </p>
+            <Child
+              key={depth2.label}
+              label={depth2.label}
+              type={depth2.type}
+            />
           );
         });
 
         return (
-          <p key={depth1.label}>
-            {depth1.label}
+          <React.Fragment key={depth1.label}>
+            <Child
+              key={depth1.label}
+              label={depth1.label}
+              type={depth1.type}
+            />
             {children2}
-          </p>
+          </React.Fragment>
         );
       });
 
       return (
-        <Item key={item.title1 + item.title2}>
-          <Title1 dangerouslySetInnerHTML={{ __html: item.title1 }} />
+        <Item key={item.title1 || item.title2 || item.children![0]?.label}>
+          {item.title1 && <Title1 dangerouslySetInnerHTML={{ __html: item.title1 }} />}
           {item.title2 && <Title dangerouslySetInnerHTML={{ __html: item.title2 }} />}
           {item.title3 && <Title dangerouslySetInnerHTML={{ __html: item.title3 }} />}
-          <Description>
-            {children}
-          </Description>
+          {children && (
+            <Description className="desc">
+              {children}
+            </Description>
+          )}
         </Item>
       );
     });
   }, [group]);
 
   return (
-    <StyledGroup>
-      <GroupLabel id={group.id}>{group.label}</GroupLabel>
+    <StyledGroup type={group.type}>
+      {group.label.length > 0 && <GroupLabel group={group} />}
       {list}
     </StyledGroup>
   );

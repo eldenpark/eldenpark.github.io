@@ -1,6 +1,21 @@
 import { ContentData } from './ContentData';
 
 const data: ContentData = {
+  aboutDesc: {
+    id: 'about_desc',
+    items: [
+      {
+        children: [
+          {
+            label: '<small>* If you\'d like to see my professional resume, please contact me.</small>',
+            type: 'text',
+          },
+        ],
+      },
+    ],
+    label: '',
+    type: 'message',
+  },
   activities: {
     id: 'extracurricular_activities',
     items: [
@@ -8,6 +23,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Worked on a number of Android application projects, self-taught.',
+            type: 'text',
           },
         ],
         title1: 'Mashup (Product development group), Seoul, South Korea',
@@ -17,6 +33,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Studied Apache Hadoop and the ecosystem',
+            type: 'text',
           },
         ],
         title1: 'Designing and Building Big Data Applications workshop, Cloudera, San Jose, CA',
@@ -26,6 +43,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Student representative of an overseas workshop program, organized by Korea University',
+            type: 'text',
           },
         ],
         title1: 'Silicon Valley technology and entrepreneurship workshop, San Jose, CA',
@@ -35,6 +53,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Chaired an international youth forum on histrical reconciliation in East Asia',
+            type: 'text',
           },
         ],
         title1: 'UNESCO International Youth Forum (2013), Seoul, South Korea',
@@ -44,6 +63,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Supported a local community project',
+            type: 'text',
           },
         ],
         title1: 'International Workcamp, Kathmandu, Nepal',
@@ -53,6 +73,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Military service',
+            type: 'text',
           },
         ],
         title1: '705th Special Assault Regiment, Republic of Korea Army',
@@ -62,6 +83,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Studied old East Asian languages',
+            type: 'text',
           },
         ],
         title1: 'Research Institute of Korean Studies, Korea University',
@@ -71,6 +93,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Studied at a French language institution',
+            type: 'text',
           },
         ],
         title1: 'Lyon Bleu, Lyon, France',
@@ -78,6 +101,7 @@ const data: ContentData = {
       },
     ],
     label: 'EXTRACURRICULAR ACTIVITIES',
+    type: 'category',
   },
   awards: {
     id: 'honors_and_actiities',
@@ -120,6 +144,7 @@ const data: ContentData = {
       },
     ],
     label: 'HONORS AND AWARDS',
+    type: 'category',
   },
   education: {
     id: 'education',
@@ -128,6 +153,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Board member of Dev Nights / Board member of Korean American Scientists and Engineers Association (KSEA), USC',
+            type: 'text',
           },
         ],
         title1: '<b>M.S., in Computer Science</b>, University of Southern California, Los Angeles, CA',
@@ -137,6 +163,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Student representative of Software Technology and Entrepreneurship Program (STEP, Interdisciplinary program) / Founder of Gokathon',
+            type: 'text',
           },
         ],
         title1: '<b>B.S., in Computer Science</b>, Korea University, Seoul, South Korea',
@@ -146,6 +173,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Exchange Program',
+            type: 'text',
           },
         ],
         title1: 'University of Utah, Salt Lake City, UT',
@@ -155,6 +183,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Academic Scholar',
+            type: 'text',
           },
         ],
         title1: 'Kookmin University, Seoul, South Korea',
@@ -166,6 +195,7 @@ const data: ContentData = {
       },
     ],
     label: 'EDUCATION',
+    type: 'category',
   },
   employment: {
     id: 'employment',
@@ -174,6 +204,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Leader of a team of 6 engineers in a fast-growing startup (Y-Combinator alumni). Worked on projects including e-commerce and data-analytics tool in an Agile work environment',
+            type: 'text',
           },
         ],
         title1: '<b>Software Engineer</b> | Memebox',
@@ -184,6 +215,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Worked on a number of projects including comment system, and digital contents store platform. Primarily focused on handling a massive volume of user traffic',
+            type: 'text',
           },
         ],
         title1: '<b>Software Engineer</b> | Naver',
@@ -194,6 +226,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Worked on a web messenger software that connects business with customers on their websites',
+            type: 'text',
           },
         ],
         title1: '<b>Software Engineer Intern</b> | Zoyi',
@@ -204,6 +237,7 @@ const data: ContentData = {
         children: [
           {
             label: 'Software Architecture Team, CTO Division',
+            type: 'text',
           },
         ],
         title1: '<b>Software Engineer Intern</b> | LG CNS',
@@ -212,6 +246,7 @@ const data: ContentData = {
       },
     ],
     label: 'EMPLOYMENT',
+    type: 'category',
   },
   general: {
     email: 'eldeniyenden@gmail.com',
@@ -232,6 +267,30 @@ const data: ContentData = {
       },
     ],
     label: 'INTERESTS',
+    type: 'category',
+  },
+  musicDesc: {
+    id: 'music_desc',
+    items: [
+      {
+        children: [
+          {
+            label: 'Music has been an integral part of my life. During the school days, I have played instruments in a band. Now, my interest has been extended over to mixing and possibly producing the sound in the future.',
+            type: 'text',
+          },
+          {
+            label: '<p>I\'m a huge fan of trance music, but when it comes to the type of songs I listen to, I\'m more of an omnivore. </p>',
+            type: 'text',
+          },
+          {
+            label: '<img src="/dist/assets/music-1.jpg" />',
+            type: 'multimedia',
+          },
+        ],
+      },
+    ],
+    label: '',
+    type: 'message',
   },
   projectsAbbrev: {
     id: 'projects',
@@ -242,6 +301,22 @@ const data: ContentData = {
       },
     ],
     label: 'PROJECTS',
+    type: 'category',
+  },
+  projectsDesc: {
+    id: 'projects_desc',
+    items: [
+      {
+        children: [
+          {
+            label: 'I craft things for fun, or for different purposes. Some I build solely for myself to use, others to present as proof of concept. If you are curious to know about the projects, or would like to suggest a new thing to work on, feel free to hit me up.',
+            type: 'text',
+          },
+        ],
+      },
+    ],
+    label: '',
+    type: 'message',
   },
   projectsGeneral: {
     id: 'projects_general',
@@ -277,12 +352,18 @@ const data: ContentData = {
         title3: 'Android application. Implemented state propagation in Java, inspired by Redux.js',
       },
       {
+        title1: '<a href="https://github.com/eldeni/eldeni.github.io">Personal website</a>',
+        title2: '2017',
+        title3: 'Personal website. Implemented a static website generator engine first with native JavaScript, later migrated using React.js',
+      },
+      {
         title1: '<a href="https://gimci.github.io/">Gimci: Korean natural language processor</a>',
         title2: '2016',
         title3: 'Language processor with a noble Romanization scheme. Implemeneted a search engine inspired by Faroo\'s method',
       },
     ],
     label: 'GENERAL',
+    type: 'category',
   },
   projectsLibraries: {
     id: 'projects_libraries',
@@ -295,7 +376,7 @@ const data: ContentData = {
       {
         title1: '<a href="https://github.com/eldeni/xongkoro">xongkoro</a>',
         title2: '2019',
-        title3: 'Asynchronous data fetcher for server side rendering of React, inspired by Apollo.js (prior to 16.x)',
+        title3: 'Asynchronous data fetcher for server side rendering of React.js (prior to 16.x), inspired by Apollo.js',
       },
       {
         title1: '<a href="https://github.com/eldeni/process-launch">process-launch</a>',
@@ -315,51 +396,78 @@ const data: ContentData = {
       {
         title1: '<a href="https://github.com/eldeni/express-isomorphic">express-isomorphic</a>',
         title2: '2018',
-        title3: 'Express.js extended to serve isomorphic application (app running in both client and server sides). Constantly refreshing codes on both sides while developing. This website is built and developed using this library',
+        title3: 'Express.js extended to serve isomorphic application (app running in both client and server sides). Constantly refreshing codes on both sides while developing. (This) personal website is built and developed using this library',
       },
     ],
     label: 'LIBRARIES',
+    type: 'category',
   },
   songs: {
     id: 'songs',
     items: [
       {
+        children: [
+          {
+            label: '<iframe src="https://www.youtube.com/embed/WfVsT88Pwz0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            type: 'multimedia',
+          },
+        ],
         title1: 'Darude - Surrender',
         title2: '2018, Mar 2020',
-        title3: '<iframe src="https://www.youtube.com/embed/WfVsT88Pwz0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
       },
       {
+        children: [
+          {
+            label: '<iframe src="https://www.youtube.com/embed/Aooy7iw-7cY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            type: 'multimedia',
+          },
+        ],
         title1: 'Vini Vici & Astrix - Adhana',
         title2: '2017, Mar 2020',
-        title3: '<iframe src="https://www.youtube.com/embed/Aooy7iw-7cY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
       },
       {
+        children: [
+          {
+            label: '<iframe src="https://www.youtube.com/embed/FUZcSWDzzog" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            type: 'multimedia',
+          },
+        ],
         title1: 'Chris Schweizer feat. Roxanne Emery - Under The Light',
         title2: '2018, Mar 2020',
-        title3: '<iframe src="https://www.youtube.com/embed/FUZcSWDzzog" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
       },
       {
-        title1: 'Davey Asprey - Alone In The Wilderness (Extended Mix)',
-        title2: '2018, Mar 2020',
-        title3: '<iframe src="https://www.youtube.com/embed/401oweAI6-M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-      },
-      {
+        children: [
+          {
+            label: '<iframe src="https://www.youtube.com/embed/0Gxz0SnW_i0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            type: 'multimedia',
+          },
+        ],
         title1: 'Armin van Buuren feat. Josh Cumbee - Sunny Days (Club Mix)',
         title2: '2017, Mar 2020',
-        title3: '<iframe src="https://www.youtube.com/embed/0Gxz0SnW_i0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
       },
       {
+        children: [
+          {
+            label: '<iframe src="https://www.youtube.com/embed/0hm5T77olxw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            type: 'multimedia',
+          },
+        ],
         title1: 'Chris Schweizer - The Wolf (Extended Mix)',
         title2: '2018, Mar 2020',
-        title3: '<iframe src="https://www.youtube.com/embed/0hm5T77olxw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
       },
       {
+        children: [
+          {
+            label: '<iframe src="https://www.youtube.com/embed/O94aCnc5xHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            type: 'multimedia',
+          },
+        ],
         title1: 'Armin van Buuren - Therapy (Leo Reyes Extended Remix)',
         title2: '2018, Mar 2020',
-        title3: '<iframe src="https://www.youtube.com/embed/O94aCnc5xHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
       },
     ],
     label: 'SONGS (MISC)',
+    type: 'category',
   },
   talks: {
     id: 'talks',
@@ -371,14 +479,15 @@ const data: ContentData = {
       },
     ],
     label: 'TALKS',
+    type: 'category',
   },
   views: {
     items: [
       {
         children: [
           {
-            type: 'text',
-            value: '<small>* If you\'d like to see my professional resume, please contact me.</small>',
+            type: 'group',
+            value: 'aboutDesc',
           },
           {
             type: 'group',
@@ -417,8 +526,8 @@ const data: ContentData = {
       {
         children: [
           {
-            type: 'text',
-            value: 'I craft things for fun, or for different purposes. Some I build solely for myself to use, others to present as proof of concept. If you are curious to know about the projects, or would like to suggest a new thing to work on, feel free to hit me up.',
+            type: 'group',
+            value: 'projectsDesc',
           },
           {
             type: 'group',
@@ -436,8 +545,8 @@ const data: ContentData = {
       {
         children: [
           {
-            type: 'text',
-            value: 'Music has been an integral part of my life. During the school days, I played instruments in a band. Now my interest has been extended over to mix and possibly produce the sound (in the future🙏). I listen a lot to Trance music, but I\'m really an omnivore in terms of preference. <img src="/dist/assets/music-1.jpg" />',
+            type: 'group',
+            value: 'musicDesc',
           },
           {
             type: 'group',

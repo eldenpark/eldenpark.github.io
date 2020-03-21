@@ -9,33 +9,8 @@ const StyledDefaultView = styled.div({
   width: '100%',
 });
 
-const StyledText = styled.div({
-  '& img': {
-    alignSelf: 'center',
-    borderRadius: 5,
-    display: 'block',
-    margin: '1.05em 0',
-    maxWidth: '80%',
-  },
-  '& small': {
-    fontSize: '0.91em',
-  },
-  display: 'flex',
-  flexDirection: 'column',
-  marginBottom: '2.4em',
-});
-
-const Text = ({
-  text,
-}) => {
-  return (
-    <StyledText dangerouslySetInnerHTML={{ __html: text }} />
-  );
-};
-
 const componentMap = {
   group: Group,
-  text: Text,
 };
 
 const DefaultView: React.FC<any> = ({
@@ -45,7 +20,8 @@ const DefaultView: React.FC<any> = ({
 
   const contents = React.useMemo(() => {
     return childrenMeta.map((child) => {
-      const component = componentMap[child.type];
+      const component = componentMap[child.type] || Group;
+
       const componentProps = {
         key: child.value,
         ...(child.type === 'group' && { group: contentData[child.value] }),
