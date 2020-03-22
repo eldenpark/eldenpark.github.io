@@ -30,10 +30,20 @@ const Link: React.FC<any> = ({
   exact,
   to,
 }) => {
+  const isActive = React.useCallback((match, location) => {
+    let stemIsFound = false;
+    if (to.endsWith('.html')) {
+      const stem = to.substring(0, to.length - 5);
+      stemIsFound = location.pathname.startsWith(stem);
+    }
+    return stemIsFound || !!match;
+  }, [to]);
+
   return (
     <li>
       <NavLink
         exact={exact}
+        isActive={isActive}
         to={to}
       >
         {children}

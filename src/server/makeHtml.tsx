@@ -37,8 +37,14 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
 
   const reactAssetElements = createAssetElements(assets, publicPath);
   const processEnvElement = createStringifiableObjectElement('__NODE_ENV__', getProcessEnv('NODE_ENV'));
-  const { builtAt, contentData, latestCommitHash } = serverState.state;
+  const {
+    blogData,
+    builtAt,
+    contentData,
+    latestCommitHash,
+  } = serverState.state;
   const isomorphicData = {
+    blogData,
     builtAt,
     contentData,
     latestCommitHash,
@@ -97,7 +103,7 @@ function template({
     <title>Elden Park</title>
     <meta charset="UTF-8">
     <meta property="og:image" content="${opImageUrl}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="icon" type="image/x-icon" href="/dist/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Work+Sans:400,500,700,800,900&display=swap" rel="stylesheet">
     <style>${fontAwesomeCss}</style>

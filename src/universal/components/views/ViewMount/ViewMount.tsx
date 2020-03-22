@@ -10,6 +10,7 @@ import DefaultView from '@@src/universal/components/views/DefaultView/DefaultVie
 import Footer from '@@src/universal/components/app/Footer/Footer';
 import IntroHeader from '@@src/universal/components/app/IntroHeader/IntroHeader';
 import Menu from '@@src/universal/components/views/ViewMount/Menu';
+import { log } from '@@src/universal/modules/Logger';
 import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
 
 const StyledViewMount = styled.div({
@@ -33,6 +34,8 @@ const ViewMount = () => {
 
   const routes = React.useMemo(() => {
     const _routes = views.items.map((item) => {
+      log('ViewMount(): registering view, label: %s, url: %s', item.label, item.url);
+
       return (
         <Route
           exact={!!item.exact && item.exact === 'true'}
@@ -46,7 +49,7 @@ const ViewMount = () => {
             }
 
             return (
-              <DefaultView childrenMeta={item.children} />
+              <DefaultView view={item} />
             );
           }}
         />

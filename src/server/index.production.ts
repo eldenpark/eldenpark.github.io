@@ -11,6 +11,7 @@ import { logger } from 'jege/server';
 import path from 'path';
 import { withWebpack } from 'express-isomorphic-extension/webpack';
 
+import getData from './getData';
 import IsomorphicState from './IsomorphicState';
 import webpackConfig from '../webpack/webpack.config.client.prod.web';
 
@@ -25,16 +26,11 @@ const paths = {
 };
 
 const extend: Extend<IsomorphicState> = async (app, serverState) => {
-  const dataPath = process.env.DATA_PATH as string;
-  const latestCommitHash = process.env.LATEST_COMMIT_HASH as string;
-
-  let contentData;
-  try {
-    contentData = require(dataPath).default;
-  } catch (err) {
-    log(`local(): ${chalk.yellow('warn')} process.env.ENV.dataPath is not a valid path`);
-    throw new Error('dataPath is not a valid path');
-  }
+  const {
+    blogData,
+    contentData,
+    latestCommitHash,
+  } = getData();
 
   app.use((req: Request, res, next: NextFunction) => {
     log('extend(): requestUrl: %s', req.url);
@@ -53,6 +49,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
   return Promise.all([])
     .then(() => {
       serverState.update(() => ({
+        blogData,
         builtAt: webpackBuild.builtAt,
         contentData,
         latestCommitHash,

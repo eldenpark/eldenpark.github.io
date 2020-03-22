@@ -1,18 +1,20 @@
 export interface ContentData {
-  aboutDesc: Group;
-  activities: Group;
-  awards: Group;
-  education: Group;
-  employment: Group;
   general: General;
-  interests: Group;
-  musicDesc: Group;
-  projectsAbbrev: Group;
-  projectsDesc: Group;
-  projectsGeneral: Group;
-  projectsLibraries: Group;
-  songs: Group;
-  talks: Group;
+  groups: {
+    aboutDesc: Group;
+    activities: Group;
+    awards: Group;
+    education: Group;
+    employment: Group;
+    interests: Group;
+    musicDesc: Group;
+    projectsAbbrev: Group;
+    projectsDesc: Group;
+    projectsGeneral: Group;
+    projectsLibraries: Group;
+    songs: Group;
+    talks: Group;
+  };
   views: Views;
 }
 
@@ -29,16 +31,19 @@ interface General {
 }
 
 interface Views {
-  items: {
-    children: {
-      type: string;
-      value: string;
-    }[];
-    exact?: string;
-    label: string;
-    url: string;
-    visibleOnMenu: string;
+  items: View[];
+}
+
+export interface View {
+  backUrl?: string;
+  children: {
+    type: string;
+    value: string;
   }[];
+  exact?: string;
+  label: string;
+  url: string;
+  visibleOnMenu: string;
 }
 
 export interface Group {

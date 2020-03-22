@@ -18,10 +18,17 @@ const latestCommitHash = (function getLastetCommitHash() {
 })();
 
 function launch() {
-  process.env.DATA_PATH = path.resolve(__dirname, '../data/data-20200316.ts');
+  process.env.DATA_PATH = path.resolve(__dirname, '../data');
+  process.env.DATA_FILE_PATH = path.resolve(__dirname, '../data/data-20200316.ts');
   process.env.LATEST_COMMIT_HASH = latestCommitHash;
 
-  log('launch(): argv: %j, DATA_PATH: %s', argv, process.env.DATA_PATH);
+  log(
+    'launch(): argv: %j, DATA_PATH: %s, DATA_FILE_PATH: %s, LATEST_COMMIT_HASH: %s',
+    argv,
+    process.env.DATA_PATH,
+    process.env.DATA_FILE_PATH,
+    process.env.LATEST_COMMIT_HASH,
+  );
 
   if (process.env.NODE_ENV === 'production') {
     const buildTask = gulp.task('build');

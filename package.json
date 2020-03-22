@@ -67,7 +67,7 @@
     "objekt": "^0.1.0",
     "process-launch": "^0.6.1",
     "react-hot-loader": "^4.12.20",
-    "showdown": "^1.9.0",
+    "showdown": "^1.9.1",
     "typescript": "^3.8.3",
     "webpack": "^4.35.0",
     "webpack-merge": "^4.2.1",

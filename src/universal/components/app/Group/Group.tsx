@@ -21,7 +21,7 @@ const GroupLabel = ({
   group,
 }) => {
   return (
-    <StyledGroupLabel id={group.id}>
+    <StyledGroupLabel id={group.id.length > 0 ? group.id : undefined}>
       {group.label}
     </StyledGroupLabel>
   );
