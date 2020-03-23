@@ -22,7 +22,7 @@ const StyledMenu = styled.ul({
     marginLeft: 12,
   },
   display: 'flex',
-  marginTop: 30,
+  marginBottom: '1.0em',
 });
 
 const Link: React.FC<any> = ({
@@ -52,7 +52,7 @@ const Link: React.FC<any> = ({
   );
 };
 
-const Menu = () => {
+const Menu: React.FC = () => {
   const { views } = useContentData();
   const menuCompoennts = React.useMemo(() => {
     return views.items.map((item) => {

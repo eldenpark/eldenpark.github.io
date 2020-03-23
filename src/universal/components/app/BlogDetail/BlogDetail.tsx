@@ -1,31 +1,47 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import React from 'react';
 import styled from 'styled-components';
 
 import { Blog as BlogType } from '@@data/BlogData';
-import color from '@@src/universal/styles/color';
+import { getDisplayableDate } from '@@src/universal/utils';
+import Text from '@@src/universal/components/app/Text/Text';
 
 const StyledBlogDetail = styled.div({});
 
-const ButtonRow = styled.div({
-  '& a': {
-    '&:hover': {
-      borderBottom: 'none',
-    },
-    borderBottom: `1px solid ${color.htmlColor}`,
+// const ButtonRow = styled.div({
+//   '& a': {
+//     '&:hover': {
+//       borderBottom: 'none',
+//     },
+//     borderBottom: `1px solid ${color.htmlColor}`,
+//   },
+// });
+
+const BlogMain = styled.div({
+  '& div:nth-child(2)': {
+    marginTop: '0.3em',
   },
+  // marginTop: '2.4rem',
 });
 
 const BlogBody = styled.div({
-  marginTop: '2.4em',
+  '& iframe': {
+    alignSelf: 'center',
+    height: '44vw',
+    margin: '1.1em 0',
+    maxHeight: 267,
+    maxWidth: 480,
+    width: '80vw',
+  },
+  display: 'flex',
+  flexDirection: 'column',
+  marginTop: '1.2rem',
 });
 
 const BlogDetail: React.FC<BlogDetailProps> = ({
-  backUrl,
   blog,
 }) => {
   const { pathname } = useLocation();
-
   const {
     datetime,
     html,
@@ -42,8 +58,7 @@ const BlogDetail: React.FC<BlogDetailProps> = ({
     });
 
     if (selectedBlog) {
-      const date = new Date(selectedBlog.createdAt);
-      result.datetime = `${date.getMonth() - 1} ${date.getDate()} ${date.getFullYear()}`;
+      result.datetime = getDisplayableDate(selectedBlog.createdAt);
       result.html = selectedBlog.html;
       result.title = selectedBlog.meta?.title;
     }
@@ -53,16 +68,11 @@ const BlogDetail: React.FC<BlogDetailProps> = ({
 
   return (
     <StyledBlogDetail>
-      <ButtonRow>
-        <Link to={backUrl}>
-          Back to list
-        </Link>
-      </ButtonRow>
-      <div>
-        {title}
-      </div>
-      {/* {selectedBlog} */}
-      {/* <BlogBody dangerouslySetInnerHTML={{ __html: }} /> */}
+      <BlogMain>
+        <Text type="blog1">{title}</Text>
+        <Text>{datetime}</Text>
+        <BlogBody dangerouslySetInnerHTML={{ __html: html }} />
+      </BlogMain>
     </StyledBlogDetail>
   );
 };

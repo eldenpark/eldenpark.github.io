@@ -19,7 +19,7 @@ const latestCommitHash = (function getLastetCommitHash() {
 
 function launch() {
   process.env.DATA_PATH = path.resolve(__dirname, '../data');
-  process.env.DATA_FILE_PATH = path.resolve(__dirname, '../data/data-20200316.ts');
+  process.env.DATA_FILE_PATH = path.resolve(__dirname, '../data/data.ts');
   process.env.LATEST_COMMIT_HASH = latestCommitHash;
 
   log(

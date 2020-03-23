@@ -8,25 +8,21 @@ import {
 
 import DefaultView from '@@src/universal/components/views/DefaultView/DefaultView';
 import Footer from '@@src/universal/components/app/Footer/Footer';
-import IntroHeader from '@@src/universal/components/app/IntroHeader/IntroHeader';
-import Menu from '@@src/universal/components/views/ViewMount/Menu';
+import Masthead from '@@src/universal/components/app/Masthead/Masthead';
 import { log } from '@@src/universal/modules/Logger';
 import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
+import { w320 } from '@@src/universal/styles/media';
 
 const StyledViewMount = styled.div({
-  alignItems: 'center',
   display: 'flex',
   flexDirection: 'column',
-  padding: '15 9',
-});
-
-const Inner = styled.div({
   maxWidth: 600,
+  minHeight: '100vh',
+  padding: '44 9',
   width: '100%',
-});
-
-const ViewWrapper = styled.div({
-  marginTop: 24,
+  ...w320({
+    padding: '15 9',
+  }),
 });
 
 const ViewMount = () => {
@@ -49,7 +45,10 @@ const ViewMount = () => {
             }
 
             return (
-              <DefaultView view={item} />
+              <>
+                <Masthead visibleOnMenu={item.visibleOnMenu} />
+                <DefaultView view={item} />
+              </>
             );
           }}
         />
@@ -65,16 +64,10 @@ const ViewMount = () => {
 
   return (
     <StyledViewMount>
-      <Inner>
-        <IntroHeader />
-        <Menu />
-        <ViewWrapper>
-          <Switch>
-            {routes}
-          </Switch>
-        </ViewWrapper>
-        <Footer />
-      </Inner>
+      <Switch>
+        {routes}
+      </Switch>
+      <Footer />
     </StyledViewMount>
   );
 };

@@ -57,7 +57,9 @@ const GlobalStyle = createGlobalStyle({
 });
 
 const StyledUniversal = styled.div({
+  display: 'flex',
   fontSize: '1.15rem',
+  justifyContent: 'center',
 });
 
 const Universal: React.FC<any> = () => {

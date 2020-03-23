@@ -13,11 +13,12 @@ const StyledFooter = styled.div({
   '& span:not(:first-child)': {
     marginLeft: '0.5em',
   },
+  alignItems: 'flex-end',
   color: '#bdbdbd',
   display: 'flex',
+  height: 180,
   justifyContent: 'space-between',
-  marginTop: 90,
-  padding: '18px 0',
+  marginTop: 'auto',
 });
 
 const Footer = () => {

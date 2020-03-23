@@ -63,7 +63,7 @@ export default async function local() {
   const { app, serverState } = await ExpressIsomorphic.createDev({
     extend,
     makeHtmlPath: path.resolve(paths.build, 'makeHtml.bundle.js'),
-    watchExt: 'js,jsx,ts,tsx,html,test',
+    watchExt: 'js,jsx,ts,tsx,html,test,md',
     watchPaths: [
       paths.data,
     ],
@@ -71,14 +71,20 @@ export default async function local() {
 
   serverState.on('change', () => {
     try {
-      delete require.cache[process.env.DATA_PATH!];
-      const contentData = require(process.env.DATA_PATH!).default;
+      log('on change: serverState changed, delete cache: %s', process.env.DATA_FILE_PATH);
+      delete require.cache[process.env.DATA_FILE_PATH!];
+
+      const {
+        blogData,
+        contentData,
+      } = getData();
 
       serverState.update(() => ({
+        blogData,
         contentData,
       }));
     } catch (err) {
-      log('on change: error loading module: %s', process.env.DATA_PATH);
+      log('on change: error loading module: %s', process.env.DATA_FILE_PATH);
     }
   });
 

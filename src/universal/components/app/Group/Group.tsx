@@ -4,9 +4,12 @@ import styled from 'styled-components';
 import Child from './Child';
 import color from '@@src/universal/styles/color';
 import { Group as GroupType } from '@@data/ContentData';
+import Text from '@@src/universal/components/app/Text/Text';
 
 const StyledGroup = styled.div<any>(({ type = 'category' }) => ({
-  marginBottom: type === 'category' ? '3.7em' : '2.4em',
+  '&:not(:last-child)': {
+    marginBottom: type === 'category' ? '3.7em' : '2.4em',
+  },
 }));
 
 const StyledGroupLabel = styled.p({
@@ -31,26 +34,8 @@ const Item = styled.div({
   '& .desc:not(:first-child)': {
     marginTop: '0.42em',
   },
-  marginBottom: '1.9em',
-});
-
-const Title1 = styled.div({
-  '& a': {
-    '&:hover': {
-      borderBottom: 'none',
-    },
-    borderBottom: `1px solid ${color.h1Color}`,
-  },
-  color: color.h1Color,
-  fontWeight: 600,
-});
-
-const Title = styled.div({
-  '& a': {
-    '&:hover': {
-      borderBottom: 'none',
-    },
-    borderBottom: `1px solid ${color.htmlColor}`,
+  '&:not(:last-child)': {
+    marginBottom: '1.9em',
   },
 });
 
@@ -87,9 +72,9 @@ const Group: React.FC<GroupProps> = ({
 
       return (
         <Item key={item.title1 || item.title2 || item.children![0]?.label}>
-          {item.title1 && <Title1 dangerouslySetInnerHTML={{ __html: item.title1 }} />}
-          {item.title2 && <Title dangerouslySetInnerHTML={{ __html: item.title2 }} />}
-          {item.title3 && <Title dangerouslySetInnerHTML={{ __html: item.title3 }} />}
+          {item.title1 && <Text dangerouslySetInnerHTML={{ __html: item.title1 }} type="h1" />}
+          {item.title2 && <Text dangerouslySetInnerHTML={{ __html: item.title2 }} />}
+          {item.title3 && <Text dangerouslySetInnerHTML={{ __html: item.title3 }} />}
           {children && (
             <Description className="desc">
               {children}

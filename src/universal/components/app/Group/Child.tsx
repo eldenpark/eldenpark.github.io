@@ -22,7 +22,7 @@ const Text = styled.div({
     marginTop: '0.9em',
   },
   '& small': {
-    fontSize: '0.91em',
+    fontSize: '0.87em',
   },
 });
 

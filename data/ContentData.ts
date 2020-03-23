@@ -35,9 +35,8 @@ interface Views {
 }
 
 export interface View {
-  backUrl?: string;
   children: {
-    type: string;
+    type: 'group' | 'menu' | 'blog' | 'blogDetail' | 'introduction';
     value: string;
   }[];
   exact?: string;

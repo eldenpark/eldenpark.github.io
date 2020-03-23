@@ -6,6 +6,8 @@ import BlogDetail from '@@src/universal/components/app/BlogDetail/BlogDetail';
 import { Blog as BlogType } from '@@data/BlogData';
 import Group from '@@src/universal/components/app/Group/Group';
 import { Group as GroupType, View } from '@@data/ContentData';
+import Introduction from '@@src/universal/components/app/Introduction/Introduction';
+import Menu from '@@src/universal/components/app/Menu/Menu';
 import { useIsomorphicData } from '@@src/universal/contexts/IsomorphicDataContext';
 
 const StyledDefaultView = styled.div({
@@ -18,6 +20,8 @@ const componentMap = {
   blogDetail: BlogDetail,
   default: Group,
   group: Group,
+  introduction: Introduction,
+  menu: Menu,
 };
 
 const DefaultView: React.FC<DefaultViewProps> = ({
@@ -27,13 +31,11 @@ const DefaultView: React.FC<DefaultViewProps> = ({
     blogData,
     contentData,
   } = useIsomorphicData()!;
-
   const contents = React.useMemo(() => {
     return view.children.map((child) => {
       const component = componentMap[child.type] || componentMap.default;
 
       const componentProps = {
-        backUrl: view.backUrl,
         key: child.value,
         ...(child.type === 'group' && { group: contentData.groups[child.value] as GroupType }),
         ...(child.type === 'blog' && {

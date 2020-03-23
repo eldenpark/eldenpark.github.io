@@ -8,7 +8,7 @@ const data: ContentData = {
       p1: 'I write code, and think over observations. Learning is what drives me the most. Other than doing some projects on the side as a pastime, I listen to music and dj.',
     },
     linkedIn: 'https://www.linkedin.com/in/eldenpark/',
-    name: 'Elden Seunghyun Park',
+    name: 'Elden Park',
     photoUrl: '/g/assets/elden-2-reduced.jpg',
   },
   groups: {
@@ -39,16 +39,6 @@ const data: ContentData = {
           ],
           title1: 'Mashup (Product development group), Seoul, South Korea',
           title2: '01/2018 - 12/2018',
-        },
-        {
-          children: [
-            {
-              label: 'Studied Apache Hadoop and the ecosystem',
-              type: 'text',
-            },
-          ],
-          title1: 'Designing and Building Big Data Applications workshop, Cloudera, San Jose, CA',
-          title2: '06/2016',
         },
         {
           children: [
@@ -488,6 +478,14 @@ const data: ContentData = {
       {
         children: [
           {
+            type: 'introduction',
+            value: 'introduction',
+          },
+          {
+            type: 'menu',
+            value: 'menu',
+          },
+          {
             type: 'group',
             value: 'aboutDesc',
           },
@@ -528,6 +526,14 @@ const data: ContentData = {
       {
         children: [
           {
+            type: 'introduction',
+            value: 'introduction',
+          },
+          {
+            type: 'menu',
+            value: 'menu',
+          },
+          {
             type: 'group',
             value: 'projectsDesc',
           },
@@ -547,6 +553,14 @@ const data: ContentData = {
       {
         children: [
           {
+            type: 'introduction',
+            value: 'introduction',
+          },
+          {
+            type: 'menu',
+            value: 'menu',
+          },
+          {
             type: 'group',
             value: 'musicDesc',
           },
@@ -560,8 +574,11 @@ const data: ContentData = {
         visibleOnMenu: 'true',
       },
       {
-        backUrl: '/g/music.html',
         children: [
+          {
+            type: 'menu',
+            value: 'menu',
+          },
           {
             type: 'blogDetail',
             value: 'music',

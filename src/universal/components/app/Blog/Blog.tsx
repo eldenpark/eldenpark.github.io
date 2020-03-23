@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { Blog as BlogType } from '@@data/BlogData';
 import color from '@@src/universal/styles/color';
+import { getDisplayableDate } from '@@src/universal/utils';
 
 const StyledBlogListItem = styled.div({
 });
@@ -27,8 +28,7 @@ const Blog: React.FC<BlogProps> = ({
 }) => {
   const items = React.useMemo(() => {
     return blog.items.map((item) => {
-      const date = new Date(item.createdAt);
-      const _date = `${date.getMonth() - 1}/${date.getFullYear()}`;
+      const date = getDisplayableDate(item.createdAt);
       const pageUrl = `${blogType}/${item.pageUrl}`;
 
       return (
@@ -39,7 +39,7 @@ const Blog: React.FC<BlogProps> = ({
             </Link>
           </Title1>
           <p>
-            {_date}
+            {date}
           </p>
         </BlogListItem>
       );
