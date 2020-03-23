@@ -5,6 +5,7 @@ import express, {
 import ExpressIsomorphic, {
   Extend,
 } from 'express-isomorphic';
+import fs from 'fs';
 import http from 'http';
 import { logger } from 'jege/server';
 import path from 'path';
@@ -28,6 +29,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
   const {
     blogData,
     contentData,
+    createdFiles,
     latestCommitHash,
   } = getData();
 
@@ -51,6 +53,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
         blogData,
         builtAt: webpackBuild.builtAt,
         contentData,
+        createdFiles,
         latestCommitHash,
         publicPath,
       }));
@@ -58,7 +61,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
 };
 
 export default async function main() {
-  const { app, eject } = await ExpressIsomorphic.create({
+  const { app, eject, serverState } = await ExpressIsomorphic.create({
     extend,
     makeHtmlPath: path.resolve(paths.build, 'makeHtml.bundle.js'),
   });
@@ -69,6 +72,19 @@ export default async function main() {
 
   httpServer.listen(port, () => {
     log('productionServer listening on: %s', port);
+  });
+
+  const { createdFiles } = serverState.state;
+  await ejectFiles(eject, port, createdFiles);
+}
+
+async function ejectFiles(eject, port, createdFiles) {
+  createdFiles.map(async (file) => {
+    const directoryPath = path.resolve(paths.dist, file.category);
+    if (!fs.existsSync(directoryPath)) {
+      log('ejectFiles(): creating directory: %s', directoryPath);
+      fs.mkdirSync(directoryPath);
+    }
   });
 
   await eject({
@@ -84,5 +100,12 @@ export default async function main() {
   await eject({
     filePath: path.resolve(paths.dist, 'music.html'),
     requestUrl: `http://localhost:${port}/music.html`,
+  });
+
+  createdFiles.map(async (file) => {
+    await eject({
+      filePath: path.resolve(paths.dist, file.category, file.fileName),
+      requestUrl: `http://localhost:${port}/g/${file.category}/${file.fileName}`,
+    });
   });
 }

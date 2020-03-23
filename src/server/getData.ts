@@ -20,6 +20,7 @@ function getData() {
   const result: Result = {
     blogData: undefined,
     contentData: undefined,
+    createdFiles: undefined,
     latestCommitHash,
   };
 
@@ -40,6 +41,7 @@ function getData() {
         label: 'music',
       },
     };
+    const createdFiles: CreatedFile[] = [];
 
     if (fs.existsSync(dataPath)) {
       const files = fs.readdirSync(dataPath);
@@ -93,12 +95,17 @@ function getData() {
                 meta,
                 pageUrl,
               });
+              createdFiles.push({
+                category: file1,
+                fileName: pageUrl,
+              });
             }
           });
         }
       });
 
       result.blogData = blogData;
+      result.createdFiles = createdFiles;
     } else {
       throw new Error('dataPath does not exist');
     }
@@ -115,5 +122,11 @@ export default getData;
 interface Result {
   blogData?: BlogData;
   contentData?: ContentData;
+  createdFiles?: CreatedFile[];
   latestCommitHash?: string;
+}
+
+export interface CreatedFile {
+  category: string;
+  fileName: string;
 }
