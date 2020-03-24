@@ -5,8 +5,13 @@ import styled from 'styled-components';
 import { Blog as BlogType } from '@@data/BlogData';
 import color from '@@src/universal/styles/color';
 import { getDisplayableDate } from '@@src/universal/utils';
+import { w320 } from '@@src/universal/styles/media';
 
 const StyledBlogListItem = styled.div({
+  fontSize: '1.34rem',
+  ...w320({
+    fontSize: '1.25rem',
+  }),
 });
 
 const BlogListItem = styled.div({});

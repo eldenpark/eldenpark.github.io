@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle({
       textDecoration: 'none',
     },
     color: 'inherit',
+    cursor: 'pointer',
     textDecoration: 'none',
     transition: 'color 1s ease',
   },
@@ -58,7 +59,7 @@ const GlobalStyle = createGlobalStyle({
 
 const StyledUniversal = styled.div({
   display: 'flex',
-  fontSize: '1.15rem',
+  fontSize: '1.16rem',
   justifyContent: 'center',
 });
 

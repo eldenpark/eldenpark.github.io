@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import color from '@@src/universal/styles/color';
 import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
@@ -13,34 +14,10 @@ const mastHeadTheme = {
   },
   true: {
     fontColor: color.h1Color,
-    fontSize: '2.32rem',
-    fontSize320: '2.08rem',
+    fontSize: '2.52rem',
+    fontSize320: '2.28rem',
   },
 };
-
-const textShadow1 = keyframes({
-  '0%, 100%': {
-    transform: 'translate(0px, 0px)',
-  },
-  '20%': {
-    transform: 'translate(4px, 0px)',
-  },
-  '40%': {
-    transform: 'translate(0px, 0px)',
-  },
-});
-
-const textShadow2 = keyframes({
-  '0%, 100%': {
-    transform: 'translate(0px, 0px)',
-  },
-  '20%': {
-    transform: 'translate(6px, 1px)',
-  },
-  '40%': {
-    transform: 'translate(0px, 0px)',
-  },
-});
 
 const StyledMasthead = styled.div<any>(({
   label,
@@ -52,6 +29,7 @@ const StyledMasthead = styled.div<any>(({
     left: 0,
     position: 'absolute',
     top: 0,
+    transition: 'transform 1s ease',
     zIndex: -1,
   },
   '&::before': {
@@ -60,23 +38,22 @@ const StyledMasthead = styled.div<any>(({
     left: 0,
     position: 'absolute',
     top: 0,
+    transition: 'transform 1s ease',
     zIndex: -2,
   },
   '&:hover': {
     color: '#eff',
   },
-  '&:hover .main:after': {
-    // transform: 'translate(7px, 1px)',
+  '&:hover::after': {
+    transform: 'translate(3px, 0px)',
   },
-  '&:hover .main:before': {
-    // transform: 'translate(3px, -1px)',
+  '&:hover::before': {
+    transform: 'translate(5px, 1px)',
   },
   color: theme.fontColor,
-  cursor: 'pointer',
   fontFamily: '"Work Sans"',
   fontSize: theme.fontSize,
   fontWeight: 800,
-  letterSpacing: '0.02em',
   lineHeight: '1.1em',
   marginBottom: '0.24em',
   position: 'relative',
@@ -84,14 +61,7 @@ const StyledMasthead = styled.div<any>(({
   ...w320({
     fontSize: theme.fontSize320,
   }),
-}), css`
-  &::after {
-    animation: 10s ease 0s infinite normal forwards ${textShadow1};
-  }
-  &::before {
-    animation: 10s ease 0s infinite normal forwards ${textShadow2};
-  }
-`);
+}));
 
 const Masthead: React.FC<MastheadProps> = ({
   visibleOnMenu,
@@ -103,7 +73,9 @@ const Masthead: React.FC<MastheadProps> = ({
       label={general.name}
       theme={mastHeadTheme[visibleOnMenu]}
     >
-      {general.name}
+      <Link to="/">
+        {general.name}
+      </Link>
     </StyledMasthead>
   );
 };

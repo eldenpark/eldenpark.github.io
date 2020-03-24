@@ -12,7 +12,6 @@ export interface ContentData {
     projectsDesc: Group;
     projectsGeneral: Group;
     projectsLibraries: Group;
-    songs: Group;
     talks: Group;
   };
   views: Views;

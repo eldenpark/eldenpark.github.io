@@ -65,7 +65,7 @@ function getData() {
               const content = fs.readFileSync(filePath2).toString();
               const html = converter.makeHtml(content).replace(/\r?\n|\r/g, '');
               const shasum = crypto.createHash('sha256');
-              shasum.update(file1 + file2 + html);
+              shasum.update(file1 + file2 + content);
               const hash = shasum.digest('hex');
               const meta = converter.getMetadata();
 
@@ -110,8 +110,8 @@ function getData() {
       throw new Error('dataPath does not exist');
     }
   } catch (err) {
-    log('getData(): Error loading data, path: %s', dataPath);
-    throw new Error('getData(): error loading data');
+    log('getData(): Error loading data, path: %s, err: %s', dataPath, err);
+    throw err;
   }
 
   return result;

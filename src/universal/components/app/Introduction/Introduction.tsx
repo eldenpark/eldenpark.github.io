@@ -28,13 +28,13 @@ const Photo = styled.img({
   '&:hover': {
     // boxShadow: '0px 0px 4px 1px rgba(0,0,0,0.8)',
     transform: 'scale(1.2)',
-    transformOrigin: 'top right',
   },
   borderRadius: 6,
   float: 'right',
   height: 100,
   margin: '0px 0 6px 6px',
-  transition: 'all 1s ease',
+  transformOrigin: 'top right',
+  transition: 'transform 1s ease',
   width: 100,
   ...w320({
     height: 85,
@@ -58,10 +58,8 @@ const Contact = styled.ul({
     marginLeft: '0.4em',
   },
   '& li:not(:first-child)::before': {
-    content: '"|"',
     marginRight: '0.4em',
   },
-  fontSize: '1rem',
 });
 
 const Introduction: React.FC = () => {

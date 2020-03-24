@@ -9,6 +9,7 @@ export interface Blog {
     hash: string;
     html: string;
     meta: {
+      [key: string]: string;
       title: string;
     }
     pageUrl: string;

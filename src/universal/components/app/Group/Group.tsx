@@ -5,16 +5,21 @@ import Child from './Child';
 import color from '@@src/universal/styles/color';
 import { Group as GroupType } from '@@data/ContentData';
 import Text from '@@src/universal/components/app/Text/Text';
+import { w320 } from '@@src/universal/styles/media';
 
 const StyledGroup = styled.div<any>(({ type = 'category' }) => ({
   '&:not(:last-child)': {
     marginBottom: type === 'category' ? '3.7em' : '2.4em',
   },
+  fontSize: '1.34rem',
+  ...w320({
+    fontSize: '1.25rem',
+  }),
 }));
 
 const StyledGroupLabel = styled.p({
   color: color.h1Color,
-  fontSize: '1.19em',
+  fontSize: '1.6rem',
   fontWeight: 500,
   letterSpacing: '0.027em',
   marginBottom: 7,

@@ -16,12 +16,12 @@ import { w320 } from '@@src/universal/styles/media';
 const StyledViewMount = styled.div({
   display: 'flex',
   flexDirection: 'column',
-  maxWidth: 600,
+  maxWidth: 670,
   minHeight: '100vh',
-  padding: '44 9',
+  padding: '44 20',
   width: '100%',
   ...w320({
-    padding: '15 9',
+    padding: '15 20',
   }),
 });
 

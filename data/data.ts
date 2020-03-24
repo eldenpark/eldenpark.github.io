@@ -43,6 +43,16 @@ const data: ContentData = {
         {
           children: [
             {
+              label: 'Studied Apache Hadoop and the ecosystem',
+              type: 'text',
+            },
+          ],
+          title1: 'Designing and Building Big Data Applications workshop, Cloudera, San Jose, CA',
+          title2: '06/2016',
+        },
+        {
+          children: [
+            {
               label: 'Student representative of an overseas workshop program, organized by Korea University',
               type: 'text',
             },
@@ -391,73 +401,6 @@ const data: ContentData = {
         },
       ],
       label: 'LIBRARIES',
-      type: 'category',
-    },
-    songs: {
-      id: 'songs',
-      items: [
-        {
-          children: [
-            {
-              label: '<iframe src="https://www.youtube.com/embed/WfVsT88Pwz0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-              type: 'multimedia',
-            },
-          ],
-          title1: 'Darude - Surrender',
-          title2: '2018, Mar 2020',
-        },
-        {
-          children: [
-            {
-              label: '<iframe src="https://www.youtube.com/embed/Aooy7iw-7cY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-              type: 'multimedia',
-            },
-          ],
-          title1: 'Vini Vici & Astrix - Adhana',
-          title2: '2017, Mar 2020',
-        },
-        {
-          children: [
-            {
-              label: '<iframe src="https://www.youtube.com/embed/FUZcSWDzzog" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-              type: 'multimedia',
-            },
-          ],
-          title1: 'Chris Schweizer feat. Roxanne Emery - Under The Light',
-          title2: '2018, Mar 2020',
-        },
-        {
-          children: [
-            {
-              label: '<iframe src="https://www.youtube.com/embed/0Gxz0SnW_i0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-              type: 'multimedia',
-            },
-          ],
-          title1: 'Armin van Buuren feat. Josh Cumbee - Sunny Days (Club Mix)',
-          title2: '2017, Mar 2020',
-        },
-        {
-          children: [
-            {
-              label: '<iframe src="https://www.youtube.com/embed/0hm5T77olxw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-              type: 'multimedia',
-            },
-          ],
-          title1: 'Chris Schweizer - The Wolf (Extended Mix)',
-          title2: '2018, Mar 2020',
-        },
-        {
-          children: [
-            {
-              label: '<iframe src="https://www.youtube.com/embed/O94aCnc5xHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-              type: 'multimedia',
-            },
-          ],
-          title1: 'Armin van Buuren - Therapy (Leo Reyes Extended Remix)',
-          title2: '2018, Mar 2020',
-        },
-      ],
-      label: 'TRACKS (MISC)',
       type: 'category',
     },
     talks: {

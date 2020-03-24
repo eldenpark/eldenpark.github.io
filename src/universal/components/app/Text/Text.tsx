@@ -11,7 +11,7 @@ const H1 = styled.div({
     borderBottom: `1px solid ${color.h1Color}`,
   },
   color: color.h1Color,
-  fontWeight: 600,
+  fontWeight: 700,
 });
 
 const Default = styled.div({
@@ -26,7 +26,7 @@ const Default = styled.div({
 const Blog1 = styled.div({
   color: color.h1Color,
   fontFamily: '"Work Sans", "sans-serif"',
-  fontSize: '2rem',
+  fontSize: '2.7rem',
   fontWeight: 700,
   lineHeight: '1.1em',
 });

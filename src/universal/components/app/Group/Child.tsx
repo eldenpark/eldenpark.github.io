@@ -22,17 +22,9 @@ const Text = styled.div({
     marginTop: '0.9em',
   },
   '& small': {
-    fontSize: '0.87em',
+    fontSize: '0.93em',
   },
 });
-
-const hoverStyle = {
-  '&:hover': {
-    boxShadow: '0px 0px 10px 5px rgba(0,0,0,1)',
-    transform: 'scale(1.15)',
-  },
-  transition: 'all 1s ease',
-};
 
 const Multimedia = styled.div({
   '& > *': {
@@ -51,7 +43,6 @@ const Multimedia = styled.div({
     display: 'block',
     margin: '1.05em 0',
     maxWidth: '80%',
-    ...hoverStyle,
   },
   display: 'flex',
   justifyContent: 'center',
