@@ -61,6 +61,7 @@ const StyledUniversal = styled.div({
   display: 'flex',
   fontSize: '1.16rem',
   justifyContent: 'center',
+  minWidth: 318,
 });
 
 const Universal: React.FC<any> = () => {

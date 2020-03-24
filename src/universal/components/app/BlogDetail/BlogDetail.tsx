@@ -69,8 +69,8 @@ const BlogDetail: React.FC<BlogDetailProps> = ({
       result.datetime = getDisplayableDate(selectedBlog.createdAt);
       result.html = selectedBlog.html;
       result.title = selectedBlog.meta?.title;
-      const unescapedFunc = selectedBlog.meta?.func?.replace(/&quot;/g, '"');
-      result.func = new Function('dataSet', unescapedFunc);
+      const unescapedFunc = selectedBlog.meta?.callable?.replace(/&quot;/g, '"');
+      result.func = new Function('dataset', unescapedFunc);
     }
 
     return result;

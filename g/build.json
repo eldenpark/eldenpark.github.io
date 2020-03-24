@@ -1,19 +1,33 @@
 {
   "errors": [],
   "warnings": [
-    "entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  client (295 KiB)\n      chunk.442361a6fe3fc7d45839.js\n      chunk.c7450f95435817ab7a51.js\n      client.d4dfafdb393bafac0888.js\n",
+    "entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  client (331 KiB)\n      chunk.d5fe0eff94a32208e9cd.js\n      chunk.3b21cf0554578561d2e3.js\n      client.5cec6a27dffc647a559c.js\n",
     "webpack performance recommendations: \nYou can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.\nFor more info visit https://webpack.js.org/guides/code-splitting/"
   ],
-  "builtAt": 1585023828039,
+  "builtAt": 1585026941518,
   "assetsByChunkName": {
-    "vendors~client~react": "chunk.442361a6fe3fc7d45839.js",
-    "client": "client.d4dfafdb393bafac0888.js",
-    "react": "react.27332cee4944f4a00fa7.js",
-    "vendors~client": "chunk.c7450f95435817ab7a51.js"
+    "vendors~client~react": "chunk.d5fe0eff94a32208e9cd.js",
+    "client": "client.5cec6a27dffc647a559c.js",
+    "react": "react.f968a75d0ff125c8518a.js",
+    "vendors~client": "chunk.3b21cf0554578561d2e3.js"
   },
   "assets": [
     {
-      "name": "chunk.442361a6fe3fc7d45839.js",
+      "name": "chunk.3b21cf0554578561d2e3.js",
+      "size": 192721,
+      "chunks": [
+        3
+      ],
+      "chunkNames": [
+        "vendors~client"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": true
+    },
+    {
+      "name": "chunk.d5fe0eff94a32208e9cd.js",
       "size": 129724,
       "chunks": [
         0
@@ -27,22 +41,8 @@
       "emitted": true
     },
     {
-      "name": "chunk.c7450f95435817ab7a51.js",
-      "size": 156495,
-      "chunks": [
-        3
-      ],
-      "chunkNames": [
-        "vendors~client"
-      ],
-      "info": {
-        "immutable": true
-      },
-      "emitted": true
-    },
-    {
-      "name": "client.d4dfafdb393bafac0888.js",
-      "size": 16223,
+      "name": "client.5cec6a27dffc647a559c.js",
+      "size": 16382,
       "chunks": [
         1
       ],
@@ -55,7 +55,7 @@
       "emitted": true
     },
     {
-      "name": "react.27332cee4944f4a00fa7.js",
+      "name": "react.f968a75d0ff125c8518a.js",
       "size": 1553,
       "chunks": [
         2
@@ -78,9 +78,9 @@
         1
       ],
       "assets": [
-        "chunk.442361a6fe3fc7d45839.js",
-        "chunk.c7450f95435817ab7a51.js",
-        "client.d4dfafdb393bafac0888.js"
+        "chunk.d5fe0eff94a32208e9cd.js",
+        "chunk.3b21cf0554578561d2e3.js",
+        "client.5cec6a27dffc647a559c.js"
       ],
       "children": {},
       "childAssets": {}
@@ -91,8 +91,8 @@
         2
       ],
       "assets": [
-        "chunk.442361a6fe3fc7d45839.js",
-        "react.27332cee4944f4a00fa7.js"
+        "chunk.d5fe0eff94a32208e9cd.js",
+        "react.f968a75d0ff125c8518a.js"
       ],
       "children": {},
       "childAssets": {}
@@ -110,9 +110,9 @@
         "vendors~client~react"
       ],
       "files": [
-        "chunk.442361a6fe3fc7d45839.js"
+        "chunk.d5fe0eff94a32208e9cd.js"
       ],
-      "hash": "442361a6fe3fc7d45839",
+      "hash": "d5fe0eff94a32208e9cd",
       "siblings": [
         1,
         2,
@@ -127,14 +127,14 @@
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 26662,
+      "size": 27037,
       "names": [
         "client"
       ],
       "files": [
-        "client.d4dfafdb393bafac0888.js"
+        "client.5cec6a27dffc647a559c.js"
       ],
-      "hash": "d4dfafdb393bafac0888",
+      "hash": "5cec6a27dffc647a559c",
       "siblings": [
         0,
         3
@@ -153,9 +153,9 @@
         "react"
       ],
       "files": [
-        "react.27332cee4944f4a00fa7.js"
+        "react.f968a75d0ff125c8518a.js"
       ],
-      "hash": "27332cee4944f4a00fa7",
+      "hash": "f968a75d0ff125c8518a",
       "siblings": [
         0
       ],
@@ -169,14 +169,14 @@
       "initial": true,
       "entry": false,
       "reason": "split chunk (cache group: vendors) (name: vendors~client)",
-      "size": 466941,
+      "size": 1041109,
       "names": [
         "vendors~client"
       ],
       "files": [
-        "chunk.c7450f95435817ab7a51.js"
+        "chunk.3b21cf0554578561d2e3.js"
       ],
-      "hash": "c7450f95435817ab7a51",
+      "hash": "3b21cf0554578561d2e3",
       "siblings": [
         0,
         1

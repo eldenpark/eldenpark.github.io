@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -42,8 +44,11 @@ const Photo = styled.img({
   }),
 });
 
-const Contact = styled.ul({
-  '& a': {
+const Contact = styled.div({
+  '& > ul': {
+    marginLeft: 20,
+  },
+  '& a:not(.icon)': {
     '&:hover': {
       borderBottom: 'none',
     },
@@ -51,15 +56,14 @@ const Contact = styled.ul({
     color: '#c4bddb',
   },
   '& li': {
-    color: '#c4bddb',
     display: 'inline-block',
+    fontSize: '1.1em',
   },
   '& li:not(:first-child)': {
-    marginLeft: '0.4em',
+    marginLeft: 14,
   },
-  '& li:not(:first-child)::before': {
-    marginRight: '0.4em',
-  },
+  color: '#c4bddb',
+  display: 'flex',
 });
 
 const Introduction: React.FC = () => {
@@ -79,15 +83,21 @@ const Introduction: React.FC = () => {
         )}
       </Description>
       <Contact>
-        <li>
+        <p>
           <a href={`mailto:${general.email}`}>{general.email}</a>
-        </li>
-        <li>
-          <a href={general.github}>Github</a>
-        </li>
-        <li>
-          <a href={general.linkedIn}>LinkedIn</a>
-        </li>
+        </p>
+        <ul>
+          <li>
+            <a className="icon" href={general.github}>
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </li>
+          <li>
+            <a className="icon" href={general.linkedIn}>
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+          </li>
+        </ul>
       </Contact>
     </StyledIntroduction>
   );
