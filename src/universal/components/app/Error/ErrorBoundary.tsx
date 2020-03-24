@@ -5,19 +5,19 @@ import React from 'react';
 const log = logger('[sandbox-web]');
 
 class ErrorBoundary extends React.Component {
-  state = {
+  state: State = {
     hasError: false,
   };
 
-  static getDerivedStateFromError() {
+  static getDerivedStateFromError(): State {
     return { hasError: true };
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error, info): void {
     log('ErrorBoundary(): error: %o, info: %o', error, info);
   }
 
-  render() {
+  render(): React.ReactNode {
     if (this.state.hasError) {
       return <h1>Something went wrong.</h1>;
     }
@@ -26,3 +26,7 @@ class ErrorBoundary extends React.Component {
 }
 
 export default ErrorBoundary;
+
+interface State {
+  hasError: boolean;
+}

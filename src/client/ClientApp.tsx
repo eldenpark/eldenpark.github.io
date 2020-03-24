@@ -6,7 +6,7 @@ import { IsomorphicDataProvider } from '@@src/universal/contexts/IsomorphicDataC
 import { log } from '@@src/universal/modules/Logger';
 import Universal from '@@src/universal/components/Universal';
 
-const ClientApp: React.FC<any> = () => {
+const ClientApp: React.FC = () => {
   const isomorphicData = window['ISOMORPHIC_DATA'];
   log('window.ISOMORPHIC_DATA: %o', isomorphicData);
 

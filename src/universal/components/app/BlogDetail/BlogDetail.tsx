@@ -74,11 +74,11 @@ const BlogDetail: React.FC<BlogDetailProps> = ({
     }
 
     return result;
-  }, [blog]);
+  }, [blog, pathname]);
 
   const registerFunctions = React.useCallback((elem) => {
     if (elem !== null) {
-      elem.querySelectorAll(`.callable`)
+      elem.querySelectorAll('.callable')
         .forEach((callable) => {
           callable.addEventListener('click', func.bind(this, callable.dataset));
         });

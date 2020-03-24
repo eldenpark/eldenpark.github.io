@@ -25,7 +25,7 @@ const StyledViewMount = styled.div({
   }),
 });
 
-const ViewMount = () => {
+const ViewMount: React.FC = () => {
   const { views } = useContentData();
 
   const routes = React.useMemo(() => {

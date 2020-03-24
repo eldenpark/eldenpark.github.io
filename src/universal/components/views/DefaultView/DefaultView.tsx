@@ -37,7 +37,7 @@ const DefaultView: React.FC<DefaultViewProps> = ({
 
       const componentProps = {
         key: child.value,
-        ...(child.type === 'group' && { group: contentData.groups[child.value] as GroupType }),
+        ...(child.type === 'group' && { group: contentData?.groups[child.value] as GroupType }),
         ...(child.type === 'blog' && {
           blog: blogData[child.value] as BlogType,
           blogType: child.value,
@@ -49,7 +49,7 @@ const DefaultView: React.FC<DefaultViewProps> = ({
 
       return React.createElement(component, componentProps);
     });
-  }, [view]);
+  }, [view, blogData, contentData]);
 
   return (
     <StyledDefaultView>

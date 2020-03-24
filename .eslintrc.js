@@ -6,9 +6,14 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb-typescript',
+    'airbnb/hooks',
+    'plugin:@typescript-eslint/recommended',
   ],
   parser: '@typescript-eslint/parser',
-  parserOptions: { ecmaVersion: 2018 },
+  parserOptions: {
+    "ecmaVersion": 2018,
+    "project": "tsconfig.json",
+  },
   plugins: [
     '@typescript-eslint',
     'sort-destructure-keys',
@@ -28,6 +33,15 @@ module.exports = {
         'instance-method',
       ],
     }],
+    '@typescript-eslint/no-namespace': ['off'],
+    '@typescript-eslint/no-implied-eval': ['off'],
+    '@typescript-eslint/explicit-function-return-type': ['off'],
+    '@typescript-eslint/no-explicit-any': ['off'],
+    '@typescript-eslint/no-non-null-assertion': ['off'],
+    '@typescript-eslint/no-use-before-define': ['error', {
+      functions: false,
+    }],
+    '@typescript-eslint/no-var-requires': ['off'],
     'arrow-body-style': ['off'],
     'arrow-parens': ['error', 'always'],
     'dot-notation': ['off'],
@@ -55,7 +69,8 @@ module.exports = {
     }],
     'object-curly-newline': ['off'],
     'prefer-template': ['off'],
-    quotes: [
+    quotes: ['off'],
+    '@typescript-eslint/quotes': [
       'error',
       'single',
       {
@@ -71,6 +86,7 @@ module.exports = {
     'react/no-danger': ['off'],
     'react/no-unescaped-entities': ['off'],
     'react/prop-types': ['off'],
+    'react/state-in-constructor': ['off'],
     'sort-destructure-keys/sort-destructure-keys': 2,
     'sort-keys': ['error'],
     'typescript-sort-keys/interface': ['error', 'asc', {

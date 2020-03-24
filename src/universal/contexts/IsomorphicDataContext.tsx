@@ -17,8 +17,8 @@ const IsomorphicDataProvider = ({
   );
 };
 
-const useIsomorphicData = () => React.useContext(IsomorphicDataContext);
-const useContentData = () => React.useContext(IsomorphicDataContext)!.contentData;
+const useIsomorphicData = (): IsomorphicData | undefined => React.useContext(IsomorphicDataContext);
+const useContentData = () => React.useContext(IsomorphicDataContext)?.contentData;
 
 export {
   IsomorphicDataProvider,

@@ -11,7 +11,7 @@ export interface Blog {
     meta: {
       [key: string]: string;
       title: string;
-    }
+    };
     pageUrl: string;
   }[];
   label: string;

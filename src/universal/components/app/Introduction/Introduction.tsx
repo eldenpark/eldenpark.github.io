@@ -72,7 +72,11 @@ const Introduction: React.FC = () => {
       />
       <Description>
         <p dangerouslySetInnerHTML={{ __html: general.introduction.p1 }} />
-        {general.introduction.p2 && <div><p dangerouslySetInnerHTML={{ __html: general.introduction.p2 }} /></div>}
+        {general.introduction.p2 && (
+          <div>
+            <p dangerouslySetInnerHTML={{ __html: general.introduction.p2 }} />
+          </div>
+        )}
       </Description>
       <Contact>
         <li>

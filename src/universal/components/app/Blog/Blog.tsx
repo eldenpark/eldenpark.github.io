@@ -49,7 +49,7 @@ const Blog: React.FC<BlogProps> = ({
         </BlogListItem>
       );
     });
-  }, [blog]);
+  }, [blog, blogType]);
 
   return (
     <StyledBlogListItem>
