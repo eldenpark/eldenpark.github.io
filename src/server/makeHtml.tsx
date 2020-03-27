@@ -102,7 +102,9 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
     socketPath,
     socketPort,
     styledComponentsStyleElements: styleTags,
-  });
+  })
+    .replace(/[\r\n]+/gm, '');
+
   return html;
 };
 

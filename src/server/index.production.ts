@@ -88,12 +88,12 @@ async function ejectFiles(eject, port, createdFiles) {
 
   await eject({
     filePath: path.resolve(paths.dist, 'projects.html'),
-    requestUrl: `http://localhost:${port}/projects.html`,
+    requestUrl: `http://localhost:${port}/g/projects.html`,
   });
 
   await eject({
     filePath: path.resolve(paths.dist, 'music.html'),
-    requestUrl: `http://localhost:${port}/music.html`,
+    requestUrl: `http://localhost:${port}/g/music.html`,
   });
 
   createdFiles.map(async (file) => {

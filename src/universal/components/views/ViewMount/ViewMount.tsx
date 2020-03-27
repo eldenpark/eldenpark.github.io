@@ -10,6 +10,7 @@ import DefaultView from '@@src/universal/components/views/DefaultView/DefaultVie
 import Footer from '@@src/universal/components/app/Footer/Footer';
 import Masthead from '@@src/universal/components/app/Masthead/Masthead';
 import { log } from '@@src/universal/modules/Logger';
+import { StaticContext } from '@@src/universal/contexts/StaticContext';
 import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
 import { w320 } from '@@src/universal/styles/media';
 
@@ -44,7 +45,7 @@ const ViewMount: React.FC = () => {
               <>
                 <Masthead visibleOnMenu={item.visibleOnMenu} />
                 <DefaultView
-                  staticContext={staticContext}
+                  staticContext={staticContext as StaticContext}
                   view={item}
                 />
               </>
