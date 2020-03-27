@@ -118,7 +118,7 @@ const data: ContentData = {
       id: 'honors_and_actiities',
       items: [
         {
-          title1: 'Best lightning talk, KOCSEA Tech Symposium 2019, Korean Computer Scientists and Engineers Association in America',
+          title1: 'Best lightning talk, KOCSEA Tech Symposium 2019, Korean Computer Scientists and Engineers Association of America',
           title2: '2019',
         },
         {
@@ -168,7 +168,7 @@ const data: ContentData = {
             },
           ],
           title1: '<b>M.S., in Computer Science</b>, University of Southern California, Los Angeles, CA',
-          title2: '01/2019 - Present',
+          title2: '2019 - Present',
         },
         {
           children: [
@@ -178,7 +178,7 @@ const data: ContentData = {
             },
           ],
           title1: '<b>B.S., in Computer Science</b>, Korea University, Seoul, South Korea',
-          title2: '03/2015 - 08/2017',
+          title2: '2015 - 2017',
         },
         {
           children: [
@@ -188,7 +188,7 @@ const data: ContentData = {
             },
           ],
           title1: 'University of Utah, Salt Lake City, UT',
-          title2: '01/2014 - 05/2014',
+          title2: 'Spring 2014',
         },
         {
           children: [
@@ -198,11 +198,11 @@ const data: ContentData = {
             },
           ],
           title1: 'Kookmin University, Seoul, South Korea',
-          title2: '03/2013 - 02/2015',
+          title2: '2013 - 2014',
         },
         {
           title1: 'Yeongdong High School, Seoul, South Korea',
-          title2: '03/2005 - 02/2008',
+          title2: '2005 - 2008',
         },
       ],
       label: 'EDUCATION',
