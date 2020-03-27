@@ -40,7 +40,7 @@ const Blog: React.FC<BlogProps> = ({
         <BlogListItem key={item.pageUrl}>
           <Title1>
             <Link to={pageUrl}>
-              {item.meta.title}
+              {item.capitalizedTitle}
             </Link>
           </Title1>
           <p>

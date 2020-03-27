@@ -5,6 +5,7 @@ export interface BlogData {
 export interface Blog {
   id: string;
   items: {
+    capitalizedTitle: string;
     createdAt: number;
     hash: string;
     html: string;

@@ -75,6 +75,8 @@ function getData() {
                 throw new Error(`title is not defined, filename: ${file2}`);
               }
 
+              const capitalizedTitle = toTitleCase(meta.title);
+
               const pageUrl = meta.title.replace(/\s+/g, '-')
                 .toLowerCase()
                 + '--'
@@ -91,6 +93,7 @@ function getData() {
               );
 
               (blogData[file1] as Blog).items.push({
+                capitalizedTitle,
                 createdAt,
                 hash,
                 html,
@@ -120,6 +123,13 @@ function getData() {
 }
 
 export default getData;
+
+function toTitleCase(str: string) {
+  return str.replace(
+    /\w\S*/g,
+    (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(),
+  );
+}
 
 interface Result {
   blogData?: BlogData;
