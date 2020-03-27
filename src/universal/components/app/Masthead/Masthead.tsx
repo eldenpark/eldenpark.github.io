@@ -6,7 +6,7 @@ import color from '@@src/universal/styles/color';
 import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
 import { w320 } from '@@src/universal/styles/media';
 
-const mastHeadTheme = {
+const mastheadTheme = {
   false: {
     fontColor: color.htmlColor,
     fontSize: '1.3rem',
@@ -19,12 +19,14 @@ const mastHeadTheme = {
   },
 };
 
-const StyledMasthead = styled.div<any>(({
+const StyledMasthead = styled.div({});
+
+const Label = styled.p<any>(({
   label,
   theme,
 }) => ({
   '&::after': {
-    color: '#665dd5',
+    color: color.violet66,
     content: `"${label}"`,
     left: 0,
     position: 'absolute',
@@ -51,6 +53,7 @@ const StyledMasthead = styled.div<any>(({
     transform: 'translate(5px, 1px)',
   },
   color: theme.fontColor,
+  display: 'inline-block',
   fontFamily: '"Work Sans"',
   fontSize: theme.fontSize,
   fontWeight: 800,
@@ -66,16 +69,18 @@ const StyledMasthead = styled.div<any>(({
 const Masthead: React.FC<MastheadProps> = ({
   visibleOnMenu,
 }) => {
-  const { general } = useContentData();
+  const { general } = useContentData()!;
 
   return (
-    <StyledMasthead
-      label={general.name}
-      theme={mastHeadTheme[visibleOnMenu]}
-    >
-      <Link to="/">
-        {general.name}
-      </Link>
+    <StyledMasthead>
+      <Label
+        label={general.name}
+        theme={mastheadTheme[visibleOnMenu]}
+      >
+        <Link to="/">
+          {general.name}
+        </Link>
+      </Label>
     </StyledMasthead>
   );
 };

@@ -4,12 +4,13 @@ import {
 import React from 'react';
 import styled from 'styled-components';
 
+import color from '@@src/universal/styles/color';
 import { useContentData } from '@@src/universal/contexts/IsomorphicDataContext';
 
 const StyledMenu = styled.ul({
   '& a': {
     '&:hover': {
-      color: '#fff',
+      color: color.lightBlueC4,
     },
     display: 'inline-block',
     paddingBottom: 4,

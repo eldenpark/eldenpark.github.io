@@ -7,6 +7,7 @@ import color from '@@src/universal/styles/color';
 import ErrorBoundary from '@@src/universal/components/app/Error/ErrorBoundary';
 import normalize from '@@src/universal/styles/normalize';
 import ViewMount from '@@src/universal/components/views/ViewMount/ViewMount';
+import { w320 } from '@@src/universal/styles/media';
 
 const Normalize = createGlobalStyle`
   ${normalize}
@@ -59,9 +60,12 @@ const GlobalStyle = createGlobalStyle({
 
 const StyledUniversal = styled.div({
   display: 'flex',
-  fontSize: '1.16rem',
+  fontSize: '1.34rem',
   justifyContent: 'center',
   minWidth: 318,
+  ...w320({
+    fontSize: '1.25rem',
+  }),
 });
 
 const Universal: React.FC<any> = () => {

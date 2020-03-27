@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import color from '@@src/universal/styles/color';
+import { w320 } from '@@src/universal/styles/media';
 
 const Text = styled.div({
   '& a': {
@@ -46,6 +47,15 @@ const Multimedia = styled.div({
   },
   display: 'flex',
   justifyContent: 'center',
+  ...w320({
+    '& img': {
+      borderRadius: 0,
+      margin: '1.05em -20px',
+      maxWidth: 'initial',
+      width: '100vw',
+    },
+    display: 'block',
+  }),
 });
 
 const componentMap = {

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import color from '@@src/universal/styles/color';
+import { w320 } from '@@src/universal/styles/media';
 
 const H1 = styled.div({
   '& a': {
@@ -29,6 +30,9 @@ const Blog1 = styled.div({
   fontSize: '2.7rem',
   fontWeight: 700,
   lineHeight: '1.1em',
+  ...w320({
+    fontSize: '2.15rem',
+  }),
 });
 
 const componentMap = {

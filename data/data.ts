@@ -280,7 +280,7 @@ const data: ContentData = {
               type: 'text',
             },
             {
-              label: '<p>I\'m a huge fan of trance music but when it comes to the type of songs I listen to, I\'m more of an omnivore. Below is a list of tracks I\'ve enjoyed the most. This I hope will consist of the ones I produce in the future. Let me know if you know any good tracks.</p>',
+              label: '<p>I\'m a huge fan of trance music but when it comes to the type of songs I listen to, I\'m more of an omnivore. And, as a courtesy of those songs that have impacted me the most in various ways, I decided to keep the record of them. Someday I hope I can post my own releases as well.</p>',
               type: 'text',
             },
             {

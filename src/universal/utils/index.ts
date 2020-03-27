@@ -15,7 +15,7 @@ const months = [
 
 export function getDisplayableDate(timestamp: number): string {
   const date = new Date(timestamp);
-  return months[date.getMonth() - 1].substring(0, 3)
+  return months[date.getMonth()].substring(0, 3)
     + ' '
     + date.getDate()
     + ', '

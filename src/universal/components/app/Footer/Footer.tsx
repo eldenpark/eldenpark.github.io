@@ -4,21 +4,30 @@ import styled from 'styled-components';
 import { useIsomorphicData } from '@@src/universal/contexts/IsomorphicDataContext';
 
 const StyledFooter = styled.div({
-  '& button': {
+  '& button, & a': {
     '&:hover': {
       borderBottom: 'none',
     },
     borderBottom: '1px solid #bdbdbd',
+    display: 'inline',
   },
   '& span:not(:first-child)': {
-    marginLeft: '0.5em',
+    marginLeft: '0.4em',
   },
-  alignItems: 'flex-end',
   color: '#bdbdbd',
   display: 'flex',
-  height: 180,
-  justifyContent: 'space-between',
+  flexDirection: 'column',
   marginTop: 'auto',
+  padding: '90px 0 1em 0',
+});
+
+const Top = styled.div({
+  display: 'flex',
+  justifyContent: 'space-between',
+});
+
+const Bottom = styled.div({
+  fontSize: '1rem',
 });
 
 const Footer = () => {
@@ -39,25 +48,27 @@ const Footer = () => {
 
   return (
     <StyledFooter>
-      <div>
+      <Top>
         <p>
           <span>{date.getFullYear()}</span>
           <span>{contentData.general?.name}</span>
         </p>
+        <div>
+          <button
+            onClick={handleClickTop}
+            type="button"
+          >
+            Top
+          </button>
+        </div>
+      </Top>
+      <Bottom>
         <p>
-          <span>Last updated at</span>
+          <span>Updated at</span>
           <span>{`${date.getMonth() + 1}/${date.getFullYear()},`}</span>
-          <span>{`[-1] ${latestCommitHash}`}</span>
+          <span>{`[^1] ${latestCommitHash}`}</span>
         </p>
-      </div>
-      <div>
-        <button
-          onClick={handleClickTop}
-          type="button"
-        >
-          Top
-        </button>
-      </div>
+      </Bottom>
     </StyledFooter>
   );
 };

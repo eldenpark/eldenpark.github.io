@@ -18,15 +18,15 @@ const StyledViewMount = styled.div({
   flexDirection: 'column',
   maxWidth: 670,
   minHeight: '100vh',
-  padding: '44 20',
+  padding: '44px 20px',
   width: '100%',
   ...w320({
-    padding: '15 20',
+    padding: '15px 20px',
   }),
 });
 
 const ViewMount: React.FC = () => {
-  const { views } = useContentData();
+  const { views } = useContentData()!;
 
   const routes = React.useMemo(() => {
     const _routes = views.items.map((item) => {

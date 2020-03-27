@@ -11,7 +11,6 @@ import Menu from '@@src/universal/components/app/Menu/Menu';
 import { useIsomorphicData } from '@@src/universal/contexts/IsomorphicDataContext';
 
 const StyledDefaultView = styled.div({
-  overflowX: 'hidden',
   width: '100%',
 });
 
@@ -27,6 +26,10 @@ const componentMap = {
 const DefaultView: React.FC<DefaultViewProps> = ({
   view,
 }) => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const {
     blogData,
     contentData,

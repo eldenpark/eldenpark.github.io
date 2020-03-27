@@ -8,7 +8,13 @@ import color from '@@src/universal/styles/color';
 import { getDisplayableDate } from '@@src/universal/utils';
 import Text from '@@src/universal/components/app/Text/Text';
 
-const StyledBlogDetail = styled.div({});
+const StyledBlogDetail = styled.div({
+  paddingTop: 15,
+});
+
+const DateTime = styled(Text)({
+  fontStyle: 'italic',
+});
 
 const BlogMain = styled.div({
   '& div:nth-child(2)': {
@@ -18,8 +24,24 @@ const BlogMain = styled.div({
 
 const BlogBody = styled.div({
   '& .container': {
+    '& figcaption': {
+      color: 'gray',
+      fontFamily: '"Arial, Helvetica, sans-serif;"',
+      fontSize: '0.9em',
+      marginTop: 5,
+      textAlign: 'center',
+    },
+    '& iframe': {
+      alignSelf: 'center',
+      height: '47vw',
+      maxHeight: 267,
+      maxWidth: 480,
+      width: '85vw',
+    },
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
+    margin: '1.1em 0',
   },
   '& a': {
     '&:hover': {
@@ -27,17 +49,12 @@ const BlogBody = styled.div({
     },
     borderBottom: `1px solid ${color.htmlColor}`,
   },
-  '& iframe': {
-    alignSelf: 'center',
-    height: '47vw',
-    margin: '1.1em 0',
-    maxHeight: 267,
-    maxWidth: 480,
-    width: '85vw',
-  },
   '& li': {
     listStyleType: 'disc',
     marginLeft: 24,
+  },
+  '& p:not(:last-child)': {
+    marginBottom: '1.4em',
   },
   display: 'flex',
   flexDirection: 'column',
@@ -69,7 +86,7 @@ const BlogDetail: React.FC<BlogDetailProps> = ({
       result.datetime = getDisplayableDate(selectedBlog.createdAt);
       result.html = selectedBlog.html;
       result.title = selectedBlog.meta?.title;
-      const unescapedFunc = selectedBlog.meta?.callable?.replace(/&quot;/g, '"');
+      const unescapedFunc = selectedBlog.meta?.clickable?.replace(/&quot;/g, '"');
       result.func = new Function('dataset', unescapedFunc);
     }
 
@@ -78,9 +95,9 @@ const BlogDetail: React.FC<BlogDetailProps> = ({
 
   const registerFunctions = React.useCallback((elem) => {
     if (elem !== null) {
-      elem.querySelectorAll('.callable')
-        .forEach((callable) => {
-          callable.addEventListener('click', func.bind(this, callable.dataset));
+      elem.querySelectorAll('.clickable')
+        .forEach((clickable) => {
+          clickable.addEventListener('click', func.bind(this, clickable.dataset));
         });
     }
   }, [func]);
@@ -89,7 +106,7 @@ const BlogDetail: React.FC<BlogDetailProps> = ({
     <StyledBlogDetail>
       <BlogMain>
         <Text type="blog1">{title}</Text>
-        <Text>{datetime}</Text>
+        <DateTime>{datetime}</DateTime>
         <BlogBody
           dangerouslySetInnerHTML={{ __html: html }}
           ref={registerFunctions}
