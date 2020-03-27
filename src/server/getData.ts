@@ -67,7 +67,7 @@ function getData() {
               const content = fs.readFileSync(filePath2).toString();
               const html = converter.makeHtml(content).replace(/\r?\n|\r/g, '');
               const shasum = crypto.createHash('sha256');
-              shasum.update(file1 + file2 + content);
+              shasum.update(content);
               const hash = shasum.digest('hex');
               const meta = converter.getMetadata();
 
@@ -80,7 +80,7 @@ function getData() {
               const pageUrl = meta.title.replace(/\s+/g, '-')
                 .toLowerCase()
                 + '--'
-                + hash.substring(0, 6)
+                + hash.substring(0, 8)
                 + '.html';
 
               log(
