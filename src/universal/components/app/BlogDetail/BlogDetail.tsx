@@ -1,11 +1,12 @@
 /* eslint-disable no-new-func */
-import { useLocation } from 'react-router-dom';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { Blog as BlogType } from '@@data/BlogData';
 import color from '@@src/universal/styles/color';
 import { getDisplayableDate } from '@@src/universal/utils';
+import { StaticContext } from '@@src/universal/contexts/StaticContext';
 import Text from '@@src/universal/components/app/Text/Text';
 
 const StyledBlogDetail = styled.div({
@@ -63,6 +64,7 @@ const BlogBody = styled.div({
 
 const BlogDetail: React.FC<BlogDetailProps> = ({
   blog,
+  staticContext,
 }) => {
   const { pathname } = useLocation();
   const {
@@ -90,8 +92,14 @@ const BlogDetail: React.FC<BlogDetailProps> = ({
       result.func = new Function('dataset', unescapedFunc);
     }
 
+    if (staticContext !== undefined) {
+      staticContext.metaTitle = result.title;
+      staticContext.metaDescription = (result.html.replace(/(<([^>]+)>)/ig, '')
+        .substring(0, 300)) + '...';
+    }
+
     return result;
-  }, [blog, pathname]);
+  }, [blog, pathname, staticContext]);
 
   const registerFunctions = React.useCallback((elem) => {
     if (elem !== null) {
@@ -121,4 +129,5 @@ export default BlogDetail;
 interface BlogDetailProps {
   backUrl: string;
   blog: BlogType;
+  staticContext: StaticContext;
 }

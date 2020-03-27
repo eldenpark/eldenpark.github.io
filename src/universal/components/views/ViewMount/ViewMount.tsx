@@ -40,14 +40,13 @@ const ViewMount: React.FC = () => {
           render={({
             staticContext,
           }) => {
-            if (staticContext) {
-              (staticContext as any).name = item.url;
-            }
-
             return (
               <>
                 <Masthead visibleOnMenu={item.visibleOnMenu} />
-                <DefaultView view={item} />
+                <DefaultView
+                  staticContext={staticContext}
+                  view={item}
+                />
               </>
             );
           }}

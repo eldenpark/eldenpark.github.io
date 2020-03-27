@@ -1,6 +1,5 @@
 import chalk from 'chalk';
 import express, {
-  NextFunction,
 } from 'express';
 import ExpressIsomorphic, {
   Extend,
@@ -31,12 +30,8 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
     blogData,
     contentData,
     latestCommitHash,
+    repositoryUrl,
   } = getData();
-
-  app.use((req: Request, res, next: NextFunction) => {
-    log('extend(): requestUrl: %s', req.url);
-    next();
-  });
 
   app.use(webpackConfig.output.publicPath, express.static(paths.dist));
 
@@ -51,6 +46,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
     contentData,
     latestCommitHash,
     publicPath: webpackConfig.output.publicPath,
+    repositoryUrl,
   }));
 
   return watch(webpackConfigServer);

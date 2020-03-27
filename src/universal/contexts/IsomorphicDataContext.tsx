@@ -31,4 +31,5 @@ interface IsomorphicData {
   builtAt: number;
   contentData: ContentData;
   latestCommitHash: string;
+  repositoryUrl: string;
 }

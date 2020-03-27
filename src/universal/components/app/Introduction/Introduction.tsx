@@ -60,10 +60,14 @@ const Contact = styled.div({
       color: color.h1Color,
     },
     display: 'inline-block',
-    fontSize: '1.1em',
+    fontSize: '1.05em',
   },
   '& li:not(:first-child)': {
     marginLeft: 14,
+  },
+  '& ul': {
+    alignItems: 'center',
+    display: 'flex',
   },
   color: color.lightBlueC4,
   display: 'flex',

@@ -1,7 +1,4 @@
-import express, {
-  NextFunction,
-  Request,
-} from 'express';
+import express from 'express';
 import ExpressIsomorphic, {
   Extend,
 } from 'express-isomorphic';
@@ -31,12 +28,8 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
     contentData,
     createdFiles,
     latestCommitHash,
+    repositoryUrl,
   } = getData();
-
-  app.use((req: Request, res, next: NextFunction) => {
-    log('extend(): requestUrl: %s', req.url);
-    next();
-  });
 
   withWebpack({
     serverState,
@@ -56,6 +49,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
         createdFiles,
         latestCommitHash,
         publicPath,
+        repositoryUrl,
       }));
     });
 };

@@ -8,6 +8,7 @@ import Group from '@@src/universal/components/app/Group/Group';
 import { Group as GroupType, View } from '@@data/ContentData';
 import Introduction from '@@src/universal/components/app/Introduction/Introduction';
 import Menu from '@@src/universal/components/app/Menu/Menu';
+import { StaticContext } from '@@src/universal/contexts/StaticContext';
 import { useIsomorphicData } from '@@src/universal/contexts/IsomorphicDataContext';
 
 const StyledDefaultView = styled.div({
@@ -24,6 +25,7 @@ const componentMap = {
 };
 
 const DefaultView: React.FC<DefaultViewProps> = ({
+  staticContext,
   view,
 }) => {
   React.useEffect(() => {
@@ -48,11 +50,11 @@ const DefaultView: React.FC<DefaultViewProps> = ({
         ...(child.type === 'blogDetail' && {
           blog: blogData[child.value] as BlogType,
         }),
+        staticContext,
       };
-
       return React.createElement(component, componentProps);
     });
-  }, [view, blogData, contentData]);
+  }, [view, blogData, contentData, staticContext]);
 
   return (
     <StyledDefaultView>
@@ -64,5 +66,6 @@ const DefaultView: React.FC<DefaultViewProps> = ({
 export default DefaultView;
 
 interface DefaultViewProps {
+  staticContext?: StaticContext;
   view: View;
 }

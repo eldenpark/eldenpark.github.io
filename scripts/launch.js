@@ -5,6 +5,7 @@ const path = require('path');
 
 const babelRc = require('./.babelrc');
 const { gulp } = require('./build');
+const pJson = require('../package.json');
 
 const log = logger('[eldeni.github.io]');
 
@@ -21,6 +22,8 @@ function launch() {
   process.env.DATA_PATH = path.resolve(__dirname, '../data');
   process.env.DATA_FILE_PATH = path.resolve(__dirname, '../data/data.ts');
   process.env.LATEST_COMMIT_HASH = latestCommitHash;
+  process.env.HARDCODED_STATIC_URL = 'https://eldeni.github.io';
+  process.env.REPOSITORY_URL = pJson.repository.url;
 
   log(
     'launch(): argv: %j, DATA_PATH: %s, DATA_FILE_PATH: %s, LATEST_COMMIT_HASH: %s',

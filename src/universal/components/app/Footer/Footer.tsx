@@ -27,6 +27,9 @@ const Top = styled.div({
 });
 
 const Bottom = styled.div({
+  '& a': {
+    borderBottom: 'none',
+  },
   fontSize: '1rem',
 });
 
@@ -35,6 +38,7 @@ const Footer = () => {
     builtAt,
     contentData,
     latestCommitHash,
+    repositoryUrl,
   } = useIsomorphicData()!;
 
   const date = React.useMemo(() => {
@@ -66,7 +70,9 @@ const Footer = () => {
         <p>
           <span>Updated at</span>
           <span>{`${date.getMonth() + 1}/${date.getFullYear()},`}</span>
-          <span>{`[^1] ${latestCommitHash}`}</span>
+          <span>
+            <a href={repositoryUrl}>{`[^1] ${latestCommitHash}`}</a>
+          </span>
         </p>
       </Bottom>
     </StyledFooter>

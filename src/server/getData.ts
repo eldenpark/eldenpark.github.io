@@ -16,12 +16,14 @@ function getData() {
   const dataPath = process.env.DATA_PATH as string;
   const dataFilePath = process.env.DATA_FILE_PATH as string;
   const latestCommitHash = process.env.LATEST_COMMIT_HASH as string;
+  const repositoryUrl = process.env.REPOSITORY_URL as string;
 
   const result: Result = {
     blogData: undefined,
     contentData: undefined,
     createdFiles: undefined,
     latestCommitHash,
+    repositoryUrl,
   };
 
   try {
@@ -124,6 +126,7 @@ interface Result {
   contentData?: ContentData;
   createdFiles?: CreatedFile[];
   latestCommitHash?: string;
+  repositoryUrl: string;
 }
 
 export interface CreatedFile {

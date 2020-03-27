@@ -11,22 +11,26 @@ import { ServerStyleSheet } from 'styled-components';
 
 import IsomorphicState from './IsomorphicState';
 import ServerApp from '@@src/server/ServerApp';
+import { StaticContext } from '@@src/universal/contexts/StaticContext';
 
 const isProd = process.env.NODE_ENV === 'production';
 
 const log = logger('[eldeni.github.io]');
 
+const HARDCODED_STATIC_URL = process.env.HARDCODED_STATIC_URL as string;
+
 const ogImageUrls = {
-  '/': '/g/assets/elden-2-reduced.jpg',
-  '/music.html': '/g/assets/music-1.jpg',
+  '/g/music': '/g/assets/music-1.jpg',
   default: '/g/assets/elden-2-reduced.jpg',
 };
 
 const makeHtml: MakeHtml<IsomorphicState> = async ({
-  requestUrl,
+  host,
+  protocol,
   serverState,
+  url,
 }) => {
-  log('makeHtml()');
+  log('makeHtml(): protocol: %s, host: %s, url: %s', protocol, host, url);
 
   const { socketPath, socketPort, state } = serverState;
   const {
@@ -42,32 +46,56 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
     builtAt,
     contentData,
     latestCommitHash,
+    repositoryUrl,
   } = serverState.state;
   const isomorphicData = {
     blogData,
     builtAt,
     contentData,
     latestCommitHash,
+    repositoryUrl,
   };
-  const staticContext = {};
+  const staticContext: StaticContext = {};
 
   const element = (
     <ServerApp
       isomorphicData={isomorphicData}
-      requestUrl={requestUrl}
+      requestUrl={url}
       serverStyleSheet={serverStyleSheet}
       staticContext={staticContext}
     />
   );
 
   const reactAppInString = await renderToString(element);
-
   const styleTags = serverStyleSheet.getStyleTags();
+
+  let {
+    metaDescription,
+    metaImageUrl,
+    metaTitle,
+  } = staticContext;
+
+  if (metaImageUrl === undefined) {
+    metaImageUrl = ogImageUrls[(
+      Object.keys(ogImageUrls)
+        .find((urlKey) => url.startsWith(urlKey))
+      || 'default'
+    )] as string;
+  }
+
+  const fullHost = isProd ? HARDCODED_STATIC_URL : (protocol + '://' + host);
+  metaImageUrl = metaImageUrl.startsWith('/') ? fullHost + metaImageUrl : metaImageUrl;
+  metaTitle = metaTitle ? metaTitle : contentData.general.name;
+  metaDescription = metaDescription
+    ? metaDescription
+    : contentData.general.introduction.p1;
 
   const html = template({
     fontAwesomeCss: dom.css(),
     isomorphicData,
-    opImageUrl: ogImageUrls[staticContext['name'] || 'default'],
+    metaDescription,
+    metaImageUrl,
+    metaTitle,
     processEnvElement,
     reactAppInString,
     reactAssetElements,
@@ -81,7 +109,9 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
 function template({
   fontAwesomeCss,
   isomorphicData,
-  opImageUrl,
+  metaDescription,
+  metaImageUrl,
+  metaTitle,
   processEnvElement,
   reactAppInString,
   reactAssetElements,
@@ -102,7 +132,12 @@ function template({
 
     <title>Elden Park</title>
     <meta charset="UTF-8">
-    <meta property="og:image" content="${opImageUrl}" />
+    <meta name="title" content="${metaTitle}" />
+    <meta property="og:title" name="title" content="${metaTitle}"/>
+    <meta name="description" content="${metaDescription}">
+    <meta property=”og:description” content=”${metaDescription}” />
+    <meta name="image" content="${metaImageUrl}" />
+    <meta property="og:image" content="${metaImageUrl}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="icon" type="image/x-icon" href="/dist/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Work+Sans:400,500,700,800,900&display=swap" rel="stylesheet">

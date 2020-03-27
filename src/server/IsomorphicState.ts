@@ -13,4 +13,5 @@ export default class IsomorphicState implements WebpackServerState {
   createdFiles: CreatedFile[];
   latestCommitHash: string;
   publicPath: string;
+  repositoryUrl: string;
 }

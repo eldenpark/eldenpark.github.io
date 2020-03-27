@@ -276,7 +276,7 @@ const data: ContentData = {
         {
           children: [
             {
-              label: 'Music has been an integral part of my life. During the school days, I have played instruments in a band. Now, my interest has been extended over to mixing and possibly producing the sound.',
+              label: 'Music has been an integral part of my life. While growing up, I have played a number of different instruments. Now, my interest has been extended over to mixing and possibly producing the sound.',
               type: 'text',
             },
             {

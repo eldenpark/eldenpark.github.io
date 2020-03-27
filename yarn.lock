@@ -887,7 +887,7 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@commitlint/cli@^8.0.0":
+"@commitlint/cli@^8.3.5":
   version "8.3.5"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-8.3.5.tgz#6d93a3a8b2437fa978999d3f6a336bcc70be3fd3"
   integrity sha512-6+L0vbw55UEdht71pgWOE55SRgb+8OHcEwGDB234VlIBFGK9P2QOBU7MHiYJ5cjdjCQ0rReNrGjOHmJ99jwf0w==
@@ -4889,22 +4889,22 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   dependencies:
     homedir-polyfill "^1.0.1"
 
-express-isomorphic-extension@^0.36.0:
-  version "0.36.0"
-  resolved "https://registry.yarnpkg.com/express-isomorphic-extension/-/express-isomorphic-extension-0.36.0.tgz#bc48932c72777f193d589d07ac904c68a3e199a1"
-  integrity sha512-ocb4xs3rfrInl8QGVWwfzrifTL9LE+P1PMXEGqoX2G1/t/Zr8zERvgxuZS+llJYIK1/COeJTqulI5yZf8MCvTQ==
+express-isomorphic-extension@^0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/express-isomorphic-extension/-/express-isomorphic-extension-0.37.0.tgz#bc6cf7f8f74018a5991375097669b09c533fd592"
+  integrity sha512-oMtMBT6ysv8lOYgm/Zr3EM90QHsi9Bmm3RuwzbOkX7QCLnT2vccSVUxWiyKaGdpZhW+Zhv4Q2TXl2JFS2SBsew==
   dependencies:
     chalk "^2.4.2"
-    express-isomorphic "^0.36.0"
+    express-isomorphic "^0.37.0"
     jege "^0.4.0"
     webpack "^4.33.0"
     webpack-dev-middleware "^3.7.0"
     webpack-hot-middleware "^2.25.0"
 
-express-isomorphic@^0.36.0:
-  version "0.36.0"
-  resolved "https://registry.yarnpkg.com/express-isomorphic/-/express-isomorphic-0.36.0.tgz#217af6b4a1f4e954397ced0e26ff310b7f479f16"
-  integrity sha512-MegADEyXrz/Fw6Fof/GEwroFBgzzZc/aYUdOtGghYhcz7I9z9/Ib5J+iDO8iQC7F6G5T89mEIYCjs9HXpz5r/Q==
+express-isomorphic@^0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/express-isomorphic/-/express-isomorphic-0.37.0.tgz#a41d9f95773c989117964f6b057b2a1a6f646e52"
+  integrity sha512-XVryzFYUvTyuq4IqyL0+qx9jDuaG/ihikRinfLNnrtJp7qju/o7UiVz3aMcvHJN4yaHbiO51X8tjlnG24f2OMw==
   dependencies:
     axios "^0.19.0"
     body-parser "^1.19.0"
@@ -6882,7 +6882,7 @@ lead@^1.0.0:
   dependencies:
     flush-write-stream "^1.0.2"
 
-lerna@^3.15.0:
+lerna@^3.20.2:
   version "3.20.2"
   resolved "https://registry.yarnpkg.com/lerna/-/lerna-3.20.2.tgz#abf84e73055fe84ee21b46e64baf37b496c24864"
   integrity sha512-bjdL7hPLpU3Y8CBnw/1ys3ynQMUjiK6l9iDWnEGwFtDy48Xh5JboR9ZJwmKGCz9A/sarVVIGwf1tlRNKUG9etA==
