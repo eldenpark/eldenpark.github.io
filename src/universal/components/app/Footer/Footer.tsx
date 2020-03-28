@@ -10,6 +10,7 @@ const StyledFooter = styled.div({
     },
     borderBottom: '1px solid #bdbdbd',
     display: 'inline',
+    transition: 'border-bottom 0.5s ease',
   },
   '& span:not(:first-child)': {
     marginLeft: '0.4em',
@@ -27,9 +28,6 @@ const Top = styled.div({
 });
 
 const Bottom = styled.div({
-  '& a': {
-    borderBottom: 'none',
-  },
   fontSize: '1rem',
 });
 
