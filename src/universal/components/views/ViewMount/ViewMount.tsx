@@ -17,7 +17,7 @@ import { w320 } from '@@src/universal/styles/media';
 const StyledViewMount = styled.div({
   display: 'flex',
   flexDirection: 'column',
-  maxWidth: 670,
+  maxWidth: 690,
   minHeight: '100vh',
   padding: '44px 20px',
   width: '100%',

@@ -191,12 +191,6 @@ const data: ContentData = {
           title2: 'Spring 2014',
         },
         {
-          children: [
-            {
-              label: 'Academic Scholar',
-              type: 'text',
-            },
-          ],
           title1: 'Kookmin University, Seoul, South Korea',
           title2: '2013 - 2014',
         },
