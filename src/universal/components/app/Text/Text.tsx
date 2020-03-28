@@ -7,7 +7,7 @@ import { w320 } from '@@src/universal/styles/media';
 const H1 = styled.div({
   '& a': {
     '&:hover': {
-      borderBottom: 'none',
+      borderBottom: '1px solid transparent',
     },
     borderBottom: `1px solid ${color.h1Color}`,
   },
@@ -18,7 +18,7 @@ const H1 = styled.div({
 const Default = styled.div({
   '& a': {
     '&:hover': {
-      borderBottom: 'none',
+      borderBottom: '1px solid transparent',
     },
     borderBottom: `1px solid ${color.htmlColor}`,
   },

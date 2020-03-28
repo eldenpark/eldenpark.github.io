@@ -19,7 +19,7 @@ const BlogListItem = styled.div({});
 const Title1 = styled.div({
   '& a': {
     '&:hover': {
-      borderBottom: 'none',
+      borderBottom: '1px solid transparent',
     },
     borderBottom: `1px solid ${color.h1Color}`,
   },

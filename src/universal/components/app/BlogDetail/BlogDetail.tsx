@@ -46,7 +46,7 @@ const BlogBody = styled.div({
   },
   '& a': {
     '&:hover': {
-      borderBottom: 'none',
+      borderBottom: '1px solid transparent',
     },
     borderBottom: `1px solid ${color.htmlColor}`,
   },

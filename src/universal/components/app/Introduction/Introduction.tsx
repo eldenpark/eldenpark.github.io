@@ -51,7 +51,7 @@ const Contact = styled.div({
   },
   '& a:not(.icon)': {
     '&:hover': {
-      borderBottom: 'none',
+      borderBottom: '1px solid transparent',
     },
     borderBottom: `1px solid ${color.lightBlueC4}`,
   },

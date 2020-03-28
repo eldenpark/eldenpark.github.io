@@ -7,7 +7,7 @@ import { w320 } from '@@src/universal/styles/media';
 const Text = styled.div({
   '& a': {
     '&:hover': {
-      borderBottom: 'none',
+      borderBottom: '1px solid transparent',
     },
     borderBottom: `1px solid ${color.htmlColor}`,
   },

@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle({
     color: 'inherit',
     cursor: 'pointer',
     textDecoration: 'none',
-    transition: 'color 1s ease',
+    transition: 'color 0.5s ease, border-bottom 0.5s ease',
   },
   body: {
   },
