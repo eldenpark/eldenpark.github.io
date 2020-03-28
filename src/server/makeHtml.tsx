@@ -1,6 +1,5 @@
 import {
   createAssetElements,
-  createStringifiableObjectElement,
 } from 'express-isomorphic/utils';
 import { dom } from '@fortawesome/fontawesome-svg-core';
 import { logger } from 'jege/server';
@@ -13,10 +12,9 @@ import IsomorphicState from './IsomorphicState';
 import ServerApp from '@@src/server/ServerApp';
 import { StaticContext } from '@@src/universal/contexts/StaticContext';
 
-const isProd = process.env.NODE_ENV === 'production';
-
 const log = logger('[eldeni.github.io]');
 
+const isProd = process.env.NODE_ENV === 'production';
 const HARDCODED_STATIC_URL = process.env.HARDCODED_STATIC_URL as string;
 
 const ogImageUrls = {
@@ -40,7 +38,6 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
   const serverStyleSheet = new ServerStyleSheet();
 
   const reactAssetElements = createAssetElements(assets, publicPath);
-  const processEnvElement = createStringifiableObjectElement('__NODE_ENV__', getProcessEnv('NODE_ENV'));
   const {
     blogData,
     builtAt,
@@ -96,7 +93,6 @@ const makeHtml: MakeHtml<IsomorphicState> = async ({
     metaDescription,
     metaImageUrl,
     metaTitle,
-    processEnvElement,
     reactAppInString,
     reactAssetElements,
     socketPath,
@@ -114,7 +110,6 @@ function template({
   metaDescription,
   metaImageUrl,
   metaTitle,
-  processEnvElement,
   reactAppInString,
   reactAssetElements,
   socketPath,
@@ -131,6 +126,11 @@ function template({
       gtag('js', new Date());
       gtag('config', 'UA-161485149-1');
     </script>
+    <link rel="icon" type="image/x-icon" href="/g/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Work+Sans:400,500,700,800,900&display=swap" rel="stylesheet">
+    <style>${fontAwesomeCss}</style>
+    ${styledComponentsStyleElements}
+    <script>window['ISOMORPHIC_DATA']=${JSON.stringify(isomorphicData)}</script>
 
     <title>Elden Park</title>
     <meta charset="UTF-8">
@@ -141,16 +141,12 @@ function template({
     <meta name="image" content="${metaImageUrl}" />
     <meta property="og:image" content="${metaImageUrl}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="icon" type="image/x-icon" href="/g/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Work+Sans:400,500,700,800,900&display=swap" rel="stylesheet">
-    <style>${fontAwesomeCss}</style>
-    <script>window['ISOMORPHIC_DATA']=${JSON.stringify(isomorphicData)}</script>
-    ${styledComponentsStyleElements}
-    ${processEnvElement}
   </head>
-  <div id="app-root">${reactAppInString}</div>
-  ${reactAssetElements}
-  ${socket(socketPort, socketPath)}
+  <body>
+    <div id="app-root">${reactAppInString}</div>
+    ${reactAssetElements}
+    ${socket(socketPort, socketPath)}
+  </body>
 </html>
 `;
 }
@@ -171,20 +167,6 @@ function socket(socketPort, socketPath) {
         }
       </script>
     `;
-}
-
-function getProcessEnv(prefix) {
-  if (prefix === undefined || prefix.length < 1) {
-    throw new Error('getProcessEnv(): prefix is not defined');
-  }
-
-  const env = {};
-  Object.keys(process.env)
-    .filter((key) => key.startsWith(prefix))
-    .forEach((key) => {
-      env[key] = process.env[key];
-    });
-  return env;
 }
 
 export default makeHtml;
