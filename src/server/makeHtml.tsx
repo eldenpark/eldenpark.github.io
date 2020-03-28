@@ -141,7 +141,7 @@ function template({
     <meta name="image" content="${metaImageUrl}" />
     <meta property="og:image" content="${metaImageUrl}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="icon" type="image/x-icon" href="/dist/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/g/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Work+Sans:400,500,700,800,900&display=swap" rel="stylesheet">
     <style>${fontAwesomeCss}</style>
     <script>window['ISOMORPHIC_DATA']=${JSON.stringify(isomorphicData)}</script>

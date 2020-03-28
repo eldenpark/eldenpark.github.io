@@ -1,14 +1,13 @@
 const merge = require('webpack-merge');
 const path = require('path');
 
-const paths = require('./paths');
 const webpackConfigClientWeb = require('./webpack.config.client.web');
 
 const config = {
   devtool: 'source-map',
   entry: {
     makeHtml: [
-      path.resolve(paths.src, 'server/makeHtml.tsx'),
+      path.resolve(process.env.SRC_PATH, 'server/makeHtml.tsx'),
     ],
   },
   mode: 'production',
@@ -18,7 +17,7 @@ const config = {
   output: {
     filename: 'makeHtml.bundle.js',
     libraryTarget: 'commonjs2',
-    path: paths.build,
+    path: process.env.BUILD_PATH,
     publicPath: '/',
   },
   plugins: [

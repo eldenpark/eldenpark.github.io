@@ -19,12 +19,6 @@ import webpackConfigServer from '../webpack/webpack.config.server.local';
 
 const log = logger('[eldeni.github.io]');
 
-const paths = {
-  build: path.resolve(__dirname, '../../build'),
-  data: path.resolve(__dirname, '../../data'),
-  dist: path.resolve(__dirname, '../../g'),
-};
-
 const extend: Extend<IsomorphicState> = async (app, serverState) => {
   const {
     blogData,
@@ -33,7 +27,7 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
     repositoryUrl,
   } = getData();
 
-  app.use(webpackConfig.output.publicPath, express.static(paths.dist));
+  app.use(webpackConfig.output.publicPath, express.static(process.env.DIST_PATH));
 
   withWebpackDev({
     serverState,
@@ -53,15 +47,25 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
 };
 
 export default async function local() {
-  log('local(): Starting, ENV: %j', process.env.ENV);
+  log(
+    'local(): Starting, NODE_ENV: %s, BUILD_PATH: %s, DIST_PATH: %s',
+    process.env.NODE_ENV,
+    process.env.BUILD_PATH,
+    process.env.DIST_PATH,
+  );
+
+  const processEnv = process.env;
+  if (!processEnv.BUILD_PATH || !processEnv.DATA_PATH) {
+    throw new Error('env variable is wrong');
+  }
 
   const port = process.env.PORT || 3001;
   const { app, serverState } = await ExpressIsomorphic.createDev({
     extend,
-    makeHtmlPath: path.resolve(paths.build, 'makeHtml.bundle.js'),
+    makeHtmlPath: path.resolve(processEnv.BUILD_PATH, 'makeHtml.bundle.js'),
     watchExt: 'js,jsx,ts,tsx,html,test,md',
     watchPaths: [
-      paths.data,
+      processEnv.DATA_PATH,
     ],
   });
 

@@ -30,7 +30,7 @@ function getData() {
     log('getData(): load module, path: %s', dataFilePath);
     result.contentData = require(dataFilePath).default;
   } catch (err) {
-    log(`getData(): ${chalk.yellow('warn')} process.env.ENV.dataFilePath is not a valid path`);
+    log(`getData(): ${chalk.yellow('warn')} process.env.DATA_FILE_PATH is not a valid path`);
     throw new Error('dataFilePath is not a valid path');
   }
 

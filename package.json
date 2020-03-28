@@ -1,8 +1,5 @@
 {
-  "name": "eldeni",
-  "version": "0.0.1",
-  "description": "Initial",
-  "main": "index.js",
+  "name": "eldeni.github.io",
   "scripts": {
     "dev": "NODE_ENV=development yarn run launch",
     "eject": "NODE_ENV=production yarn run launch",
@@ -14,8 +11,7 @@
     "type": "url",
     "url": "https://github.com/eldeni/eldeni.github.io.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Elden Park",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",

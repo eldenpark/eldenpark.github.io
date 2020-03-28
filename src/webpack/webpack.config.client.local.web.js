@@ -2,7 +2,6 @@ const merge = require('webpack-merge');
 const path = require('path');
 const webpack = require('webpack');
 
-const paths = require('./paths');
 const webpackConfigClientWeb = require('./webpack.config.client.web');
 
 const config = {
@@ -11,7 +10,7 @@ const config = {
     client: [
       'react-hot-loader/patch',
       'webpack-hot-middleware/client',
-      path.resolve(paths.src, 'client/client.tsx'),
+      path.resolve(process.env.SRC_PATH, 'client/client.tsx'),
     ],
     react: ['react', 'react-dom'],
   },

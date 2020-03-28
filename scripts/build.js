@@ -12,7 +12,7 @@ const webpackConfigServer = require('../src/webpack/webpack.config.server.prod')
 const buildLog = buildLogger('[eldeni.github.io]');
 
 const paths = {
-  build: path.resolve(__dirname, '../build'),
+  build: path.resolve(__dirname, '../.build'),
   dist: path.resolve(__dirname, '../g'),
   root: path.resolve(__dirname, '..'),
   src: path.resolve(__dirname, '../src'),

@@ -397,7 +397,7 @@ const data: ContentData = {
         {
           title1: '<a href="https://github.com/eldeni/express-isomorphic">express-isomorphic</a>',
           title2: '2018',
-          title3: 'Express.js extended to serve isomorphic application (app running in both client and server sides). Constantly refreshing codes on both sides while developing. This website you\'re not at is built and developed using this library',
+          title3: 'Express.js extended to serve isomorphic application (app running in both client and server sides). Constantly refreshing codes on both sides while developing. This website you\'re now at is built and developed using this library',
         },
       ],
       label: 'LIBRARIES',

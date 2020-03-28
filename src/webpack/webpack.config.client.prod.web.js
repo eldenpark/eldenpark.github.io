@@ -1,12 +1,11 @@
 const merge = require('webpack-merge');
 const path = require('path');
 
-const paths = require('./paths');
 const webpackConfigClientWeb = require('./webpack.config.client.web');
 
 const config = {
   entry: {
-    client: path.resolve(paths.src, 'client/client.tsx'),
+    client: path.resolve(process.env.SRC_PATH, 'client/client.tsx'),
     react: ['react', 'react-dom'],
   },
   mode: 'production',
@@ -20,7 +19,7 @@ const config = {
   output: {
     chunkFilename: 'chunk.[chunkhash].js',
     filename: '[name].[chunkhash].js',
-    path: paths.dist,
+    path: process.env.DIST_PATH,
     publicPath: '/g/',
   },
 };

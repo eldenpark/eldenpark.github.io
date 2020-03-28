@@ -16,12 +16,6 @@ const webpackBuild = require('../../g/build.json');
 
 const log = logger('[eldeni.github.io]');
 
-const paths = {
-  build: path.resolve(__dirname, '../../build'),
-  dist: path.resolve(__dirname, '../../g'),
-  root: path.resolve(__dirname, '../../'),
-};
-
 const extend: Extend<IsomorphicState> = async (app, serverState) => {
   const {
     blogData,
@@ -55,9 +49,21 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
 };
 
 export default async function main() {
+  log(
+    'local(): Starting, NODE_ENV: %s, BUILD_PATH: %s, DIST_PATH: %s',
+    process.env.NODE_ENV,
+    process.env.BUILD_PATH,
+    process.env.DIST_PATH,
+  );
+
+  const processEnv = process.env;
+  if (!processEnv.BUILD_PATH || !processEnv.DATA_PATH || !processEnv.DIST_PATH) {
+    throw new Error('env variable is wrong');
+  }
+
   const { app, eject, serverState } = await ExpressIsomorphic.create({
     extend,
-    makeHtmlPath: path.resolve(paths.build, 'makeHtml.bundle.js'),
+    makeHtmlPath: path.resolve(processEnv.BUILD_PATH, 'makeHtml.bundle.js'),
   });
 
   const port = 6001;
@@ -74,31 +80,33 @@ export default async function main() {
 
 async function ejectFiles(eject, port, createdFiles) {
   createdFiles.map(async (file) => {
-    const directoryPath = path.resolve(paths.dist, file.category);
+    const directoryPath = path.resolve(process.env.DIST_PATH!, file.category);
     if (!fs.existsSync(directoryPath)) {
       log('ejectFiles(): creating directory: %s', directoryPath);
       fs.mkdirSync(directoryPath);
     }
   });
 
+  const processEnv = process.env;
+
   await eject({
-    filePath: path.resolve(paths.root, 'index.html'),
+    filePath: path.resolve(processEnv.ROOT_PATH!, 'index.html'),
     requestUrl: `http://localhost:${port}/`,
   });
 
   await eject({
-    filePath: path.resolve(paths.dist, 'projects.html'),
+    filePath: path.resolve(processEnv.DIST_PATH!, 'projects.html'),
     requestUrl: `http://localhost:${port}/g/projects.html`,
   });
 
   await eject({
-    filePath: path.resolve(paths.dist, 'music.html'),
+    filePath: path.resolve(processEnv.DIST_PATH!, 'music.html'),
     requestUrl: `http://localhost:${port}/g/music.html`,
   });
 
   createdFiles.map(async (file) => {
     await eject({
-      filePath: path.resolve(paths.dist, file.category, file.fileName),
+      filePath: path.resolve(processEnv.DIST_PATH!, file.category, file.fileName),
       requestUrl: `http://localhost:${port}/g/${file.category}/${file.fileName}`,
     });
   });
