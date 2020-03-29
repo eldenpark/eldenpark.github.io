@@ -208,7 +208,7 @@ const data: ContentData = {
         {
           children: [
             {
-              label: 'Leader of a team of 6 engineers in a fast-growing startup (Y-Combinator alumni). Worked on projects including e-commerce and data-analytics tool in an Agile work environment',
+              label: 'Leader of a team of 6 engineers in a startup (Y-Combinator alumni). Worked on projects including e-commerce and data-analytics tool in an Agile work environment',
               type: 'text',
             },
           ],

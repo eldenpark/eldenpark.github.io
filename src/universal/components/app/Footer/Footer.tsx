@@ -48,6 +48,11 @@ const Footer = () => {
     document.documentElement.scrollTop = 0;
   }, []);
 
+  const [commitHash, setCommitHash] = React.useState('');
+  React.useEffect(function lazyLoadCommitHash() {
+    setCommitHash(`[^1] ${latestCommitHash}`);
+  }, [latestCommitHash]);
+
   return (
     <StyledFooter>
       <Top>
@@ -69,7 +74,7 @@ const Footer = () => {
           <span>Updated at</span>
           <span>{`${date.getMonth() + 1}/${date.getFullYear()},`}</span>
           <span>
-            <a href={repositoryUrl}>{`[^1] ${latestCommitHash}`}</a>
+            <a href={repositoryUrl}>{commitHash}</a>
           </span>
         </p>
       </Bottom>
