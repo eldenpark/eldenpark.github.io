@@ -4,7 +4,7 @@
     "entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  client (332 KiB)\n      chunk.d5fe0eff94a32208e9cd.js\n      chunk.d98cc72d9a3906b26e2d.js\n      client.0e293e96413574dbf9a4.js\n",
     "webpack performance recommendations: \nYou can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.\nFor more info visit https://webpack.js.org/guides/code-splitting/"
   ],
-  "builtAt": 1585507237668,
+  "builtAt": 1585511588615,
   "assetsByChunkName": {
     "vendors~client~react": "chunk.d5fe0eff94a32208e9cd.js",
     "client": "client.0e293e96413574dbf9a4.js",

@@ -11,8 +11,9 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    "ecmaVersion": 2018,
-    "project": "./tsconfig.json",
+    ecmaVersion: 2018,
+    project: ['./tsconfig.eslint.json'],
+    tsconfigRootDir: __dirname,
   },
   plugins: [
     '@typescript-eslint',
@@ -24,6 +25,7 @@ module.exports = {
   root: true,
   rules: {
     '@typescript-eslint/camelcase': ['off'],
+    '@typescript-eslint/explicit-function-return-type': ['off'],
     '@typescript-eslint/member-ordering': ['error', {
       classes: [
         'static-field',
@@ -33,15 +35,21 @@ module.exports = {
         'instance-method',
       ],
     }],
-    '@typescript-eslint/no-namespace': ['off'],
-    '@typescript-eslint/no-implied-eval': ['off'],
-    '@typescript-eslint/explicit-function-return-type': ['off'],
     '@typescript-eslint/no-explicit-any': ['off'],
+    '@typescript-eslint/no-implied-eval': ['off'],
+    '@typescript-eslint/no-namespace': ['off'],
     '@typescript-eslint/no-non-null-assertion': ['off'],
     '@typescript-eslint/no-use-before-define': ['error', {
       functions: false,
     }],
     '@typescript-eslint/no-var-requires': ['off'],
+    '@typescript-eslint/quotes': [
+      'error',
+      'single',
+      {
+        allowTemplateLiterals: true,
+      },
+    ],
     'arrow-body-style': ['off'],
     'arrow-parens': ['error', 'always'],
     'dot-notation': ['off'],
@@ -52,9 +60,6 @@ module.exports = {
     }],
     'import/no-unresolved': ['off'],
     'import/order': ['off'],
-    'prefer-arrow-callback': ['off', {
-      allowNamedFunctions: true,
-    }],
     'import/prefer-default-export': ['off'],
     'jsx-a11y/click-events-have-key-events': ['off'],
     'jsx-a11y/label-has-associated-control': ['off'],
@@ -71,14 +76,11 @@ module.exports = {
       functions: false,
     }],
     'object-curly-newline': ['off'],
+    'prefer-arrow-callback': ['off', {
+      allowNamedFunctions: true,
+    }],
     'prefer-template': ['off'],
     quotes: ['off'],
-    '@typescript-eslint/quotes': [
-      'error',
-      'single',
-      {
-        allowTemplateLiterals: true,
-      }],
     'react/destructuring-assignment': ['off'],
     'react/jsx-max-props-per-line': ['error', {
       maximum: 2,
