@@ -1,34 +1,7 @@
 {
-  "compilerOptions": {
-    "baseUrl": "./",
-    "emitDecoratorMetadata": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "jsx": "react",
-    "lib": [
-      "dom",
-      "es6",
-      "es7"
-    ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "paths": {
-      "@@src/*": [
-        "./src/*"
-      ],
-      "@@data/*": [
-        "./data/*"
-      ],
-    },
-    "strictNullChecks": true,
-    "target": "es6"
-  },
+  "extends": "./tsconfig.base.json",
   "include": [
-    "src/**/*",
     "scripts/**/*",
+    ".eslintrc.js",
   ],
-  "exclude": [
-    "node_modules",
-    "**/*/__temp"
-  ]
 }

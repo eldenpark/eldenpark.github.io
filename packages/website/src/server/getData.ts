@@ -13,10 +13,10 @@ const log = logger('[eldeni.github.io]');
 const converter = new showdown.Converter({ metadata: true });
 
 function getData() {
-  const dataPath = process.env.DATA_PATH as string;
-  const dataFilePath = process.env.DATA_FILE_PATH as string;
+  const dataPath = process.env.WEBSITE_DATA_PATH as string;
   const latestCommitHash = process.env.LATEST_COMMIT_HASH as string;
   const repositoryUrl = process.env.REPOSITORY_URL as string;
+  const contentDataPath = path.resolve(dataPath, 'data.ts');
 
   const result: Result = {
     blogData: undefined,
@@ -27,10 +27,10 @@ function getData() {
   };
 
   try {
-    log('getData(): load module, path: %s', dataFilePath);
-    result.contentData = require(dataFilePath).default;
+    log('getData(): load contentDataPath module, path: %s', contentDataPath);
+    result.contentData = require(contentDataPath).default;
   } catch (err) {
-    log(`getData(): ${chalk.yellow('warn')} process.env.DATA_FILE_PATH is not a valid path`);
+    log(`getData(): ${chalk.yellow('warn')} process.env.CONTENT_DATA_PATH is not a valid path, err: %s`, err);
     throw new Error('dataFilePath is not a valid path');
   }
 

@@ -13,8 +13,9 @@ const buildLog = buildLogger('[eldeni.github.io]');
 
 const paths = {
   build: path.resolve(__dirname, '../.build'),
-  dist: path.resolve(__dirname, '../g'),
-  root: path.resolve(__dirname, '..'),
+  data: process.env.DATA_PATH,
+  dist: process.env.DIST_PATH,
+  root: process.env.ROOT_PATH,
   src: path.resolve(__dirname, '../src'),
 };
 
@@ -27,7 +28,9 @@ gulp.task('clean', () => {
 
   buildLog('clean', 'cleanPaths: %j', cleanPaths);
 
-  return del(cleanPaths);
+  return del(cleanPaths, {
+    force: true,
+  });
 });
 
 gulp.task('copy-public', () => {

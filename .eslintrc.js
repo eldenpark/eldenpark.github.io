@@ -1,3 +1,16 @@
+const fs = require('fs');
+const { logger } = require('jege/server');
+const path = require('path');
+
+const log = logger('[eldeni.github.io]');
+
+const packageDir = [__dirname].concat(
+  fs.readdirSync(path.resolve(__dirname, 'packages'))
+    .map((child) => path.resolve(__dirname, 'packages', child)),
+);
+
+log('.eslintrc.js: packageDir: %s', packageDir);
+
 module.exports = {
   env: {
     browser: true,
@@ -12,7 +25,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
-    project: ['./tsconfig.eslint.json'],
+    project: ['./tsconfig.json', './packages/*/tsconfig.json'],
     tsconfigRootDir: __dirname,
   },
   plugins: [
@@ -57,6 +70,7 @@ module.exports = {
     'import/no-dynamic-require': ['off'],
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: true,
+      packageDir,
     }],
     'import/no-unresolved': ['off'],
     'import/order': ['off'],

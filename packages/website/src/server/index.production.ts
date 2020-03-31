@@ -12,11 +12,12 @@ import getData from './getData';
 import IsomorphicState from './IsomorphicState';
 import webpackConfig from '../webpack/webpack.config.client.prod.web';
 
-const webpackBuild = require('../../g/build.json');
-
 const log = logger('[eldeni.github.io]');
 
 const extend: Extend<IsomorphicState> = async (app, serverState) => {
+  const { DIST_PATH } = process.env;
+  const webpackBuild = require(path.resolve(DIST_PATH!, 'build.json'));
+
   const {
     blogData,
     contentData,
@@ -57,13 +58,13 @@ export default async function main() {
   );
 
   const processEnv = process.env;
-  if (!processEnv.BUILD_PATH || !processEnv.DATA_PATH || !processEnv.DIST_PATH) {
-    throw new Error('env variable is wrong');
+  if (!processEnv.WEBSITE_BUILD_PATH || !processEnv.WEBSITE_DATA_PATH || !processEnv.DIST_PATH) {
+    throw new Error('Some env variables among {buildPath, dataPath, distPath} are wrong');
   }
 
   const { app, eject, serverState } = await ExpressIsomorphic.create({
     extend,
-    makeHtmlPath: path.resolve(processEnv.BUILD_PATH, 'makeHtml.bundle.js'),
+    makeHtmlPath: path.resolve(processEnv.WEBSITE_BUILD_PATH, 'makeHtml.bundle.js'),
   });
 
   const port = 6001;

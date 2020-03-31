@@ -1,28 +1,23 @@
-const fs = require('fs');
 const path = require('path');
+const { logger } = require('jege/server');
+
+const log = logger('[eldeni.github.io]');
 
 const ROOT_PATH = (function requireProjectRoot() {
-  const root = path.resolve(__dirname, '..');
+  const parent = path.resolve(__dirname, '..');
+  const cwd = process.cwd();
 
-  let pJson = false;
-  let gitPath = false;
-  fs.readdirSync(root)
-    .forEach((file) => {
-      if (file === '.git') {
-        gitPath = true;
-      }
-      if (file === 'package.json') {
-        pJson = true;
-      }
-    });
-  if (!pJson || !gitPath) {
-    throw new Error('cwd is wrong configured. Please run the command in the root directory');
+  if (parent !== cwd) {
+    log('requireProjectRoot(): cwd may not be the project root. cwd: %s, parent of paths.js: %s', cwd, parent);
+    throw new Error('cwd must be the project root');
   }
-  return root;
+
+  return cwd;
 })();
 
 module.exports = {
   build: path.resolve(ROOT_PATH, '.build'),
+  data: path.resolve(ROOT_PATH, 'data'),
   dist: path.resolve(ROOT_PATH, 'g'),
   root: ROOT_PATH,
   src: path.resolve(ROOT_PATH, 'src'),

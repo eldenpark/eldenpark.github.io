@@ -1,14 +1,10 @@
-const env = require('./env');
-
-env.apply();
-
 const { argv } = require('yargs');
 const { logger } = require('jege/server');
 
 const babelRc = require('./.babelrc');
 const { gulp } = require('./build');
 
-const log = logger('[eldeni.github.io]');
+const log = logger('[website]');
 
 require('@babel/register')({
   ...babelRc,

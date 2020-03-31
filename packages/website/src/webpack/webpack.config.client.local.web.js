@@ -7,7 +7,7 @@ const webpackConfigClientWeb = require('./webpack.config.client.web');
 const config = {
   devtool: 'source-map',
   entry: {
-    client: path.resolve(process.env.SRC_PATH, 'client/client.tsx'),
+    client: path.resolve(process.env.WEBSITE_SRC_PATH, 'client/client.tsx'),
     hotLoader: [
       'react-hot-loader/patch',
       'webpack-hot-middleware/client',

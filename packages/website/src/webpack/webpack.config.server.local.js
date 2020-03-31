@@ -6,7 +6,7 @@ const webpackConfigClientWeb = require('./webpack.config.client.web');
 
 const config = {
   devtool: 'source-map',
-  entry: path.resolve(process.env.SRC_PATH, 'server/makeHtml.tsx'),
+  entry: path.resolve(process.env.WEBSITE_SRC_PATH, 'server/makeHtml.tsx'),
   externals: [
     nodeExternals(),
   ],
@@ -17,7 +17,7 @@ const config = {
   output: {
     filename: 'makeHtml.bundle.js',
     libraryTarget: 'commonjs2',
-    path: process.env.BUILD_PATH,
+    path: process.env.WEBSITE_BUILD_PATH,
     publicPath: '/',
   },
   plugins: [

@@ -47,32 +47,34 @@ const extend: Extend<IsomorphicState> = async (app, serverState) => {
 };
 
 export default async function local() {
+  const contentDataPath = path.resolve(process.env.WEBSITE_DATA_PATH!, 'data.ts');
   log(
-    'local(): Starting, NODE_ENV: %s, BUILD_PATH: %s, DIST_PATH: %s',
+    'local(): Starting, NODE_ENV: %s, BUILD_PATH: %s, DIST_PATH: %s, contentDataPath: %s',
     process.env.NODE_ENV,
     process.env.BUILD_PATH,
     process.env.DIST_PATH,
+    contentDataPath,
   );
 
   const processEnv = process.env;
-  if (!processEnv.BUILD_PATH || !processEnv.DATA_PATH) {
-    throw new Error('env variable is wrong');
+  if (!processEnv.WEBSITE_BUILD_PATH || !processEnv.WEBSITE_DATA_PATH) {
+    throw new Error('env variable, either buildPath or dataPath is wrong');
   }
 
   const port = process.env.PORT || 3001;
   const { app, serverState } = await ExpressIsomorphic.createDev({
     extend,
-    makeHtmlPath: path.resolve(processEnv.BUILD_PATH, 'makeHtml.bundle.js'),
+    makeHtmlPath: path.resolve(processEnv.WEBSITE_BUILD_PATH, 'makeHtml.bundle.js'),
     watchExt: 'js,jsx,ts,tsx,html,test,md',
     watchPaths: [
-      processEnv.DATA_PATH,
+      processEnv.WEBSITE_DATA_PATH,
     ],
   });
 
   serverState.on('change', () => {
     try {
-      log('on change: serverState changed, delete cache: %s', process.env.DATA_FILE_PATH);
-      delete require.cache[process.env.DATA_FILE_PATH!];
+      log('on change: serverState changed, delete cache: %s', contentDataPath);
+      delete require.cache[contentDataPath!];
 
       const {
         blogData,
@@ -84,7 +86,7 @@ export default async function local() {
         contentData,
       }));
     } catch (err) {
-      log('on change: error loading module: %s', process.env.DATA_FILE_PATH);
+      log('on change: error loading module: %s', contentDataPath);
     }
   });
 
